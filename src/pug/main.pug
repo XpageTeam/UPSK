@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug 
+		main#content
+			section.main-slider
+				.swiper-wrapper
+					.swiper-slide
+						.main-slide
+							picture.main-slide__img
+								source(media="(min-width: 660px)" srcset="img/photos/main-slide-img.jpg")
+								source(media="(max-width: 660px)" srcset="img/photos/main-slide-img-mobile.jpg")
+								img
+							.main-slide__text
+								.main-slide__text-wrapper
+									.ms-text
+										.ms-text__desc
+											.ms-desc
+												.ms-desc__label Супер цена
+												.ms-desc__title Филе цыпленка
+													br
+													| окорок охлажденный
+												.ms-desc__btn
+													a.default-btn(href="#") Подробнее
+										.ms-text__price 229.
+											span 90 
+											i.rub ₽
+					- for (let i = 0; i < 3; i++)
+						.swiper-slide
+							.main-slide
+								picture.main-slide__img
+									source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-slide-img.jpg")
+									source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-slide-img-mobile.jpg")
+									img
+								.swiper-lazy-preloader
+								.main-slide__text
+									.main-slide__text-wrapper
+										.ms-text
+											.ms-text__desc
+												.ms-desc
+													.ms-desc__label Супер цена
+													.ms-desc__title Филе цыпленка
+														br
+														| окорок охлажденный
+													.ms-desc__btn
+														a.default-btn(href="#") Подробнее
+											.ms-text__price 229.
+												span 90 
+												i.rub ₽
+				.main-slider__bullets
+					.swiper-pagination
+			section.main-catalog
+				.wrapper
+					.main-catalog__title
+						.main-title 
+							span Предложение недели
+					.main-catalog__list
+						.catalog-list
+							each item, i in ['Вода мин. лечебно-столовая "Сарыагаш" газ.', 'Нектар  с мяк. "Сто Рецептов" тыквенный', 'Квас "Никола Традиционный" фильт. паст. ж/б ', 'Вода мин. лечебно-столовая "Сарыагаш" газ. ', ]
+								.catalog-list__item
+									.cat-item
+										.cat-item__labels
+											.cat-labels
+												.cat-labels__label.cat-labels__label--red Акция 10.06 / 10.07
+												if ( i == 1)
+													.cat-labels__label.cat-labels__label--yelow Не во всех магазинах
+										if ( i == 1)
+											.cat-item__sale Супер цена
+										else
+											.cat-item__sale 25%
+										a.cat-item__img(href="#")
+											img(src="img/photos/mc-img-"+i+".jpg")
+										.cat-item__desc
+											a.cat-item__title(href="#")=item
+											.cat-item__volume 300 мл
+											.cat-item__buy
+												.cat-buy
+													.cat-buy__price
+														.cat-buy__price-curprice
+															.price 22.
+																span 99 
+																i.rub ₽
+														.cat-buy__price-lastprice
+															.price 22.
+																span 99 
+																i.rub ₽
+													.cat-buy__btn
+														a.arrow-btn(href="#")
+						.main-catalog__list-more
+							a.more-btn(href="#") Показать ещё
+			section.main-catalog-slider
+				.wrapper
+					.main-catalog-slider__title
+						.main-title.main-title--decor
+							span Наши лучшие цены
+					.catalog-slider
+						.catalog-slider__nav
+							.swiper-button-prev
+							.swiper-button-next
+						.catalog-slider__list
+							.swiper-wrapper
+								each item, i in ['Вода мин. лечебно-столовая "Сарыагаш" газ.', 'Нектар  с мяк. "Сто Рецептов" тыквенный', 'Квас "Никола Традиционный" фильт. паст. ж/б ', 'Вода мин. лечебно-столовая "Сарыагаш" газ. ', ]
+									.swiper-slide
+										.cat-item
+											.cat-item__labels
+												.cat-labels
+													.cat-labels__label.cat-labels__label--red Акция 10.06 / 10.07
+													if ( i == 1)
+														.cat-labels__label.cat-labels__label--yelow Не во всех магазинах
+											if ( i == 1)
+												.cat-item__sale Супер цена
+											else
+												.cat-item__sale 25%
+											a.cat-item__img(href="#")
+												img.swiper-lazy(data-src="img/photos/mc-img-"+i+".jpg")
+												.swiper-lazy-preloader
+											.cat-item__desc
+												a.cat-item__title(href="#")=item
+												.cat-item__volume 300 мл
+												.cat-item__buy
+													.cat-buy
+														.cat-buy__price
+															.cat-buy__price-curprice
+																.price 22.
+																	span 99 
+																	i.rub ₽
+															.cat-buy__price-lastprice
+																.price 22.
+																	span 99 
+																	i.rub ₽
+														.cat-buy__btn
+															a.arrow-btn(href="#")
+			section.main-banners__cont
+				.wrapper
+					.main-banners
+						.swiper-wrapper
+							.swiper-slide
+								picture.main-banners__slide
+									source(media="(min-width: 660px)" srcset="img/photos/main-banner-0.jpg")
+									source(media="(max-width: 660px)" srcset="img/photos/main-banner-0-mobile.jpg")
+									img
+							.swiper-slide
+								picture.main-banners__slide
+									source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-banner-0.jpg")
+									source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-banner-0-mobile.jpg")
+									img
+								.swiper-lazy-preloader
+			section.main-news__cont
+				.wrapper
+					.main-news
+						.main-news__title
+							.main-title.main-title--decor
+								span Новости
+						.main-news__list
+							.news-list
+								- for (let i = 0; i < 3; i++)
+									.news-list__item
+										.news-item
+											.news-item__date 1 июня 2019
+											a.news-item__img(href="#")
+												img(src="img/photos/main-news-img-"+i+".jpg")
+											.news-item__desc
+												.news-item__desc-cont
+													a.news-item__desc-title(href="#") Салат из запеченного редиса
+													.news-item__desc-btn
+														a.arrow-btn(href="#")
+		include inc/footer.pug
+		include inc/scripts.pug

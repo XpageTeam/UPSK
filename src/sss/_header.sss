@@ -1,0 +1,104 @@
+.inner
+
+	.head
+		position: sticky
+		top: 0
+		z-index: 10
+		border-bottom: 1px solid #EEF0F4
+
+		&__logo
+			width: 105px
+			margin-bottom: 17px
+
+	.h-top
+		padding-left: 136px
+
+.head
+	position: relative
+	z-index: 2
+
+	&__top
+		color: #fff var(--main-color)
+
+	&__main
+		background: #fff
+
+	&__logo
+		margin: -28px 0 -22px
+		flex: none
+		margin-right: 32px
+
+	&__menu
+		margin-right: auto
+		padding-right: 20px
+
+	&__phone
+		margin-right: 40px
+
+.h-phone
+	padding-left: 30px
+	background: url("../img/ico-phone.svg") left center no-repeat
+	min-height: 13px
+
+	a
+		font-size: 500px
+		font-size: 20px
+		color: inherit
+
+.logo
+
+	img
+		display: block
+
+.h-main,
+.h-top
+	display: flex
+	align-items: center
+
+.h-top
+	justify-content: space-between
+	padding: 11px 0 10px 175px
+
+	&__title
+		font-size: 19px
+		font-weight: bold
+
+.find-link
+	color: inherit
+	font-size: 14px
+	position: relative
+
+	&:before
+		content: ""
+		position: absolute calc(50% - 7px) calc(100% + 15px) * *
+		background: url("../img/ico-loc-white.svg") no-repeat
+		size: 10px 14px
+
+.h-menu
+	display: flex
+
+	> li
+
+		&:not(:last-child)
+			margin-right: 42px
+
+	&__submenu
+
+		.h-menu
+
+			&__link
+				color: var(--main-color)
+				display: flex
+				align-items: center
+
+				&:before
+					content: ""
+					display: inline-block
+					flex: none
+					background: url("../img/ico-burger.svg") no-repeat
+					size: 18px 16px
+					margin-right: 17px
+
+	&__link
+		font-size: 17px
+		font-weight: 500

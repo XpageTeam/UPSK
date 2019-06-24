@@ -1,0 +1,19 @@
+header.head
+	.head__wrap
+		.head__logo
+			a.logo(href="#")
+				span.logo__text Y A R U S H I N
+		.head__shop
+			a.shop-link(href="#") Shop
+		.head__burger
+			span.head__burger-text Menu
+			.burger
+				span
+		nav.head__menu
+			ul.h-menu
+				each item, i in ["Автор", "Контакты", "Форум", "Медиа", "Календарь", "Музыка", ]
+					li
+						if (i == 0)
+							a.h-menu__link.active=item
+						else
+							a.h-menu__link=item

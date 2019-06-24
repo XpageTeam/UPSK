@@ -1,0 +1,44 @@
+aside.filter
+	form(action="#")
+		.filter
+			each type in ["Фрукты", "Овощи", "Грибы", "Ягоды", ]
+				.filter__item
+					.filter__item-title=type
+					.filter__item-content
+						ul.filter-list
+							each item in ["Цитрусовые", "Персики, нектарины", "Яблоки, айва", "Экзотические фрукты", "Виноград", "Хурма, гранат", "Груши", "Бананы", "Абрикос, слива, алыча", ]
+								li
+									a.filter-list__link(href="#")=item
+			.filter__item
+				.filter__item-title Цена
+				.filter__item-content
+					.price-filter
+						.price-filter__inputs
+							input.price-min(type="hidden" value="5")
+							input.price-max(type="hidden" value="10000")
+
+							input.price-step(type="hidden" value="5")
+
+							<!-- значения брать из этих инпутов -->
+							input.price-min-cur(type="hidden" value="5")
+							input.price-max-cur(type="hidden" value="7000")
+						.price-filter__slider
+			.filter__item
+				.filter__item-title Бренд
+				.filter__item-content
+					.search-filter
+						.search-filter__input
+							.sf-input
+								input.sf-input__input(type="text" placeholder="Введите название")
+								input.sf-input__submit(type="submit" value="")
+						.search-filter__list
+							ul.search-list
+								- for (let i = 0; i < 3; i++)
+									each item, j in ["EWAS", "Driscolls Du Maroc", "Future Trading", "Golden Fruit Orchard", "Honey Crunch", "Agzulasa", ]
+										li.search-list__item
+											.checkbox
+												input.checkbox__input(type="checkbox" id="check-"+i+""+j)
+												label.checkbox__label(for="check-"+i+""+j)=item
+							.search-filter__list-toggle Показать все
+			span.filter__btn
+				input.default-btn(type="submit" value="Очистить все фильтры")

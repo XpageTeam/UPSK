@@ -1,0 +1,32 @@
+.title-block
+	letter-spacing: 0.02em
+
+	&__title
+		margin-bottom: 9px
+
+		h1
+			font-weight: bold
+			color: #393939
+			font-size: 24px
+
+.bread-crumbs
+
+	&__link
+		color: #B0B7BB
+
+		&:first-child
+
+			&:before
+				background: url("../img/ico-home.svg") no-repeat
+				size: 11px
+				content: ""
+				display: inline-block
+				margin-right: 15px
+
+		&:after
+			content: "-"
+			display: inline-block
+			margin: 0 5px
+
+	&__this
+		color: var(--main-color)
