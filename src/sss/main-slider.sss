@@ -1,0 +1,220 @@
+.main-slider
+	color: #fff
+	overflow: hidden
+	position: relative
+
+	.swiper
+
+		&-slide
+			height: auto
+			display: flex
+			flex-direction: column
+
+	&__dots
+		position: absolute 0
+		pointer-events: none
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: flex-end
+		z-index: 2
+		margin: 0 auto
+		max-width: var(--base-width)
+		padding: 120px 0 275px
+
+		.swiper
+
+			&-pagination
+				pointer-events: auto
+				display: flex
+				flex-direction: column
+				justify-content: center
+
+				&:after
+					content: ""
+					position: absolute 12px 50% 12px *
+					width: 1px
+					background: var(--main-color)
+
+				&-bullet
+					size: 23px
+					transition: background-color .3s ease
+					background-color: transparent
+					position: relative
+					opacity: 1
+					z-index: 2
+
+					&:before
+						content: ""
+						position: absolute calc(50% - height("../img/highlight.png") / 2) calc(50% - height("../img/highlight.png") / 2) * *
+						background: url("../img/highlight.png") no-repeat
+						size: width("../img/highlight.png")
+						transition: opacity .3s ease
+						opacity: 0
+						pointer-events: none
+
+					&:not(:first-child)
+						margin: 36px 0 0
+
+					&:after
+						content: ""
+						position: absolute calc(50% - 3px) calc(50% - 3px) * *
+						size: 7px
+						transition: background-color .3s ease
+						border-radius: 50%
+						background: var(--main-color)
+
+					&-active
+						background: rgba(2, 120, 237, .5)
+
+						&:after
+							background: #fff
+
+						&:before
+							opacity: 1
+
+	&__big-counter
+		position: absolute 0
+		z-index: 2
+		pointer-events: none
+		margin: 0 auto
+		max-width: var(--base-width)
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: flex-end
+		padding: 120px 0 275px
+		padding-right: 115px
+
+	&__counters
+		position: absolute * 0 0
+		z-index: 2
+		padding: 0 0 130px
+
+		.main-left-decor
+			background-color: var(--main-color)
+
+	&__slide
+		position: relative
+		flex: 1 1 auto
+
+		&-text
+			position: absolute 0
+			padding: 120px 0 275px
+			display: flex
+			flex-direction: column
+			justify-content: center
+
+			.wrapper
+				width: 100%
+
+		&:before
+			content: ""
+			position: absolute 0
+			background: #040B1D
+			opacity: .8
+
+		&-img
+			display: block
+			width: 100%
+
+			img
+				display: block
+				width: 100%
+
+.ms-text
+	max-width: 820px
+
+	&__link
+		margin: 0 0 70px
+
+	&__text
+		font-size: 42px
+		font-weight: bold
+
+.play-link
+	color: #fff
+	display: inline-block
+	position: relative
+	padding-left: 45px
+
+	&:hover &__btn:before
+		opacity: 1
+
+	&__btn
+		background: url("../img/ico-play.svg") center no-repeat
+		position: absolute calc(50% - 7px) * * 0
+		size: 13px
+
+		&:before
+			content: ""
+			position: absolute calc(50% - height("../img/highlight.png") / 2) calc(50% - width("../img/highlight.png") / 2)
+			background: url("../img/highlight.png") no-repeat
+			size: width("../img/highlight.png") height("../img/highlight.png")
+			opacity: 0
+			transition: opacity .3s ease
+			pointer-events: none
+
+	&__text
+		font-size: 16px
+		line-height: 1
+
+.ms-counters
+	display: flex
+
+	&__item
+		min-width: 132px
+
+		&:not(:last-child)
+			margin-right: 100px
+
+.ms-counter
+	position: relative
+	padding: 50px 0 0
+
+	&:before
+		content: ""
+		position: absolute 0 * * 0
+		size: 132px 1px
+		background: var(--main-color)
+
+	&__text
+		font-size: 16px
+		max-width: 280px
+
+		b
+			font-weight: 600
+			font-size: 36px
+			color: var(--main-color)
+
+.big-counter
+	position: relative
+
+	&__text
+		position: absolute 0
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		text-align: center
+
+		&-number
+			font-weight: bold
+			font-size: 50px
+			line-height: 1.1
+			letter-spacing: .014em
+
+		&-subtitle
+			font-size: 16px
+			line-height: calc(22 / 16)
+			display: inline-block
+			max-width: 140px
+
+	&__svg
+		animation: circlesRotate 10s linear infinite
+
+@keyframes circlesRotate
+	0%
+		transform: rotateZ(0)
+	100%
+		transform: rotateZ(-360deg)

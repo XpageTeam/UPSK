@@ -10,164 +10,124 @@ html(lang="ru")
 		main#content
 			section.main-slider
 				.swiper-wrapper
-					.swiper-slide
-						.main-slide
-							picture.main-slide__img
-								source(media="(min-width: 660px)" srcset="img/photos/main-slide-img.jpg")
-								source(media="(max-width: 660px)" srcset="img/photos/main-slide-img-mobile.jpg")
-								img
-							.main-slide__text
-								.main-slide__text-wrapper
-									.ms-text
-										.ms-text__desc
-											.ms-desc
-												.ms-desc__label Супер цена
-												.ms-desc__title Филе цыпленка
-													br
-													| окорок охлажденный
-												.ms-desc__btn
-													a.default-btn(href="#") Подробнее
-										.ms-text__price 229.
-											span 90 
-											i.rub ₽
-					- for (let i = 0; i < 3; i++)
+					- for (let i = 0; i <= 3; i++)
 						.swiper-slide
-							.main-slide
-								picture.main-slide__img
-									source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-slide-img.jpg")
-									source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-slide-img-mobile.jpg")
-									img
-								.swiper-lazy-preloader
-								.main-slide__text
-									.main-slide__text-wrapper
+							.main-slider__slide
+								picture.main-slider__slide-img
+									if (i == 0)
+										source(media="(min-width: 660px)" srcset="img/photos/main-slider-img.jpg")
+										source(media="(max-width: 660px)" srcset="img/photos/main-slider-img.jpg")
+										img
+									else
+										source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-slider-img.jpg")
+										source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-slider-img.jpg")
+										img
+										.swiper-lazy-preloader
+								.main-slider__slide-text
+									.wrapper
 										.ms-text
-											.ms-text__desc
-												.ms-desc
-													.ms-desc__label Супер цена
-													.ms-desc__title Филе цыпленка
-														br
-														| окорок охлажденный
-													.ms-desc__btn
-														a.default-btn(href="#") Подробнее
-											.ms-text__price 229.
-												span 90 
-												i.rub ₽
-				.main-slider__bullets
+											.ms-text__link
+												a.play-link.fancybox(href="#")
+													span.play-link__btn
+													span.play-link__text Смотреть видео
+											.ms-text__text Поставка трубной продукции
+												br
+												| и металлопроката по России
+												br
+												| и всему евразийскому континенту
+				.main-slider__big-counter
+					.big-counter
+						include ../img/big-counter.svg
+						.big-counter__text
+							.big-counter__text-number 1325
+							.big-counter__text-subtitle Реализованных проектов
+				.main-slider__dots
 					.swiper-pagination
-			section.main-catalog
+				.main-slider__counters
+					.main-left-decor
+					.ms-counters__cont
+						.wrapper
+							.ms-counters
+								.ms-counters__item
+									.ms-counter
+										.ms-counter__text
+											b 12
+											br
+											| лет работы
+											br
+											| в отрасли
+								.ms-counters__item
+									.ms-counter
+										.ms-counter__text Свыше
+											b  100 000
+											br
+											| тонн отгруженного металлопроката
+								.ms-counters__item
+									.ms-counter
+										.ms-counter__text Более
+											b  500
+											|  постоянных
+											br
+											| клиентов, готовых порекомендовать нас
+								.ms-counters__item
+									.ms-counter
+										.ms-counter__text Сотрудничаем с
+											b  75
+											br
+											| проверенными производителями
+			section.main-catalog__cont
+				.main-left-decor
+					.main-left-decor__text Каталог продукции
 				.wrapper
-					.main-catalog__title
-						.main-title 
-							span Предложение недели
-					.main-catalog__list
-						.catalog-list
-							each item, i in ['Вода мин. лечебно-столовая "Сарыагаш" газ.', 'Нектар  с мяк. "Сто Рецептов" тыквенный', 'Квас "Никола Традиционный" фильт. паст. ж/б ', 'Вода мин. лечебно-столовая "Сарыагаш" газ. ', ]
-								.catalog-list__item
-									.cat-item
-										.cat-item__labels
-											.cat-labels
-												.cat-labels__label.cat-labels__label--red Акция 10.06 / 10.07
-												if ( i == 1)
-													.cat-labels__label.cat-labels__label--yelow Не во всех магазинах
-										if ( i == 1)
-											.cat-item__sale Супер цена
-										else
-											.cat-item__sale 25%
-										a.cat-item__img(href="#")
-											img(src="img/photos/mc-img-"+i+".jpg")
-										.cat-item__desc
-											a.cat-item__title(href="#")=item
-											.cat-item__volume 300 мл
-											.cat-item__buy
-												.cat-buy
-													.cat-buy__price
-														.cat-buy__price-curprice
-															.price 22.
-																span 99 
-																i.rub ₽
-														.cat-buy__price-lastprice
-															.price 22.
-																span 99 
-																i.rub ₽
-													.cat-buy__btn
-														a.arrow-btn(href="#")
-						.main-catalog__list-more
-							a.more-btn(href="#") Показать ещё
-			section.main-catalog-slider
-				.wrapper
-					.main-catalog-slider__title
-						.main-title.main-title--decor
-							span Наши лучшие цены
-					.catalog-slider
-						.catalog-slider__nav
-							.swiper-button-prev
-							.swiper-button-next
-						.catalog-slider__list
-							.swiper-wrapper
-								each item, i in ['Вода мин. лечебно-столовая "Сарыагаш" газ.', 'Нектар  с мяк. "Сто Рецептов" тыквенный', 'Квас "Никола Традиционный" фильт. паст. ж/б ', 'Вода мин. лечебно-столовая "Сарыагаш" газ. ', ]
-									.swiper-slide
-										.cat-item
-											.cat-item__labels
-												.cat-labels
-													.cat-labels__label.cat-labels__label--red Акция 10.06 / 10.07
-													if ( i == 1)
-														.cat-labels__label.cat-labels__label--yelow Не во всех магазинах
-											if ( i == 1)
-												.cat-item__sale Супер цена
-											else
-												.cat-item__sale 25%
-											a.cat-item__img(href="#")
-												img.swiper-lazy(data-src="img/photos/mc-img-"+i+".jpg")
-												.swiper-lazy-preloader
-											.cat-item__desc
-												a.cat-item__title(href="#")=item
-												.cat-item__volume 300 мл
-												.cat-item__buy
-													.cat-buy
-														.cat-buy__price
-															.cat-buy__price-curprice
-																.price 22.
-																	span 99 
-																	i.rub ₽
-															.cat-buy__price-lastprice
-																.price 22.
-																	span 99 
-																	i.rub ₽
-														.cat-buy__btn
-															a.arrow-btn(href="#")
-			section.main-banners__cont
-				.wrapper
-					.main-banners
-						.swiper-wrapper
-							.swiper-slide
-								picture.main-banners__slide
-									source(media="(min-width: 660px)" srcset="img/photos/main-banner-0.jpg")
-									source(media="(max-width: 660px)" srcset="img/photos/main-banner-0-mobile.jpg")
-									img
-							.swiper-slide
-								picture.main-banners__slide
-									source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-banner-0.jpg")
-									source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-banner-0-mobile.jpg")
-									img
-								.swiper-lazy-preloader
-			section.main-news__cont
-				.wrapper
-					.main-news
-						.main-news__title
-							.main-title.main-title--decor
-								span Новости
-						.main-news__list
-							.news-list
-								- for (let i = 0; i < 3; i++)
-									.news-list__item
-										.news-item
-											.news-item__date 1 июня 2019
-											a.news-item__img(href="#")
-												img(src="img/photos/main-news-img-"+i+".jpg")
-											.news-item__desc
-												.news-item__desc-cont
-													a.news-item__desc-title(href="#") Салат из запеченного редиса
-													.news-item__desc-btn
-														a.arrow-btn(href="#")
+					.main-catalog
+						.main-catalog__filter
+							.mc-filter
+								form
+									.mc-filter__inputs
+										.default-input
+											select.default-input__input.default-input__input--select
+												option Трубы стальные
+												option Трубы стальные
+												option Трубы стальные
+												option Трубы стальные
+											label.default-input__label Тип
+										.default-input
+											select.default-input__input.default-input__input--select
+												option Трубы электросварные
+												option Трубы электросварные
+												option Трубы электросварные
+												option Трубы электросварные
+											label.default-input__label Подтип
+										.default-input
+										.default-input
+											select.default-input__input.default-input__input--select
+												option 0.3 мм
+												option 0.3 мм
+												option 0.3 мм
+												option 0.3 мм
+											label.default-input__label диаметр
+										.default-input
+											select.default-input__input.default-input__input--select
+												option 3 см
+												option 3 см
+												option 3 см
+												option 3 см
+											label.default-input__label толщина стенки
+										.default-input
+											select.default-input__input.default-input__input--select
+												option Сталь
+												option Сталь
+												option Сталь
+												option Сталь
+											label.default-input__label Сталь
+										.default-input
+											select.default-input__input.default-input__input--select
+												option Гост
+												option Гост
+												option Гост
+												option Гост
+											label.default-input__label Гост
+										.default-input.default-input--submit
+											input.default-btn(type="submit" value="Применить фильтр")
 		include inc/footer.pug
 		include inc/scripts.pug

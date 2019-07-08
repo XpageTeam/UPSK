@@ -298,6 +298,23 @@ export default class Element {
 		return this.els.map(callback)
 	}
 
+	/** Метод для изменения или получение атрибута
+	* @param attrName: string - имя атрибута
+	* @param value:string - Новое значение атрибута
+	* @return Element || string */
+	public attr(attrName: string, value?: string): string
+	public attr(attrName: string, value?: string): Element
+	public attr(attrName: string, value?: string): any{
+		if (value){
+			App.each(this.els, (el: HTMLElement) => {
+				el.setAttribute(attrName, value)
+			})
+			return this
+		}
+
+		return this.els[0].getAttribute(attrName)
+	}
+
 
 	/** Метод в разработке */
 	public prev(selector?: string): Element{

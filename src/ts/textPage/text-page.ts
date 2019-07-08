@@ -1,7 +1,4 @@
 import {domReady, EventListener, App} from "../xpage/index"
-// import {Swiper, Lazy, Navigation} from 'swiper/dist/js/swiper.esm.js'
-
-// Swiper.use([Lazy, Navigation])
 
 interface Shadows {
 	right: HTMLElement,
@@ -25,7 +22,7 @@ domReady(() => {
 	tableWrap.classList.add("table-wrap");
 	tableWrapTrack.classList.add("table-wrap__track");
 
-	App.wrap(".text-page > table", tableWrapTrack)
+	App.wrap(".standart-page__text table:not([class])", tableWrapTrack)
 	App.wrap(".table-wrap__track", tableWrap)
 
 	App.each(".table-wrap", (el: HTMLElement) => {

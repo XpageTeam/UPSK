@@ -1,5 +1,5 @@
 node_modules/
 accesses/
-dist/
+docs/
 *.zip
 *.rar

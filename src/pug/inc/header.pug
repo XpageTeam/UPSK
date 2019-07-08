@@ -1,25 +1,21 @@
 header.head
-	.head__top
-		.wrapper
-			.h-top
-				.h-top__title Продукты близко и недорого
-				.h-top__find
-					a.find-link.fancybox(href="#") Найти ближайший магазин
-	.head__main
-		.wrapper
-			.h-main
-				.head__logo
-					a.logo(href="#")
-						img(src="img/logo.svg")
-				nav.head__menu
-					ul.h-menu
-						li.h-menu__submenu
-							a.h-menu__link(href="#") Каталог
-						each link in ["Акции", "Магазины", "Рецепты", ]
-							li
-								a.h-menu__link(href="#")=link
-				.head__phone
-					address.h-phone
-						a(href="tel: +7 (812) 648-50-00") +7 (812) 648-50-00
-				.head__btn
-					a.write-btn(href="#") Написать в Семишагофф
+	.head__wrap
+		.head__logo
+			a.logo(href="#")
+				img(src="img/logo.svg")
+		nav.head__menu
+			ul.h-menu
+				each link, i in ["Продукция", "Логистика", "О компании", "Полезное", "Контакты", ]
+					li
+						if (i == 0)
+							a.h-menu__link.active(href="#")=link
+						else
+							a.h-menu__link(href="#")=link
+		.head__search
+			a.search-link(href="#")
+		.head__contacts
+			.h-contacts
+				address.h-contacts__phone
+					a(href="tel: 8 351 211 00 70") 8 351 211 00 70
+				.h-contacts__btn
+					a.default-btn.fancybox(href="#") Заказать звонок

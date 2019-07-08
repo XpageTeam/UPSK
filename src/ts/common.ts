@@ -1,13 +1,19 @@
+import "./forms"
 import "./main-slider"
-import "./main-banners"
-import "./catalog-slider"
+import "./textPage/text-page"
 
 import {domReady, App, Element} from "./xpage/index"
 
+
+
+
+declare global {
+    interface Window {
+    	animateScroll: Function; 
+    	isScrolledIntoView: Function; 
+    }
+}
+
 domReady(() => {
-	App.each(".catalog-list, .cat2-list", (el: HTMLElement) => {
-		new Element(el.querySelectorAll(".cat-item__title")).height(
-			Math.max(...new Element(el.querySelectorAll(".cat-item__title")).map((value: HTMLElement) => {
-				return parseInt(getComputedStyle(value).height)})))
-	})
+
 })

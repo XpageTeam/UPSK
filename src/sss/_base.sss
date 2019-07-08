@@ -95,22 +95,6 @@ select
 #content
 	flex: 1 1 auto
 
-.swiper-button
-
-	&-prev, &-next
-		position: static
-		border: 1px solid #DADDDF
-		border-radius: 5px
-		size: 49px
-		background: url("../img/ico-slider-arrow.svg") center no-repeat, var(--main-color)
-		transition: background-color .3s ease
-
-		&:hover, &:focus
-			background-color: lighten(#CC2128, .1)
-
-	&-prev
-		transform: rotateY(180deg)
-
 .inner-content
 	flex: 1 1 auto
 	position: relative
@@ -186,17 +170,10 @@ li
 	overflow: hidden
 
 
-.write-btn
-	color: var(--main-color) var(--thrid-color)
-	border-radius: 5px
-	display: inline-block
-	font-size: 14px
-	padding: 10px 18px 8px
-
 .default-btn
 	padding: 15px 25px
 
-.default-btn, .more-btn, .arrow-btn
+.default-btn
 	display: inline-block
 	border: none
 	border-radius: 5px
@@ -204,20 +181,5 @@ li
 	transition: background-color .3s ease
 
 	&:hover, &:focus
-		background-color: lighten(#CC2128, .1)
+		background-color: lighten(#244BAB, .1)
 
-.more-btn
-	padding: 15px 50px 15px 25px
-	position: relative
-
-	&:after
-		content: ""
-		position: absolute calc(50% - 7px) 25px * *
-		background: url("../img/ico-update.svg") center no-repeat
-		size: 14px
-
-.arrow-btn
-	size: 49px
-	background-image: url("../img/ico-right-arrow-white.svg")
-	background-position: center
-	background-repeat: no-repeat

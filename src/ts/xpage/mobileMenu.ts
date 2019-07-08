@@ -21,6 +21,7 @@ export default class MobileMenu{
 	private menuActiveClass: string = "js__opened"
 	private bodyActiveClass: string = "js__menu-opened"
 	private body: HTMLElement = App.getElement("body")
+	private ignoreWarnings: boolean = false
 
 	set error(text: string){
 		this._error = true
@@ -34,14 +35,14 @@ export default class MobileMenu{
 
 
 	set menu (el: HTMLElement){
-		if (!(el instanceof HTMLElement))
+		if (!(el instanceof HTMLElement) && !this.ignoreWarnings)
 			this.error = "Меню не найдено"
 		else
 			this._menu = el
 	}
 
 	set burger(el: HTMLElement){
-		if (!(el instanceof HTMLElement))
+		if (!(el instanceof HTMLElement) && !this.ignoreWarnings)
 			this.error = "Бургер не найден"
 		else
 			this._burger = el
@@ -65,7 +66,14 @@ export default class MobileMenu{
 
 	constructor(settings: mobileMenuSettings){
 		this._settings = settings
+		this.ignoreWarnings = settings.ignoreWarnings
+		console.log("this.ignoreWarnings", this.ignoreWarnings);
+
+
 		this.burger = App.getElement(settings.burger)
+
+		this.menuActiveClass = settings.menuActiveClass
+		this.bodyActiveClass = settings.bodyActiveClass
 
 		this.menu = App.getElement(settings.menu)
 

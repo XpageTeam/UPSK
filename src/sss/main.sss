@@ -8,55 +8,11 @@
 @import "_form-elements.sss"
 
 @import "_header.sss"
-@import "main-slider.sss"
-@import "main-catalog.sss"
-@import "main-catalog-slider.sss"
-@import "main-banners.sss"
-@import "main-news.sss"
 
-@import "catalog1.sss"
-@import "catalog.sss"
-@import "filter.sss"
-@import "sort.sss"
-@import "news.sss"
-@import "tovar.sss"
+@import "main-slider.sss"
 
 @import "_footer.sss"
 
-.main-title
-	text-align: center
-	position: relative
-	font-size: 24px
-	font-weight: 500
-
-	span
-		display: inline-block
-
-	&--decor
-
-		span
-			padding: 2px 45px
-			position: relative
-			z-index: 1
-			background: #FAFAFA
-
-		&:before
-			content: ""
-			size: 100% 1px
-			background: #DADDDF
-			position: absolute calc(50% - 1px) * * 0
-
-.price
-	white-space: nowrap
-	letter-spacing: .02em
-
-	span, .rub
-		font-size: 90%
-
-.inner-content
-
-	&__title
-		margin: 45px 0 0
-
-	&__content
-		margin: 45px 0 0
+.main-left-decor
+	position: absolute 0 * 0 0
+	size: 112px 100%
