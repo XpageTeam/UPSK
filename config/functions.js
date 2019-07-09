@@ -43,6 +43,9 @@ module.exports = {
 	lh(pxLh, pxFs){
 		return (pxLh / pxFs).toFixed(2)
 	},
+	em(value, base = 15){
+		return (parseInt(value) / base).toFixed(2) + "em"
+	},
 	rem(value){
 		return (parseInt(value) / 16).toFixed(2) + "rem"
 	}

@@ -1,291 +1,395 @@
-.popup-form
-	display: none
-	margin: 0 !important
-	padding: 50px 37px 75px !important
-	width: 765px
-	background: var(--thrid-color) !important
+.form
 
-	&::-webkit-scrollbar
-		width: 10px
-
-		&-track
-			background: var(--second-color)
-
-		&-thumb
-			background: var(--main-color)
-
-	&__title
-		font-size: 30px
-		margin-bottom: 20px
-
-		+ .popup-form__form
-			margin: 60px 0 0
-
-	&__text
-		color: rgba(255,255,255, .3)
-		margin: 0 auto 50px
-
-	&__submit
-		flex: none
-
-	.forms
-
-		&__input
-
-			&:focus
-
-				~ .forms
-
-					&__error
-
-						&-message
-							color: rgba(#000, .5)
-
-.checkbox
-	position: relative
-
-	&__input
-		position: absolute 0 * * 0
-		opacity: 0
-		pointer-events: none
-
-		&:checked
-
-			~ label
-
-				&:after
-					opacity: 1
-
-	&__label
-		cursor: pointer
+	&__inputs
 		display: flex
-		align-items: center
-		position: relative
-		user-select: none
-		font-size: 14px
+		flex-wrap: wrap
 
-		&:before, &:after
-			content: ""
-			display: inline-block
+		&:not(&--2, &--3)
 
-		&:before
-			flex: none
-			background: #fff
-			border: 1px solid #e8e8e8
-			margin: 0 15px 0 0
-			border-radius: 7px
-			size: 32px
+			.form
 
-		&:after
-			border: 2px solid var(--main-color)
-			border-top: none
-			border-left: none
-			size: 9px 12px
-			transform: rotateZ(45deg)
-			position: absolute 7px * * 12px
-			transition: opacity .1s ease
-			opacity: 0
+				&__inputs
 
-textarea.default-input__input
-	padding-top: 13px
+					&-input
+						width: 100%
 
-.popup-form__inputs
-	display: flex
-	flex-wrap: wrap
-	margin: 0 0 -55px -54px
+		&--2
+			margin: 0 0 calc(-1 * var(--input-vert-spacing)) calc(-1 * var(--input-hor-spacing))
 
-	&--3
+			.form__inputs-input
+				width: calc((100% - var(--input-hor-spacing) * 2) / 2)
+				margin: 0 0 var(--input-vert-spacing) var(--input-hor-spacing)
 
-		.default-input
-			margin: 0 0 55px 54px
-
-			&:not(.default-input--submit)
-				width: calc((100% - 54px * 3) / 3)
-
-			&--submit
-				width: calc((133.33% - 54px * 2) / 2)
+.form__inputs-input
 
 	&--2
+		display: flex
+		margin-left: 0 !important
 
 		.default-input
-			margin: 0 0 55px 54px
-
-			&:not(.default-input--submit)
-				width: calc((100% - 54px * 2) / 2)
-
-			&--submit
-				width: calc(100% - 54px)
-
-
-	&--column, &--1
-		flex-direction: column
-		margin: 0 !important
-
-		.default-input
-			width: 100%
-			margin: 0
-
-			&:not(:first-child)
-				margin: 25px 0 0
-
-.form-req
-	font-size: 13px
-	line-height: calc(21 / 13)
-	max-width: 450px
+			width: calc((100% - var(--input-hor-spacing) * 2) / 2)
+			margin: 0 0 var(--input-vert-spacing) var(--input-hor-spacing)
 
 .default-input
 	display: flex
 	flex-direction: column-reverse
-	font-size: 14px
 	position: relative
 
 	&__input
+		border-radius: 5px
 		border: 1px solid var(--border-color)
-		height: 50px
-		transition: border-color .3s ease
-		width: 100%
-		background-color: #fff
-		border-radius: 5px !important
-		padding: 10px 20px
+		font-weight: bold
+		font-size: em(14)
+		color: var(--main-color) #fff
 
-		&--error:not(:valid), &.error:not(:valid), &.forms__input_error:not(:valid)
-			border-color: red
+		transition: padding .3s ease, border-color .3s ease
 
-			~ .forms__error-message
-				opacity: 1
+		&:not(&--select)
+			padding: var(--input-padding)
 
 			&:focus
+				padding: var(--input-focus-padding)
 
-				~ .forms__error-message
-					opacity: 0
+		&--select
+			padding: var(--select-padding)
+			background-image: url("../img/ico-select-arrow.svg")
+			background-repeat: no-repeat
+			background-position: right 19px center
 
+			option
+				color: #000
 
-		&::-webkit-input-placeholder
-			transition: opacity .3s ease
-			color: rgba(#000, .5)
-
-		&:-moz-placeholder
-			transition: opacity .3s ease
-			color: rgba(#000, .5)
-
-		&::-moz-placeholder
-			transition: opacity .3s ease
-			color: rgba(#000, .5)
-
-		&:-ms-input-placeholder
-			transition: opacity .3s ease
-			color: rgba(#000, .5)
-
-		&:not(:focus)
-
-			&::-webkit-input-placeholder
-				color: #C8C8C8
-
-			&:-moz-placeholder
-				color: #C8C8C8
-
-			&::-moz-placeholder
-				color: #C8C8C8
-
-			&:-ms-input-placeholder
-				color: #C8C8C8
+			&:focus
+				padding: var(--select-focus-padding)
 
 		&:focus
 			border-color: var(--main-color)
 
-			&::-webkit-input-placeholder
-				opacity: 0 !important
+			~ .default-input
 
-			&:-moz-placeholder
-				opacity: 0 !important
-
-			&::-moz-placeholder
-				opacity: 0 !important
-
-			&:-ms-input-placeholder
-				opacity: 0 !important
-
-		&--select
-			padding-right: 30px
-		//background: url("../img/ico-select-arrow.svg") right 18px center no-repeat, #fff
-
-		&:required ~ label
-
-			&:not([class*="--file"])
-
-				&:after
-					content: "*"
-					display: inline-block
-					margin-left: 5px
-					color: var(--main-color)
-
-		&--textarea
-			max-width: 100%
-			height: 129px
-			resize: none
-
-		&--file
-			opacity: 0
-			position: absolute 0 * * 0
-			pointer-events: none
-
-			~ .default-input__input
-				padding-right: 60px
-
-			~ .forms__error-message
-				bottom: 35px
+				&__label
+					font-size: 0
+					opacity: 0
 
 	&__label
-		position: absolute -5px * * 10px
-		background: #fff
-		padding: 0 9px
+		font-weight: bold
+		font-size: em(10)
+		color: rgba(46, 56, 68, .6)
 		text-transform: uppercase
-		color: rgba(0,0,0, .5)
-		font-size: 10px
-		line-height: 1
+		position: absolute 12px * * 16px
+		pointer-events: none
+		transition: opacity .3s ease, font-size .3s ease
 
-		&--file
-			cursor: pointer
-			content: ""
-			position: absolute * 5px 5px *
-			size: 40px
-			//background: url("../img/ico-add-file.svg") center no-repeat, var(--main-color)
-			border-radius: 5px
-			transition: background-color .3s ease
+@supports (display: grid)
+	.form__inputs
+		margin: 0 !important
+		display: grid
+		grid-gap: var(--input-vert-spacing) var(--input-hor-spacing)
 
-			&:hover
-				background-color: lighten(#CC2128, .1)
+		&--2
+			grid-template-columns: repeat(2, 1fr)
 
-.forms
+		&-input
+			width: auto !important
+			margin: 0 !important
 
-	&__error
+			&--2
+				display: inherit
+				grid-gap: inherit
+				grid-template-columns: repeat(2, 1fr)
 
-		&-message
-			transition: opacity .3s ease
-			user-select: none
-			font-size: 12px
-			color: var(--main-color)
-			position: absolute * 0 calc(100% + 7px) *
-			opacity: 0
-			pointer-events: none
+				.default-input
+					width: auto !important
+					margin: 0 !important
 
-			&:after
-				content: ""
-				// background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAIBAMAAADU/bjBAAAAGFBMVEX////V1dXV1dXY2Nji4uL9/f3+/v7///88REMWAAAAA3RSTlMAipDLFSdbAAAAM0lEQVQI12NwKweBMgcGlXQQI0WBgQkkVObEwAAWAgowgITAAiAhsABQyBUiwMAgLAAkAJ+wDc+KWF7qAAAAAElFTkSuQmCC)
-				//background: url("../img/ico-error.svg") no-repeat
-				position: absolute
-				top: calc(50% - 10px)
-				right: 2px
-				size: 22px 20px
-
-	.default-input
-
-		&__label
-
-			&--file
-				flex-direction: column
-				align-items: flex-start
-
-				&:after
-					margin: 10px 0 0 !important
-					width: 100%
+//.popup-form
+//	display: none
+//	margin: 0 !important
+//	padding: 50px 37px 75px !important
+//	width: 765px
+//	background: var(--thrid-color) !important
+//
+//	&::-webkit-scrollbar
+//		width: 10px
+//
+//		&-track
+//			background: var(--second-color)
+//
+//		&-thumb
+//			background: var(--main-color)
+//
+//	&__title
+//		font-size: 30px
+//		margin-bottom: 20px
+//
+//		+ .popup-form__form
+//			margin: 60px 0 0
+//
+//	&__text
+//		color: rgba(255,255,255, .3)
+//		margin: 0 auto 50px
+//
+//	&__submit
+//		flex: none
+//
+//	.forms
+//
+//		&__input
+//
+//			&:focus
+//
+//				~ .forms
+//
+//					&__error
+//
+//						&-message
+//							color: rgba(#000, .5)
+//
+//.checkbox
+//	position: relative
+//
+//	&__input
+//		position: absolute 0 * * 0
+//		opacity: 0
+//		pointer-events: none
+//
+//		&:checked
+//
+//			~ label
+//
+//				&:after
+//					opacity: 1
+//
+//	&__label
+//		cursor: pointer
+//		display: flex
+//		align-items: center
+//		position: relative
+//		user-select: none
+//		font-size: 14px
+//
+//		&:before, &:after
+//			content: ""
+//			display: inline-block
+//
+//		&:before
+//			flex: none
+//			background: #fff
+//			border: 1px solid #e8e8e8
+//			margin: 0 15px 0 0
+//			border-radius: 7px
+//			size: 32px
+//
+//		&:after
+//			border: 2px solid var(--main-color)
+//			border-top: none
+//			border-left: none
+//			size: 9px 12px
+//			transform: rotateZ(45deg)
+//			position: absolute 7px * * 12px
+//			transition: opacity .1s ease
+//			opacity: 0
+//
+//textarea.default-input__input
+//	padding-top: 13px
+//
+//.popup-form__inputs
+//	display: flex
+//	flex-wrap: wrap
+//	margin: 0 0 -55px -54px
+//
+//	&--3
+//
+//		.default-input
+//			margin: 0 0 55px 54px
+//
+//			&:not(.default-input--submit)
+//				width: calc((100% - 54px * 3) / 3)
+//
+//			&--submit
+//				width: calc((133.33% - 54px * 2) / 2)
+//
+//	&--2
+//
+//		.default-input
+//			margin: 0 0 55px 54px
+//
+//			&:not(.default-input--submit)
+//				width: calc((100% - 54px * 2) / 2)
+//
+//			&--submit
+//				width: calc(100% - 54px)
+//
+//
+//	&--column, &--1
+//		flex-direction: column
+//		margin: 0 !important
+//
+//		.default-input
+//			width: 100%
+//			margin: 0
+//
+//			&:not(:first-child)
+//				margin: 25px 0 0
+//
+//.form-req
+//	font-size: 13px
+//	line-height: calc(21 / 13)
+//	max-width: 450px
+//
+//.default-input
+//	display: flex
+//	flex-direction: column-reverse
+//	font-size: 14px
+//	position: relative
+//
+//	&__input
+//		border: 1px solid var(--border-color)
+//		height: 50px
+//		transition: border-color .3s ease
+//		width: 100%
+//		background-color: #fff
+//		border-radius: 5px !important
+//		padding: 10px 20px
+//
+//		&--error:not(:valid), &.error:not(:valid), &.forms__input_error:not(:valid)
+//			border-color: red
+//
+//			~ .forms__error-message
+//				opacity: 1
+//
+//			&:focus
+//
+//				~ .forms__error-message
+//					opacity: 0
+//
+//
+//		&::-webkit-input-placeholder
+//			transition: opacity .3s ease
+//			color: rgba(#000, .5)
+//
+//		&:-moz-placeholder
+//			transition: opacity .3s ease
+//			color: rgba(#000, .5)
+//
+//		&::-moz-placeholder
+//			transition: opacity .3s ease
+//			color: rgba(#000, .5)
+//
+//		&:-ms-input-placeholder
+//			transition: opacity .3s ease
+//			color: rgba(#000, .5)
+//
+//		&:not(:focus)
+//
+//			&::-webkit-input-placeholder
+//				color: #C8C8C8
+//
+//			&:-moz-placeholder
+//				color: #C8C8C8
+//
+//			&::-moz-placeholder
+//				color: #C8C8C8
+//
+//			&:-ms-input-placeholder
+//				color: #C8C8C8
+//
+//		&:focus
+//			border-color: var(--main-color)
+//
+//			&::-webkit-input-placeholder
+//				opacity: 0 !important
+//
+//			&:-moz-placeholder
+//				opacity: 0 !important
+//
+//			&::-moz-placeholder
+//				opacity: 0 !important
+//
+//			&:-ms-input-placeholder
+//				opacity: 0 !important
+//
+//		&--select
+//			padding-right: 30px
+//		//background: url("../img/ico-select-arrow.svg") right 18px center no-repeat, #fff
+//
+//		&:required ~ label
+//
+//			&:not([class*="--file"])
+//
+//				&:after
+//					content: "*"
+//					display: inline-block
+//					margin-left: 5px
+//					color: var(--main-color)
+//
+//		&--textarea
+//			max-width: 100%
+//			height: 129px
+//			resize: none
+//
+//		&--file
+//			opacity: 0
+//			position: absolute 0 * * 0
+//			pointer-events: none
+//
+//			~ .default-input__input
+//				padding-right: 60px
+//
+//			~ .forms__error-message
+//				bottom: 35px
+//
+//	&__label
+//		position: absolute -5px * * 10px
+//		background: #fff
+//		padding: 0 9px
+//		text-transform: uppercase
+//		color: rgba(0,0,0, .5)
+//		font-size: 10px
+//		line-height: 1
+//
+//		&--file
+//			cursor: pointer
+//			content: ""
+//			position: absolute * 5px 5px *
+//			size: 40px
+//			//background: url("../img/ico-add-file.svg") center no-repeat, var(--main-color)
+//			border-radius: 5px
+//			transition: background-color .3s ease
+//
+//			&:hover
+//				background-color: lighten(#CC2128, .1)
+//
+//.forms
+//
+//	&__error
+//
+//		&-message
+//			transition: opacity .3s ease
+//			user-select: none
+//			font-size: 12px
+//			color: var(--main-color)
+//			position: absolute * 0 calc(100% + 7px) *
+//			opacity: 0
+//			pointer-events: none
+//
+//			&:after
+//				content: ""
+//				// background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAIBAMAAADU/bjBAAAAGFBMVEX////V1dXV1dXY2Nji4uL9/f3+/v7///88REMWAAAAA3RSTlMAipDLFSdbAAAAM0lEQVQI12NwKweBMgcGlXQQI0WBgQkkVObEwAAWAgowgITAAiAhsABQyBUiwMAgLAAkAJ+wDc+KWF7qAAAAAElFTkSuQmCC)
+//				//background: url("../img/ico-error.svg") no-repeat
+//				position: absolute
+//				top: calc(50% - 10px)
+//				right: 2px
+//				size: 22px 20px
+//
+//	.default-input
+//
+//		&__label
+//
+//			&--file
+//				flex-direction: column
+//				align-items: flex-start
+//
+//				&:after
+//					margin: 10px 0 0 !important
+//					width: 100%

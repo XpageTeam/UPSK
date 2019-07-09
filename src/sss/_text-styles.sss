@@ -1,32 +1,44 @@
 strong
 	font-weight: bold
 
-h2, h3, h4, h5, h6
-	font-weight: 300
+p
+	margin-top: 15px
 
-	&:not(:first-child)
-		margin-top: 40px
+h2, h3, h4, h5, h6
+	font-weight: 400
+
+	&:first-child
+		margin-top: 0
 
 h2
-	font-size: 26px
+	font-size: 24px
 	line-height: calc(32 / 26)
-	margin-bottom: 40px
+	margin: 22px 0 12px
 
 h3
 	font-size: 22px
 	line-height: calc(28 / 22)
+	margin: 22px 0 12px
 
 h4
-	font-size: 18px
+	font-size: 20px
 	line-height: calc(28 / 18)
+	margin: 33px 0 15px
 
-h5, h6
-	font-size: rem(16)
+h5
+	font-size: 18px
 	line-height: calc(24 / 16)
+	margin: 33px 0 12px
+
+h6
+	font-size: 16px
+	margin: 20px 0 2px
+	font-weight: 500
 
 blockquote
 	background: var(--secondColor)
 	padding: 30px 40px
+	margin: 20px 0
 
 	i
 		display: block
@@ -36,25 +48,30 @@ blockquote
 
 [align="right"]
 	float: right
-	margin-left: 44px
+	margin-left: 60px
 
 [align="left"]
 	float: left
-	margin-right: 44px
+	margin-right: 60px
 
-img[height]
+
+[height]:not(iframe)
 	height: auto
 
 [align]
 	margin-bottom: 35px
 
-table
-	font-size: 14px
+	img
+		display: block
+		margin: 0
+
+table:not([class])
+	margin: 52px 0 20px
 
 	thead
 
 		th, td
-			background: #ececec
+			background: #FFFFFF
 
 	td, th
 		padding: 15px
@@ -74,84 +91,78 @@ table
 
 	&[cellspacing]:not([cellspacing="1"]):not([cellspacing="0"])
 
-table[border="1"], table.styled_table
+table[border="1"]:not([class])
 	min-width: 100%
 
 	td, th
-		border: 1px solid #e7e7e7
+		border: 1px solid var(--border-color)
 
-	tr
 
-		&:hover
+ul, ol
 
-			td
-				background: #edf1e0
-
-li
-
-	&:not(:first-child)
-		margin: 3px 0 0
-
-	&:before
-		display: inline-block
-
-	ul, ol
-		margin-bottom: 20px
-		margin-top: 0
-
-	li
-		padding-left: 10px
-
-		&:before
-			margin-right: 10px !important
+	&:not([class]) li
 
 		&:not(:first-child)
-			margin-top: 5px
+			margin: 3px 0 0
+
+		&:before
+			display: inline-block
+
+		ul, ol
+			margin-bottom: 20px
+			margin-top: 0
+
+		li
+
+			&:before
+				margin-right: 10px !important
+
+			&:not(:first-child)
+				margin-top: 5px
 
 ul
 
-	&.content_ul, &:not([class])
+	&:not([class])
 
 		> li
-			padding-left: 25px
 
 			&:before
-				content: ""
-				margin: 0 16px 2px -22px
+				content: "—"
+				margin: 0 16px 2px 0
 				display: inline-block
 				border-radius: 50%
 				background: var(--mainColor)
 				size: 6px
+				text-indent: 0
+
+			li
+				text-indent: 16px
+
+		ul
+
+			> li
+
+				&:before
+					content: "-"
+
+ol:not([class])
+
 
 	> li
-
-		li
-			padding-left: 30px
-
-ol
-	counter-reset: i
-
-	> li
-		counter-increment: i
-		font-weight: bold
-		padding-left: 18px
-
-		&:before
-			content: counter(i) "."
-			margin: 0 8px 0 -18px
+		list-style-type: decimal
+		list-style-position: inside
 
 		li
 			font-weight: 300
 			margin: 23px 0 0 !important
 
-	ul
 
-		> li
-			padding-left: 14px
+@media (max-width: 660px)
+	[align]
+		float: none
+		width: 100%
+		margin-left: 0
+		margin-right: 0
 
-			&:before
-				content: "–" !important
-				background: none !important
-				border-radius: 0 !important
-				size: auto !important
-				margin: 0 7px 0 -14px
+		img
+			width: inherit

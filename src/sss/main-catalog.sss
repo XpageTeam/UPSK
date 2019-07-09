@@ -1,0 +1,78 @@
+.main-catalog
+
+	&__cont
+		padding: 88px 0 70px
+		position: relative
+
+		.main-left-decor
+			background: #fafafa
+
+	&__slider
+		padding: 105px 0 125px
+
+.mc-filter
+	padding: 0 0 92px
+	border-bottom: 1px solid var(--border-color)
+
+	&__form
+		display: flex
+		align-items: flex-end
+
+	&__btn
+		flex: none
+
+		.default-btn
+			padding: var(--input-focus-padding)
+
+	&__inputs
+		flex: 1 1 auto
+		margin-right: var(--input-hor-spacing)
+
+.slider-list
+	counter-reset: i
+
+	&__item
+		counter-increment: i
+
+		&:not(:first-child)
+			margin: 22px 0 0
+
+		&-title
+			cursor: pointer
+			position: relative
+			padding-left: 32px
+			font-weight: bold
+			font-size: em(19)
+			color: #272C33
+
+			&:before
+				content: "0" counter(i)
+				color: rgba(0, 0, 0, 0.3)
+				font-size: em(14, 19)
+				line-height: 1
+				position: absolute * * 1px 0
+				font-weight: normal
+
+		&:not(&--active)
+
+			.slider-links
+				display: none
+
+.slider-links
+	padding-left: 32px
+	margin: 20px 0 0
+
+	&__item
+		font-size: em(17)
+		transition: color .3s ease
+
+		&:not(:first-child)
+			margin: 5px 0 0
+
+		&:not(&--active)
+			cursor: pointer
+			color: rgba(46, 56, 68, 0.6)
+
+		&--active
+			color: var(--main-color)
+

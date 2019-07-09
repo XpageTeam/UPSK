@@ -1,6 +1,7 @@
 import "./forms"
 import "./main-slider"
 import "./textPage/text-page"
+import "./select"
 
 import {domReady, App, Element} from "./xpage/index"
 

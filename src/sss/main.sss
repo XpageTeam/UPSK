@@ -10,9 +10,21 @@
 @import "_header.sss"
 
 @import "main-slider.sss"
+@import "main-catalog.sss"
 
 @import "_footer.sss"
 
 .main-left-decor
 	position: absolute 0 * 0 0
 	size: 112px 100%
+	writing-mode: vertical-lr
+	display: flex
+	justify-content: center
+	align-items: center
+
+	&__text
+		white-space: nowrap
+		transform: rotateZ(180deg)
+		font-size: 1em
+		line-height: 1
+		color: #2E3844

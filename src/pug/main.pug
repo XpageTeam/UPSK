@@ -83,51 +83,94 @@ html(lang="ru")
 						.main-catalog__filter
 							.mc-filter
 								form
-									.mc-filter__inputs
-										.default-input
-											select.default-input__input.default-input__input--select
-												option Трубы стальные
-												option Трубы стальные
-												option Трубы стальные
-												option Трубы стальные
-											label.default-input__label Тип
-										.default-input
-											select.default-input__input.default-input__input--select
-												option Трубы электросварные
-												option Трубы электросварные
-												option Трубы электросварные
-												option Трубы электросварные
-											label.default-input__label Подтип
-										.default-input
-										.default-input
-											select.default-input__input.default-input__input--select
-												option 0.3 мм
-												option 0.3 мм
-												option 0.3 мм
-												option 0.3 мм
-											label.default-input__label диаметр
-										.default-input
-											select.default-input__input.default-input__input--select
-												option 3 см
-												option 3 см
-												option 3 см
-												option 3 см
-											label.default-input__label толщина стенки
-										.default-input
-											select.default-input__input.default-input__input--select
-												option Сталь
-												option Сталь
-												option Сталь
-												option Сталь
-											label.default-input__label Сталь
-										.default-input
-											select.default-input__input.default-input__input--select
-												option Гост
-												option Гост
-												option Гост
-												option Гост
-											label.default-input__label Гост
-										.default-input.default-input--submit
+									.mc-filter__form
+										.mc-filter__inputs
+											.form__inputs.form__inputs--2
+												.form__inputs-input
+													.default-input
+														select.default-input__input.default-input__input--select
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+														label.default-input__label Тип
+												.form__inputs-input
+													.default-input
+														select.default-input__input.default-input__input--select
+															option Трубы электросварные
+															option Трубы электросварные
+															option Трубы электросварные
+															option Трубы электросварные
+														label.default-input__label Подтип
+												.form__inputs-input.form__inputs-input--2
+													.default-input
+														select.default-input__input.default-input__input--select
+															option 0.3 мм
+															option 0.3 мм
+															option 0.3 мм
+															option 0.3 мм
+														label.default-input__label диаметр
+													.default-input
+														select.default-input__input.default-input__input--select
+															option 3 см
+															option 3 см
+															option 3 см
+															option 3 см
+														label.default-input__label толщина стенки
+												.form__inputs-input.form__inputs-input--2
+													.default-input
+														select.default-input__input.default-input__input--select
+															option Сталь
+															option Сталь
+															option Сталь
+															option Сталь
+														label.default-input__label Сталь
+													.default-input
+														select.default-input__input.default-input__input--select
+															option Гост
+															option Гост
+															option Гост
+															option Гост
+														label.default-input__label Гост
+										.mc-filter__btn
 											input.default-btn(type="submit" value="Применить фильтр")
+						.main-catalog__slider
+							- const items = [{title: "Трубы", list: ["Трубы стальные электросв арные ", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные ", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]}, {title: "Детали трубопроводов", list: ["Трубы стальные электросв арные ", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные ", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]}, {title: "Металлопрокат", list: ["Трубы стальные электросв арные ", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные ", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]}, {title: "Изоляция труб\\трубы в изоляции", list: ["Трубы стальные электросв арные ", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные ", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]}, {title: "Запорная арматура", list: ["Трубы стальные электросв арные ", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные ", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]}, {title: "Горячее цинкование", list: ["Трубы стальные электросв арные ", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные ", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]}, ]
+							.mc-slider
+								nav.mc-slider__nav
+									ul.slider-list
+										each item, i in items
+											if (i == 0)
+												li.slider-list__item.slider-list__item--active
+													span.slider-list__item-title=item.title
+													ul.slider-links
+														each link, j in item.list
+															if (j == 1)
+																li.slider-links__item.slider-links__item--active=link
+															else
+																li.slider-links__item=link
+											else
+												li.slider-list__item
+													span.slider-list__item-title=item.title
+													ul.slider-links
+														each link in item.list
+															li.slider-links__item=link
+								.mc-slider__slider
+									.mc-slider__slider-arrows
+										.swiper-button-prev
+										.swiper-button-next
+									.swiper-list
+										.swiper-wrapper
+											- let counter = 0
+											each item, i in items
+												each link, j in item.list
+													- counter++
+													.swiper-slide
+														a.mc-slider__slide(href="#")
+															figure.mc-slider__slide-img
+																img(src="img/photos/main-catalog-img-"+counter+".jpg", alt=link)
+															figcaption.mc-slider__slide-text=link
+													if (counter == 2)
+														- counter = 0
 		include inc/footer.pug
 		include inc/scripts.pug
