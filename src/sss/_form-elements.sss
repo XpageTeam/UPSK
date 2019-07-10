@@ -4,7 +4,7 @@
 		display: flex
 		flex-wrap: wrap
 
-		&:not(&--2, &--3)
+		&:not(&--2, &--3, &--4)
 
 			.form
 
@@ -13,12 +13,26 @@
 					&-input
 						width: 100%
 
-		&--2
+		&--2, &--3, &--4
 			margin: 0 0 calc(-1 * var(--input-vert-spacing)) calc(-1 * var(--input-hor-spacing))
 
 			.form__inputs-input
-				width: calc((100% - var(--input-hor-spacing) * 2) / 2)
 				margin: 0 0 var(--input-vert-spacing) var(--input-hor-spacing)
+
+		&--2
+
+			.form__inputs-input
+				width: calc((100% - var(--input-hor-spacing) * 2) / 2)
+
+		&--3
+
+			.form__inputs-input
+				width: calc((100% - var(--input-hor-spacing) * 3) / 3)
+
+		&--4
+
+			.form__inputs-input
+				width: calc((100% - var(--input-hor-spacing) * 4) / 4)
 
 .form__inputs-input
 
@@ -55,14 +69,25 @@
 			background-image: url("../img/ico-select-arrow.svg")
 			background-repeat: no-repeat
 			background-position: right 19px center
+			position: relative
 
 			option
 				color: #000
 
-			&:focus
+			&:focus, &.js__opened
 				padding: var(--select-focus-padding)
+				z-index: 2
 
-		&:focus
+			&.js__opened
+
+				~ .my-select
+
+					&__list
+
+						&-cont
+							display: block
+
+		&:focus, &.js__opened
 			border-color: var(--main-color)
 
 			~ .default-input
@@ -88,6 +113,12 @@
 
 		&--2
 			grid-template-columns: repeat(2, 1fr)
+
+		&--3
+			grid-template-columns: repeat(3, 1fr)
+
+		&--4
+			grid-template-columns: repeat(4, 1fr)
 
 		&-input
 			width: auto !important

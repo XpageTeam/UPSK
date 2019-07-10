@@ -89,6 +89,28 @@ html(lang="ru")
 												.form__inputs-input
 													.default-input
 														select.default-input__input.default-input__input--select
+															option(value="l" lol="sdf" rofl="sdfad") Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
+															option Трубы стальные
 															option Трубы стальные
 															option Трубы стальные
 															option Трубы стальные
@@ -141,12 +163,12 @@ html(lang="ru")
 									ul.slider-list
 										each item, i in items
 											if (i == 0)
-												li.slider-list__item.slider-list__item--active
+												li.slider-list__item.active
 													span.slider-list__item-title=item.title
 													ul.slider-links
 														each link, j in item.list
-															if (j == 1)
-																li.slider-links__item.slider-links__item--active=link
+															if (j == 0)
+																li.slider-links__item.active=link
 															else
 																li.slider-links__item=link
 											else
@@ -155,22 +177,77 @@ html(lang="ru")
 													ul.slider-links
 														each link in item.list
 															li.slider-links__item=link
-								.mc-slider__slider
-									.mc-slider__slider-arrows
-										.swiper-button-prev
-										.swiper-button-next
-									.swiper-list
-										.swiper-wrapper
-											- let counter = 0
-											each item, i in items
-												each link, j in item.list
-													- counter++
-													.swiper-slide
-														a.mc-slider__slide(href="#")
-															figure.mc-slider__slide-img
-																img(src="img/photos/main-catalog-img-"+counter+".jpg", alt=link)
-															figcaption.mc-slider__slide-text=link
-													if (counter == 2)
-														- counter = 0
+								.mc-slider__sliders
+									- let counter = 0
+									each item, i in items
+										if (i == 0)
+											.mc-slider__slider.active
+												.mc-slider__slider-arrows
+													.swiper-button-prev
+													.swiper-button-next
+												.swiper-list
+													.swiper-wrapper
+														each link, j in item.list
+															- counter++
+															.swiper-slide
+																a.mc-slider__slide(href="#")
+																	figure.mc-slider__slide-img
+																		if (j == 0)
+																			img(src="img/photos/main-catalog-img-"+counter+".jpg", alt=link)
+																		else
+																			img.swiper-lazy(src="img/photos/main-catalog-img-"+counter+".jpg", alt=link)
+																			.swiper-lazy-preloader
+																	figcaption.mc-slider__slide-text=link
+															if (counter == 2)
+																- counter = 0
+										else
+											.mc-slider__slider
+												.mc-slider__slider-arrows
+													.swiper-button-prev
+													.swiper-button-next
+												.swiper-list
+													.swiper-wrapper
+														each link, j in item.list
+															- counter++
+															.swiper-slide
+																a.mc-slider__slide(href="#")
+																	figure.mc-slider__slide-img
+																		if (j == 0)
+																			img(src="img/photos/main-catalog-img-"+counter+".jpg", alt=link)
+																		else
+																			img.swiper-lazy(src="img/photos/main-catalog-img-"+counter+".jpg", alt=link)
+																			.swiper-lazy-preloader
+																	figcaption.mc-slider__slide-text=link
+															if (counter == 2)
+																- counter = 0
+						.main-catalog__form
+							.mc-form
+								.mc-form__title Расчитать стоимость
+								form(action="#")
+									.mc-form__inputs
+										.form__inputs.form__inputs--4
+											.form__inputs-input
+												.default-input
+													input.default-input__input(type="text" placeholder="Николай Владимирович Аношкин" value="Николай Владимирович Аношкин")
+													label.default-input__label Имя
+													.default-input__error
+														.error-text
+															<!-- текст ошибки -->
+											.form__inputs-input
+												.default-input
+													input.default-input__input(type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email" placeholder="mail@yandex.ru")
+													label.default-input__label e-mail
+													.default-input__error
+														.error-text
+															<!-- текст ошибки -->
+											.form__inputs-input
+												.default-input
+													input.default-input__input(type="tel" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (900) 000-00-00")
+													label.default-input__label телефон
+													.default-input__error
+														.error-text
+															<!-- текст ошибки -->
+											.form__inputs-input
+												.mc-form__toggle.default-btn Оставить заявку
 		include inc/footer.pug
 		include inc/scripts.pug

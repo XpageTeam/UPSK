@@ -166,15 +166,18 @@ export default class Element {
 	* @param className: string
 	* @return Element
 	*/
-	public toggleClass(className: string, callback: Function = () => {}): Element{
+	public toggleClass(className: string, callback?: Function): Element{
 		App.each(this.els, (el: HTMLElement) => {
 			if (el.classList.contains(className)){
 				el.classList.remove(className)
 
-				callback(false)
+				if(callback)
+					callback(false)
 			}else{
 				el.classList.add(className)
-				callback(true)
+
+				if(callback)
+					callback(true)
 			}
 		})
 		return this

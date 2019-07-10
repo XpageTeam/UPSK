@@ -10,6 +10,10 @@
 	&__slider
 		padding: 105px 0 125px
 
+	&__form
+		--input-hor-spacing: 27px
+
+
 .mc-filter
 	padding: 0 0 92px
 	border-bottom: 1px solid var(--border-color)
@@ -53,7 +57,7 @@
 				position: absolute * * 1px 0
 				font-weight: normal
 
-		&:not(&--active)
+		&:not(.active)
 
 			.slider-links
 				display: none
@@ -61,6 +65,7 @@
 .slider-links
 	padding-left: 32px
 	margin: 20px 0 0
+	user-select: none
 
 	&__item
 		font-size: em(17)
@@ -69,10 +74,111 @@
 		&:not(:first-child)
 			margin: 5px 0 0
 
-		&:not(&--active)
+		&:not(.active)
 			cursor: pointer
 			color: rgba(46, 56, 68, 0.6)
 
-		&--active
+		&.active
 			color: var(--main-color)
 
+
+
+.mc-slider
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	&__nav
+		flex: none
+		margin-right: 20px
+
+	&__slider
+		width: calc(262px*3)
+
+		&:not(.active)
+			display: none
+
+	&__slide
+		position: relative
+		display: block
+		transition: transform .3s ease
+		flex: 1 1 auto
+
+		&:after
+			content: ""
+			position: absolute 0
+			border: 14px solid var(--main-color)
+			transition: opacity .3s ease
+			background: url("../img/active-slide-bg.png") top center no-repeat
+			background-size: cover
+			opacity: 0
+
+		&-text
+			position: absolute * 0 0
+			padding: 0 25px 70px
+			text-align: center
+			font-size: em(18)
+			line-height: calc(26 / 18)
+			z-index: 2
+			color: #fff
+
+.mc-slider__slider
+
+	&-arrows
+		display: flex
+		justify-content: flex-end
+		margin: 0 0 38px
+
+		.swiper
+
+			&-button
+
+				&-prev, &-next
+					position: relative auto
+					margin: 0
+					transition: background-color .3s ease, color .3s ease, border-color .3s ease
+					border-radius: 5px
+					size: 38px
+					border: 1px solid var(--border-color)
+					background-image: none
+					color: #000 #fff
+
+					&:hover
+						color: #fff var(--main-color)
+						border-color: rgba(233, 233, 233, 0.2)
+
+					&:after
+						content: ''
+						position: absolute calc(50% - 5px) calc(50% - 2px) * *
+						size: 9px
+						border-right: 1px solid currentColor
+						border-bottom: 1px solid currentColor
+						transform: rotateZ(-45deg)					
+
+				&-prev
+					margin-right: 18px
+					transform: rotateZ(180deg)
+
+
+	.swiper
+
+		&-slide
+			padding: 14px 0
+			display: flex
+
+			&-active
+				z-index: 2
+
+				.mc-slider
+
+					&__slide
+						transform: scale(1.075)
+
+						&:after
+							opacity: 1
+
+.mc-form
+
+	&__toggle
+		width: 100%
+		background: #4690F7
