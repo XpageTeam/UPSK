@@ -15,11 +15,15 @@ html(lang="ru")
 							.main-slider__slide
 								picture.main-slider__slide-img
 									if (i == 0)
+										<!-- Большая картинка -->
 										source(media="(min-width: 660px)" srcset="img/photos/main-slider-img.jpg")
+										<!-- Маленькая картинка -->
 										source(media="(max-width: 660px)" srcset="img/photos/main-slider-img.jpg")
 										img
 									else
+										<!-- Большая картинка -->
 										source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-slider-img.jpg")
+										<!-- Маленькая картинка -->
 										source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-slider-img.jpg")
 										img
 										.swiper-lazy-preloader
@@ -85,8 +89,8 @@ html(lang="ru")
 								form
 									.mc-filter__form
 										.mc-filter__inputs
-											.form__inputs.form__inputs--2
-												.form__inputs-input
+											.form__inputs.form__inputs--4
+												.form__inputs-input.form__inputs-input--2
 													.default-input
 														select.default-input__input.default-input__input--select
 															option(value="l" lol="sdf" rofl="sdfad") Трубы стальные
@@ -116,7 +120,7 @@ html(lang="ru")
 															option Трубы стальные
 															option Трубы стальные
 														label.default-input__label Тип
-												.form__inputs-input
+												.form__inputs-input.form__inputs-input--2
 													.default-input
 														select.default-input__input.default-input__input--select
 															option Трубы электросварные
@@ -124,7 +128,7 @@ html(lang="ru")
 															option Трубы электросварные
 															option Трубы электросварные
 														label.default-input__label Подтип
-												.form__inputs-input.form__inputs-input--2
+												.form__inputs-input
 													.default-input
 														select.default-input__input.default-input__input--select
 															option 0.3 мм
@@ -132,6 +136,7 @@ html(lang="ru")
 															option 0.3 мм
 															option 0.3 мм
 														label.default-input__label диаметр
+												.form__inputs-input
 													.default-input
 														select.default-input__input.default-input__input--select
 															option 3 см
@@ -139,7 +144,7 @@ html(lang="ru")
 															option 3 см
 															option 3 см
 														label.default-input__label толщина стенки
-												.form__inputs-input.form__inputs-input--2
+												.form__inputs-input
 													.default-input
 														select.default-input__input.default-input__input--select
 															option Сталь
@@ -147,6 +152,7 @@ html(lang="ru")
 															option Сталь
 															option Сталь
 														label.default-input__label Сталь
+												.form__inputs-input
 													.default-input
 														select.default-input__input.default-input__input--select
 															option Гост
@@ -249,5 +255,106 @@ html(lang="ru")
 															<!-- текст ошибки -->
 											.form__inputs-input
 												.mc-form__toggle.default-btn Оставить заявку
+									.mc-form__hidden-inputs
+										.form__inputs.form__inputs--2
+											.form__inputs-input
+												.default-input
+													textarea.default-input__input
+													label.default-input__label Ваще сообщение
+											.form__inputs-input
+												.default-input
+													input.default-input__input.default-input__input--file(type="file" name="file" accept="Docx, exсel, pdf, jpg, png" id="price-file")
+													.default-input__input-filetext
+														input.default-input__input(type="text" readonly="" placeholder="Docx, exсel, pdf, jpg, png")
+														label.default-input__label-file(for="price-file")
+													label.default-input__label файл с дополнительной информацией по заявке
+									.mc-form__submit
+										.form__submit
+											.form__submit-btn
+												input.default-btn(type="submit" value="Отправить")
+											.form__submit-text Нажимая на кнопку отправки сообщения, я соглашаюсь
+												br
+												| на обработку моих 
+												a(href="#") персональных данных
+						.main-catalog__bot
+							.mc-bot-title Мы принимаем
+								br
+								| участие в крупнейших проектах
+			section.main-projects__cont
+				.main-left-decor
+					.main-left-decor__text Наши проекты
+				.main-projects
+					.main-projects__top
+						.mp-slider
+							.mp-slider__arrows
+								.mp-slider__arrows-left
+									.swiper-button-prev
+								.mp-slider__arrows-right
+									.swiper-button-next
+							.swiper-wrapper
+								- for (let i = 0; i <= 5; i++)
+									.swiper-slide
+										.mp-slider__slide
+											picture.mp-slider__slide-img
+												if (i == 0)
+													<!-- Большая картинка -->
+													source(media="(min-width: 660px)" srcset="img/photos/project-slide-img-0.jpg")
+													<!-- Маленькая картинка -->
+													source(media="(max-width: 660px)" srcset="img/photos/project-slide-img-0.jpg")
+													img
+												else
+													<!-- Большая картинка -->
+													source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/project-slide-img-0.jpg")
+													<!-- Маленькая картинка -->
+													source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/project-slide-img-0.jpg")
+													img
+													.swiper-lazy-preloader
+											.mp-slider__slide-text
+												.mp-text
+													a.mp-text__title(href="#") Нефтегазовое
+														br
+														| месторождение Тенгиз
+													address.mp-text__address Атырауской область, Казахстан
+													.mp-text__text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции. 
+														br
+														| Открыто в 1979 году
+					.main-projects__bot
+						.mp-list
+							- for (let i = 0; i < 3; i++)
+								.mp-list__item
+									a.mp-item(href="#")
+										figure.mp-item__img
+											img(src="img/photos/mp-img-"+i+".jpg")
+										figcaptin.mp-item__text
+											.mp-text__title Нефтегазовое
+												br
+												| месторождение Тенгиз
+											address.mp-text__address Атырауской область, Казахстан
+			section.main-advantages__cont
+				.main-left-decor
+					.main-left-decor__text Преимущества
+				.wrapper
+					.main-advantages
+						.main-advantages__list
+							.main-advantages__list-item.main-advantages__list-item--text
+								.m-advantage-text
+									.m-advantage-text__title Качество
+									.m-advantage-text__text Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки
+							each item,i in [{title: "Качество", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Ассортимент", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Оперативность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Стоимость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Гибкость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Компетентность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Надежность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Удобство", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставк"}, ]
+								if (i == 0)
+									.main-advantages__list-item
+										.m-advantage.active
+											figure.m-advantage__img
+												img(src="img/photos/advantage-"+i+".svg")
+											figcaption.m-advantage__title=item.title
+											span.m-advantage__text=item.text
+								else
+									.main-advantages__list-item
+										.m-advantage
+											figure.m-advantage__img
+												img(src="img/photos/advantage-"+i+".svg")
+											figcaption.m-advantage__title=item.title
+											span.m-advantage__text=item.text
+
 		include inc/footer.pug
 		include inc/scripts.pug

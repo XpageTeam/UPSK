@@ -3,6 +3,10 @@ import $ from "jquery"
 window.$ = $;
 window.jQuery = $;
 
+window.get$ = (element) => {
+	return $(element)
+}
+
 document.addEventListener("DOMContentLoaded", function(){
 	require("./jquery.fancybox.js")
 	require("../css/jquery.fancybox.css")

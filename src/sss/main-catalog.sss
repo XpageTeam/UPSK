@@ -13,6 +13,13 @@
 	&__form
 		--input-hor-spacing: 27px
 
+	&__bot
+		margin: 72px 0 0
+
+.mc-bot-title
+	font-size: em(24)
+	line-height: calc(29 / 24)
+	color: #2E3844
 
 .mc-filter
 	padding: 0 0 92px
@@ -27,6 +34,10 @@
 
 		.default-btn
 			padding: var(--input-focus-padding)
+			background-color: var(--main-color-darken)
+
+			&:hover, &:focus
+				background-color: var(--main-color)
 
 	&__inputs
 		flex: 1 1 auto
@@ -107,7 +118,7 @@
 		&:after
 			content: ""
 			position: absolute 0
-			border: 14px solid var(--main-color)
+			border: 14px solid var(--main-color-darken)
 			transition: opacity .3s ease
 			background: url("../img/active-slide-bg.png") top center no-repeat
 			background-size: cover
@@ -178,7 +189,76 @@
 							opacity: 1
 
 .mc-form
+	background: var(--second-color)
+	border-radius: 5px
+	padding: 40px 50px 50px
 
 	&__toggle
 		width: 100%
 		background: #4690F7
+		height: 57px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		position: relative
+
+		&:after
+			content: ""
+			position: absolute calc(50% - 5px) 35px * *w
+			border-right: 1px solid #fff
+			border-bottom: 1px solid #fff
+			size: 10px
+			transform: rotateZ(45deg)
+
+		&.js__opened
+
+			&:after
+				transform: rotateZ(-135deg)
+
+	&__title
+		color: #202730
+		font-size: em(30)
+		margin: 0 0 26px
+
+	&__submit
+		margin: 34px 0 0
+
+	&__hidden-inputs
+		margin: 25px 0 0
+
+		&:not(.js__opened)
+			display: none
+
+		.default-input__input-filetext
+			max-width: 367px
+
+		.default-input__input
+			max-height: 67px !important
+			height: 67px
+
+.mp-list
+	display: flex
+	flex-wrap: wrap
+
+	&__item
+		width: 33.33%
+
+.mp-item
+	position: relative
+	display: block
+
+	&__text
+		position: absolute 0 0 0
+		background: url("../img/mp-shadow.png") center bottom no-repeat
+		background-size: cover
+		color: #fff
+		padding: 20px 75px 55px
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+
+	&__img
+
+		img
+			display: block
+			width: 100%

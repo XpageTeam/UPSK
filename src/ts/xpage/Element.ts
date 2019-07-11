@@ -237,7 +237,7 @@ export default class Element {
 	/** Метод для изменения и получения innerText
 	* @param text?: string
 	* @return ELement || string[] || string */
-	public text(text?: string): Element
+	public text(): string
 	public text(text?: string): string[]
 	public text(text?: string): string
 	public text(text?: string): any{
