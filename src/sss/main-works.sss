@@ -1,0 +1,82 @@
+.main-works
+
+	&__cont
+		position: relative
+		color: #fff #2E3844
+		padding: 135px 105px
+
+		.main-left-decor
+			background: var(--thrid-color)
+
+			&__text
+				color: #fff
+
+.main-works
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -70px
+
+	&__item
+		width: 20% 
+		margin: 0 0 70px
+		display: flex
+		flex-direction: column
+
+		&:not(:nth-child(5n))
+
+			.works-item
+
+				&__number
+					
+					&:after
+						content: ""
+						position: absolute calc(50% - 12px) 105px * *
+						border-radius: 50%
+						size: 23px
+						background: rgba(42, 110, 219, 0.3)
+
+					&:before
+						content: ""
+						position: absolute calc(50% - 1px) -3px 0 100px
+						height: 1px	
+						background: linear-gradient(to right, #40516A, #2E3844)			
+					
+					&-text
+
+						&:before
+							content: ""
+							border-radius: 50%
+							position: absolute
+							size: 7px
+							background: var(--main-color)
+							top: calc(50% - 4px)
+							right: 113px
+
+.works-item
+	flex: 1 1 auto
+
+	&:hover &__number-text span
+		color: #fff var(--main-color)
+		border-color: transparent
+
+	&__number
+		margin: 0 0 34px
+		position: relative
+
+		&-text span
+			position: relative
+			z-index: 1
+			border-radius: 200px
+			transition: border-color .3s ease, color .3s ease, background-color .3s ease
+			color: #2A6EDB #2E3844
+			border: 1px solid var(--main-color-darken)
+			display: inline-block
+			padding: 15px 30px
+			font-weight: bold
+			font-size: em(16)
+			line-height: 1
+
+	&__text
+		font-size: 1em
+		line-height: calc(22 / 14)
+		max-width: 205px

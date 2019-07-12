@@ -1,133 +1,47 @@
+.inner
+
+	.footer
+		background: #202730
+
 .footer
-	color: #fff var(--second-color)
-	padding: 81px 0
-	margin: 68px 0 0
+	color: #fff var(--thrid-color)
+	padding: 75px 0 95px
+	font-size: em(14)
+	line-height: calc(26 / 14)
 
-	&__wrap
+	&__top, &__bot
 		display: flex
+
+	&__bot
 		justify-content: space-between
+		align-items: center
+		margin: 30px 0 0
 
-	&__about
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		margin-right: persent(110)
+	&__copy, &__logo
+		width: 240px
+		margin-right: 42px
+		flex: none
 
-	&__menu
-		flex: 1 1 auto
-		margin: 0 30px
+	&__call, &__soc
+		margin-left: auto
+		flex: none
+		padding-left: 40px
 
-	&__links
-		display: flex
-		flex-direction: column
-		justify-content: space-between
+	&__address + &__address
+		padding-left: 40px
+		margin-left: auto
 
-		&-bot
-			margin: 20px 0 0
-			display: flex
-			align-items: center
-			justify-content: space-between
-
-.copy
-	display: flex
-	flex-direction: column
-
-	span
-		font-size: 14px
-
-		&:not(:last-child)
-			margin: 0 0 4px
-
-	a
-		font-size: 12px
-		color: #A3A0A0
-
-.f-menu
-	column-count: 2
-	column-gap: 90px
-
-	&__item
-		break-inside: avoid
-
-		&:not(:first-child)
-			margin: 40px 0 0
-
-		&--submenu
-
-			.f-menu__title
-				margin: 0 0 15px
-
-	&__title
-		text-transform: uppercase
-		font-size: 12px
-		display: block
-		color: #fff
-
-.f-submenu
-
-	li
-
-		&:not(:first-child)
-			margin: 8px 0 0
-
-	&__link
-		color: #fff
-		font-size: 14px
-
-.f-contacts
-
-	&__title
-		text-transform: uppercase
-		font-weight: 500
-		font-size: 12px
-		margin-bottom: 13px
-
-	&__phone
-		font-size: 22px
-		font-weight: 500
-		padding-left: 25px
-		background: url("../img/ico-another-phone.svg") left center no-repeat
-		min-height: 13px
+	&__address, &__copy
 
 		a
 			color: inherit
 
-	&__time
-		margin: 7px 0 0
-		font-size: 14px
-		display: block
+	&__copy
+		color: #697078
+		
 
-.subscribe-form
-
-	&__title
-		text-transform: uppercase
-		font-size: 12px
-		font-weight: 500
-		margin-bottom: 20px
-
-	form
-		position: relative
-
-		.default-btn
-			position: absolute 0 0 * *
-
-	&__input
-		font-size: 14px
-		border: none
-		border-radius: 6px !important
-		display: block
-		size: 100% 49px
-		padding: 10px 170px 10px 25px
-
-.f-soc
+.f-address
 
 	&__title
-		text-transform: uppercase
-		font-size: 12px
-		margin: -31px 0 15px
-
-.dev
-	display: block
-
-	img
-		display: block
+		margin: 0 0 12px
+		color: #697078

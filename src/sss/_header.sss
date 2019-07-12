@@ -1,12 +1,42 @@
+.main
+
+	.head
+		position: absolute 0 0 *
+		z-index: 2
+
+.inner
+	
+	.head
+		position: relative
+
+		&__wrap
+			border-bottom: 1px solid rgba(231,231,231, .15)
+			overflow: hidden
+
+		&:after
+			content: ""
+			position: absolute 0
+			pointer-events: none
+			background: #030912
+			opacity: .8
+
 .head
-	position: absolute 0 0 *
-	padding: 68px 71px 20px
-	z-index: 2
 	color: #fff
+	background-position: center 
+	background-size: cover
+	background-repeat: no-repeat
+
+	&__title
+		position: relative
+		z-index: 1
+		padding: 65px 0
 
 	&__wrap
 		display: flex
 		align-items: center
+		padding: 68px 71px
+		position: relative
+		z-index: 1
 
 	&__logo
 		margin-right: auto

@@ -1,0 +1,57 @@
+.main-partners
+
+	&__cont
+		position: relative
+		padding: 100px 0
+
+		.main-left-decor
+			background: #fafafa
+
+	&__slider
+		position: relative
+		padding: 0 60px
+
+		&-arrows
+			display: flex
+			align-items: center
+			justify-content: space-between
+			position: absolute calc(50% - 8px) 0 *
+			pointer-events: none
+
+			.swiper
+
+				&-button
+
+					&-prev, &-next
+						pointer-events: auto
+						position: static
+						margin: 0
+						size: 15px
+						background: url("../img/ico-black-arrow.svg") center no-repeat
+						transition: opacity .3s ease
+						opacity: .3
+
+						&:hover
+							opacity: 1
+
+					&-prev
+						transform: rotateZ(180deg)
+
+.partners-slider
+	overflow: hidden
+
+	.swiper
+
+		&-slide
+			height: auto
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+
+.partner-slide
+	opacity: .5
+	transition: opacity .3s ease
+
+	&:hover
+		opacity: 1

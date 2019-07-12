@@ -1,6 +1,6 @@
 import "./forms"
 import "./textPage/text-page"
-import "./select"
+import "./xpage/select"
 
 // для главной
 import "./main-slider"
@@ -8,6 +8,7 @@ import "./catalog-slider"
 import "./price-form"
 import "./projects-slider"
 import "./main-advantages"
+import "./main-partners"
 
 // import {domReady, App, Element} from "./xpage/index"
 

@@ -113,3 +113,31 @@
 		font-size: 1em
 		line-height: calc(22 / 15)
 		max-width: 515px
+
+.mp-list
+	display: flex
+	flex-wrap: wrap
+
+	&__item
+		width: 33.33%
+		flex: none
+
+.mp-item
+	position: relative
+	display: block
+
+	&__text
+		position: absolute 0 0 0
+		background: url("../img/mp-shadow.png") center bottom no-repeat
+		background-size: cover
+		color: #fff
+		padding: 20px 75px 55px
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+
+	&__img
+
+		img
+			display: block
+			width: 100%

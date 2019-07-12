@@ -1,32 +1,38 @@
 .title-block
-	letter-spacing: 0.02em
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	&__btn
+		margin-left: 20px
+		flex: none
 
 	&__title
 		margin-bottom: 9px
 
 		h1
 			font-weight: bold
-			color: #393939
-			font-size: 24px
+			font-size: em(24)
+			line-height: calc(37 / 24)
 
 .bread-crumbs
+	color: rgba(255, 255, 255, 0.6)
+	text-transform: uppercase
+	font-size: em(10)
+	line-height: calc(15 / 10)
 
 	&__link
-		color: #B0B7BB
+		color: inherit
+		transition: color .3s ease
 
-		&:first-child
-
-			&:before
-				background: url("../img/ico-home.svg") no-repeat
-				size: 11px
-				content: ""
-				display: inline-block
-				margin-right: 15px
+		&:hover, &:focus
+			color: var(--main-color)
 
 		&:after
-			content: "-"
+			content: ""
 			display: inline-block
-			margin: 0 5px
-
-	&__this
-		color: var(--main-color)
+			margin: 0 13px 3px
+			border-radius: 5px
+			size: 20px 1px
+			background: #fff
+			opacity: .3

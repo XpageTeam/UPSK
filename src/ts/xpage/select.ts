@@ -1,4 +1,4 @@
-import {EventListener, App} from "./xpage/index"
+import {EventListener, App} from "./index"
 
 interface selectElement {
 	render(template?: string): string
