@@ -1,0 +1,206 @@
+.tovar
+
+	&__list
+		margin: 97px 0 0
+
+.tovar-main
+	display: flex
+	align-items: flex-start
+
+	&__img
+		flex: none
+		border-radius: 5px
+		border: 1px solid var(--border-color)
+		width: 400px
+		min-height: 400px
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 15px
+		margin-right: 54px
+
+	&__desc
+		flex: 1 1 auto
+
+.tm-desc
+
+	&__category
+		text-transform: uppercase
+		color: #2E3844
+		opacity: .5
+		margin: 0 0 16px
+		font-weight: bold
+		font-size: em(10)
+
+	&__title, &__subtitle
+		max-width: 720px
+
+	&__title
+		margin: 0 0 15px
+
+		h1
+			font-size: rem(24)
+
+	&__subtitle
+		margin: 0 0 33px
+
+	&__price
+		margin: 35px 0 0
+
+.features
+	border-top: 1px solid var(--border-color)
+	border-bottom: 1px solid var(--border-color)
+	display: flex
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: 65px
+
+.feature
+	padding: 39px 0
+
+	&__title
+		color: var(--main-color-darken)
+		text-transform: uppercase
+		font-size: em(10)
+		font-weight: bold
+		margin: 0 0 5px
+
+	&__text
+		font-size: em(14)
+		color: rgba(0,0,0, .6)
+
+.tovar-price
+	display: flex
+	align-items: center
+
+	&__main
+		margin-right: 28px
+
+	&__text
+		color: rgba(0,0,0, .6)
+		font-size: em(14)
+		line-height: calc(26 / 14)
+
+.tp
+	display: flex
+	align-items: center
+	padding: 18px 17px
+	border: 1px solid var(--border-color)
+	border-radius: 5px
+
+	&__price
+		margin-right: 30px
+
+		&-title
+			color: var(--main-color-darken)
+			text-transform: uppercase
+			font-size: em(10)
+			font-weight: bold
+			margin: 0 0 5px
+
+		&-text
+			font-size: em(18)
+			color: rgba(0,0,0, .6)
+
+.tovar-list
+	width: 100%
+	font-size: em(14)
+
+	&__title
+
+		&-label
+			background: var(--second-color)
+			padding: 34px 30px 33px 0
+			text-transform: uppercase
+			font-weight: bold
+			font-size: em(10, 14)
+			line-height: 1
+			color: rgba(46, 56, 68, 0.6)
+
+		td
+
+			&:first-child .tovar-list__title-label
+				border-radius: 5px 0 05px
+				padding-left: 42px
+
+			&:last-child .tovar-list__title-label
+				border-radius: 0 5px 5px 0
+
+		+ tr
+
+			td
+				border-top: none !important
+
+	tr
+
+		&:not([class])
+
+			td
+				border-top: 1px solid var(--border-color)
+				vertical-align: middle
+				padding: 38px 16px 37px 0
+
+				&:last-child:not(:first-child)
+					text-align: right
+
+		+ .tovar-list__title
+
+			td
+				padding: 27px 0 0
+
+	&__name
+		font-weight: bold
+		
+
+	&__link
+		position: relative
+		font-weight: bold
+		color: var(--main-color-darken)
+		transition: color .3s ease
+		padding-right: 50px
+
+		&:after
+			content: ''
+			position: absolute calc(50% - 8px) 0 * *
+			background: url("../img/ico-arrow-right--small.svg") center no-repeat
+			size: 20px 17px
+
+		&:hover, &:focus
+			color: var(--main-color)
+
+.radio-weight
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: -14px
+
+	&__item
+		margin-bottom: 14px
+
+		&:not(:last-child)
+			margin-right: 14px
+
+.rw
+	position: relative
+
+	&__input
+		position: absolute 0 0 * *
+		opacity: 0
+		pointer-events: none
+
+		&:checked
+
+			+ label
+				background: #f4f4f4
+
+	&__label
+		size: 50px 40px
+		display: flex
+		text-align: center
+		justify-content: center
+		align-items: center
+		border-radius: 5px
+		transition: background .3s ease
+		border: 1px solid var(--border-color)
+		cursor: pointer

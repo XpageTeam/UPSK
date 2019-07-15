@@ -1,0 +1,79 @@
+.catalog3-list
+
+	&__table
+		max-height: 80vh
+		overflow-y: auto
+		
+		&::-webkit-scrollbar
+			width: 13px
+
+			&-thumb, &-track
+				border-left: 10px solid #fff
+
+			&-track
+				background: var(--second-color)
+
+			&-thumb
+				background: var(--main-color-darken)
+
+.cat3
+	width: 100%
+
+	td
+		border-bottom: 1px solid var(--border-color)
+		padding: 36px 35px 36px 0
+
+	th
+		text-align: left
+		background: #F4F4F4
+		padding: 33px 28px
+		cursor: pointer
+
+		&:first-child
+			border-radius: 5px 0 0 5px
+
+			~ th
+				padding-left: 0
+
+		&:last-child
+			border-radius: 0 5px 5px 0
+			padding-right: 40px
+
+	thead
+		// transition: transform .01s ease
+
+.cat3-sort
+	padding-left: 18px
+	position: relative
+
+	&:before
+		content: ""
+		position: absolute calc(50% - 5px) * * 0
+		size: 9px 10px
+
+	&.active
+
+		&:before
+			background: url("../img/ico-sort-active.svg") no-repeat
+
+	&.active &__text
+		color: var(--main-color-darken)
+
+	&:not(.active)
+
+		&:before
+			background: url("../img/ico-sort-unactive.svg") no-repeat
+
+	&__text
+		text-transform: uppercase
+		font-size: em(10)
+		font-weight: bold
+		line-height: calc(15 / 10)
+		transition: color .3s ease
+
+
+@media (min-width: 1000px)
+	.catalog3-list
+
+		&__sort
+			display: none

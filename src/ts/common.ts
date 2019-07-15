@@ -10,6 +10,8 @@ import "./projects-slider"
 import "./main-advantages"
 import "./main-partners"
 
+import "./cat3-scroll"
+
 // import {domReady, App, Element} from "./xpage/index"
 
 

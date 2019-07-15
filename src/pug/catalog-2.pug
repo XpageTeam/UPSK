@@ -2,7 +2,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Каталог - 1 уровень
+		title Каталог - 2уровень
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
@@ -32,11 +32,12 @@ html(lang="ru")
 					.title-block
 						.title-block__text
 							.title-block__title
-								h1 Каталог продукции
+								h1 Трубы стальные
 							.title-block__crumbs
 								.bread-crumbs
 									a.bread-crumbs__link(href="#") Главная страница
-									span.bread-crumbs__this Каталог продукции
+									a.bread-crumbs__link(href="#") Каталог продукции
+									span.bread-crumbs__this Трубы стальные
 						.title-block__btn
 							a.write-btn.fancybox(href="#") Оставить заявку
 		main#content
@@ -45,7 +46,7 @@ html(lang="ru")
 					section.catalog
 						.catalog__top
 							.wrapper
-								.catalog-text
+								.catalog-text.catalog-text--reverse
 									.catalog-text__text
 										.catalog-text__text-title Трубы стальные могут быть
 											br
@@ -137,14 +138,15 @@ html(lang="ru")
 												input.default-btn(type="submit" value="Применить фильтр")
 						.catalog__container
 							.wrapper
-								.catalog-list
-									each title, i in ["Трубы стальные", "Детали трубопроводов", "Металлопрокат", "Изоляция труб\трубы в изоляции ", "Запорная арматура", ]
-										.catalog-list__item
-											a.cat-item(href="#")
-												figure.cat-item__img
-													img(src="img/photos/cat-item-"+i+".jpg", alt=title)
-												figcaption.cat-item__title=title
-												.cat-item__arrow
+								.catalog2-list
+									.catalog-list
+										each title in ["Трубы электросварные обечаечные 630-3500 мм", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные (ВГП) ГОСТ 3262", "Трубы электросварные", "Профильные трубы"]
+											.catalog-list__item
+												a.cat-item(href="#")
+													figure.cat-item__img
+														img(src="img/photos/catalog-2-img.jpg", alt=title)
+													figcaption.cat-item__title=title
+													.cat-item__arrow
 								.catalog__form
 									.mc-form
 										.mc-form__title Оставить заявку
@@ -210,5 +212,22 @@ html(lang="ru")
 												figure.log-item__img
 													img(src="img/photos/log-img-"+i+".svg")
 												figcaption.log-item__text=text
+						.catalog__prev
+							.wrapper
+								.catalog-list
+									each title, i in ["Трубы стальные", "Детали трубопроводов", "Металлопрокат", "Изоляция труб\трубы в изоляции ", "Запорная арматура", ]
+										.catalog-list__item
+											a.cat-item(href="#")
+												figure.cat-item__img
+													img(src="img/photos/cat-item-"+i+".jpg", alt=title)
+												figcaption.cat-item__title=title
+												.cat-item__arrow
+								.seo-text
+									.seo-text__text
+										p Трубы стальные могут быть различных сечений:
+										p Круглых – самая распространенная форма, преимущества – максимальный объем при минимальной поверхности, оптимально для противостояния внутреннему и внешнему давлений, технологичность исполнения, минимальный расход материала при изготовлении. Применяются для перемещения газов и жидкостей;
+										p Прямоугольных – используются, когда известно направление приложенного вектора максимальной нагрузки. Используются при возведении колонн, вышек, опор, каркасов;
+											br
+											| Квадратных –  конструктивная прочность и жесткость, упрощенный монтаж,  низкая металлоемкость при изготовлении, логистическое преимущество. Используются при возведении колонн, вышек, опор, каркасов;
 		include inc/footer.pug
 		include inc/scripts.pug 

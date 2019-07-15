@@ -32,11 +32,12 @@ html(lang="ru")
 					.title-block
 						.title-block__text
 							.title-block__title
-								h1 Каталог продукции
+								h1 Трубы стальные электросварные обечаечные 630-3500 мм
 							.title-block__crumbs
 								.bread-crumbs
 									a.bread-crumbs__link(href="#") Главная страница
-									span.bread-crumbs__this Каталог продукции
+									a.bread-crumbs__link(href="#") Каталог продукции
+									span.bread-crumbs__this Трубы
 						.title-block__btn
 							a.write-btn.fancybox(href="#") Оставить заявку
 		main#content
@@ -46,16 +47,24 @@ html(lang="ru")
 						.catalog__top
 							.wrapper
 								.catalog-text
-									.catalog-text__text
-										.catalog-text__text-title Трубы стальные могут быть
+									.catalog-text__title
+										p Трубы стальные
 											br
+											| могут быть 
+											br 
 											| различных сечений
+									.catalog-text__text
 										.catalog-text__text-text
 											p Круглых – самая распространенная форма, преимущества – максимальный объем при минимальной поверхности, оптимально для противостояния внутреннему и внешнему давлений, технологичность исполнения, минимальный расход материала при изготовлении. Применяются для перемещения газов и жидкостей
 											p Прямоугольных – используются, когда известно направление приложенного вектора максимальной нагрузки. Используются при возведении колонн, вышек, опор, каркасов
 											p Квадратных –  конструктивная прочность и жесткость, упрощенный монтаж,  низкая металлоемкость при изготовлении, логистическое преимущество. Используются при возведении колонн, вышек, опор, каркасов
-									figure.catalog-text__img
-										img(src="img/photos/catalog-img.jpg")
+						.catalog__imgs
+							.mp-list
+								- for (let i = 0; i < 3; i++)
+									.mp-list__item
+										a.mp-item(href="#")
+											figure.mp-item__img
+												img(src="img/photos/mp-img-"+i+".jpg")
 						.catalog__filter
 							.wrapper
 								.mc-filter
@@ -137,14 +146,49 @@ html(lang="ru")
 												input.default-btn(type="submit" value="Применить фильтр")
 						.catalog__container
 							.wrapper
-								.catalog-list
-									each title, i in ["Трубы стальные", "Детали трубопроводов", "Металлопрокат", "Изоляция труб\трубы в изоляции ", "Запорная арматура", ]
-										.catalog-list__item
-											a.cat-item(href="#")
-												figure.cat-item__img
-													img(src="img/photos/cat-item-"+i+".jpg", alt=title)
-												figcaption.cat-item__title=title
-												.cat-item__arrow
+								.catalog3-list
+									.catalog3-list__table
+										<!-- сортировка в адаптиве -->
+										.catalog3-list__sort
+											.cat-sort
+												.default-input
+													select.cat-sort__select.default-input__input.default-input__input--select
+														each title, i in ["по названию", "по типу", "Диаметр", "Толщина стенки", "Сталь", "гост", "Цена", ]
+															if (i == 0)
+																option(value=i)=title
+															else
+																option(value=i)=title
+													label.default-input__label Сортировка
+										table.cat3
+											thead
+												tr
+													<!-- клик нужно установить по th -->
+													each title, i in ["по названию", "по типу", "Диаметр", "Толщина стенки", "Сталь", "гост", "Цена", ]
+														th
+															if (i == 0) 
+																.cat3-sort.active
+																	.cat3-sort__text=title
+															else
+																.cat3-sort
+																	.cat3-sort__text=title
+											tbody
+												each item in [{title: "Трубы электросварные обечаечные 630-3500 мм", type: "Арматура ", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "	ГОСТ 10706-76 ЧТПЗ", price: "64 000 Р"}, {title: "Насосно-компрессорные трубы НКТ", type: "Круг", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 10706-76	65 000", price: "64 000 Р"}, {title: "Труба обсадная", type: "Квадрат", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 10706-76	65 000	", price: "64 000 Р"}, {title: "Трубы бурильные (сбт)", type: "Шестигранник", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 10706-76	65 000", price: "64 000 Р"}, {title: "Трубы водогазопроводные стальные (ВГП) ГОСТ 3262", type: "Балка", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 10706-76	65 000", price: "64 000 Р"}, {title: "Трубы электросварные", type: "Швеллер", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 10705-80	53 000", price: "64 000 Р"}, {title: "Профильные трубы", type: "Лист ", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 10705-80	58 000	", price: "64 000 Р"}, {title: "Трубы бесшовные", type: "Полоса", d: "0.3мм", weight: "3 см", steel: "13ХФА", gost: "ГОСТ 20295-85*	74 500", price: "64 000 Р"}, ]
+													tr
+														td(data-title="Название")=item.title
+														td(data-title="Тип")=item.type
+														td(data-title="Диаметр")=item.d
+														td(data-title="Толщина стенки")=item.weight
+														td(data-title="Сталь")=item.steel
+														td(data-title="Гост")=item.gost
+														td(data-title="Цена")=item.price
+													tr
+														td(data-title="Название")=item.title
+														td(data-title="Тип")=item.type
+														td(data-title="Диаметр")=item.d
+														td(data-title="Толщина стенки")=item.weight
+														td(data-title="Сталь")=item.steel
+														td(data-title="Гост")=item.gost
+														td(data-title="Цена")=item.price
 								.catalog__form
 									.mc-form
 										.mc-form__title Оставить заявку
@@ -210,5 +254,62 @@ html(lang="ru")
 												figure.log-item__img
 													img(src="img/photos/log-img-"+i+".svg")
 												figcaption.log-item__text=text
+						.catalog__prev
+							.wrapper
+								.catalog2-list
+									.catalog-list
+										each title in ["Трубы электросварные обечаечные 630-3500 мм", "Насосно-компрессорные трубы НКТ", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные (ВГП) ГОСТ 3262", "Трубы электросварные", "Профильные трубы"]
+											.catalog-list__item
+												a.cat-item(href="#")
+													figure.cat-item__img
+														img(src="img/photos/catalog-2-img.jpg", alt=title)
+													figcaption.cat-item__title=title
+													.cat-item__arrow
+								.catalog__prev-form
+									.mc-form
+										.mc-form__title Оставить заявку
+										form(action="#")
+											.mc-form__inputs
+												.form__inputs.form__inputs--4
+													.form__inputs-input.form__inputs-input--2
+														.default-input
+															input.default-input__input(type="text" placeholder="Николай Владимирович Аношкин" value="Николай Владимирович Аношкин")
+															label.default-input__label ФИО
+															.default-input__error
+																.error-text
+																	<!-- текст ошибки -->
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="tel" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (900) 000-00-00")
+															label.default-input__label телефон
+															.default-input__error
+																.error-text
+																	<!-- текст ошибки -->
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email" placeholder="mail@yandex.ru")
+															label.default-input__label e-mail
+															.default-input__error
+																.error-text
+																	<!-- текст ошибки -->
+													.form__inputs-input.form__inputs-input--2
+														.default-input
+															textarea.default-input__input
+															label.default-input__label Ваще сообщение
+													.form__inputs-input.form__inputs-input--2
+														.default-input
+															input.default-input__input.default-input__input--file(type="file" name="file" accept="Docx, exсel, pdf, jpg, png" id="price-file")
+															.default-input__input-filetext
+																input.default-input__input(type="text" readonly="" placeholder="Docx, exсel, pdf, jpg, png")
+																label.default-input__label-file(for="price-file")
+															label.default-input__label файл с дополнительной информацией по заявке
+											.mc-form__submit
+												.form__submit
+													.form__submit-btn
+														input.default-btn(type="submit" value="Отправить")
+													.form__submit-text Нажимая на кнопку отправки сообщения, я соглашаюсь
+														br
+														| на обработку моих 
+														a(href="#") персональных данных
 		include inc/footer.pug
 		include inc/scripts.pug 

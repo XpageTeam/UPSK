@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Карточка
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		header.head(style="background-image: url(img/photos/inner-header-bg.jpg)")
+			.head__wrap
+				.head__logo
+					a.logo(href="#")
+						img(src="img/logo.svg")
+				nav.head__menu
+					ul.h-menu
+						each link, i in ["Продукция", "Логистика", "О компании", "Полезное", "Контакты", ]
+							li
+								if (i == 0)
+									a.h-menu__link.active(href="#")=link
+								else
+									a.h-menu__link(href="#")=link
+				.head__search
+					a.search-link(href="#")
+				.head__contacts
+					.h-contacts
+						address.h-contacts__phone
+							a(href="tel: 8 351 211 00 70") 8 351 211 00 70
+						.h-contacts__btn
+							a.default-btn.fancybox(href="#") Заказать звонок
+			.head__title
+				.wrapper
+					.title-block
+						.title-block__text
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная страница
+									a.bread-crumbs__link(href="#") Каталог продукции
+									span.bread-crumbs__this трубы стальные
+						.title-block__btn
+							a.write-btn.fancybox(href="#") Оставить заявку
+		main#content
+			.inner-content
+				.inner-content__content
+					section.tovar
+						.tovar
+							.wrapper
+								.tovar__main
+									.tovar-main
+										figure.tovar-main__img
+											img(src="img/photos/tovar-img.jpg")
+										.tovar-main__desc
+											.tm-desc
+												.tm-desc__category Категория: трубы стальные
+												.tm-desc__title
+													h1 Насосно-компрессорные трубы НКТ в Челябинске
+												.tm-desc__subtitle Новая стальная труба 1220x12 по ГОСТ 10706-76 сталь различные в Челябинске из наличия, цены со склада и с доставкой, объем в наличии, расчет веса
+												.tm-desc__features
+													.features
+														.features__item
+															.feature
+																.feature__title размеры
+																.feature__text 6x2
+														.features__item
+															.feature
+																.feature__title марка стали
+																.feature__text сталь 09г2с, 10г2
+														.features__item
+															.feature
+																.feature__title гост
+																.feature__text ГОСТ 8734, ТУ 14-161-184-2000
+												.tm-desc__price
+													.tovar-price
+														.tovar-price__main
+															.tp
+																.tp__price
+																	.tp__price-title Цену за тонну
+																	.tp__price-text 200 000 Р
+																.tp__btn
+																	a.default-btn(href="#") Оставить заявку
+														.tovar-price__text Осуществляется отгрузка по РФ,
+															br
+															| отсрочка оплаты
+								.tovar__list
+									table.tovar-list
+										tr.tovar-list__title
+											td 
+												.tovar-list__title-label Более дешевые варианты трубы
+											td(colspan="2")
+												.tovar-list__title-label Цена
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь 13ХФА ТУ 1303-006.3-593377520-2003
+											td 
+												.tovar-list__price 64 000 р / т
+												.tovar-list__label нет в наличии
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь К56 ГОСТ 10706-76
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь К56 ГОСТ 20295-85
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь н/у ГОСТ 10705-80
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь 09ГСФ
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь К56 ГОСТ 10706-76
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr.tovar-list__title
+											td 
+												.tovar-list__title-label Другая сталь
+											td(colspan="2") 
+												.tovar-list__title-label Цена
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь 13ХФА ТУ 1303-006.3-593377520-2003
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь К56 ГОСТ 10706-76
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr
+											td 
+												a.tovar-list__name(href="#") 530х8 сталь К56 ГОСТ 20295-85
+											td 
+												.tovar-list__price 64 000 р / т
+											td 
+												a.tovar-list__link(href="#") Подробнее
+										tr.tovar-list__title
+											td(colspan="3") 
+												.tovar-list__title-label Выбрать другую толщину стенки для 530 мм
+										tr
+											td(colspan="3")
+												.radio-weight
+													each item, i in ["7", "9", "10", "11", "11.7", "12", "14", "16", "18", "18.1", "25", ]
+														.radio-weight__item
+															.rw
+																if (i == 0)
+																	input.rw__input(type="radio" checked="" name="weight" value=item id="0"+i)
+																else
+																	input.rw__input(type="radio" name="weight" value=item id="0"+i)
+																label.rw__label(for="0"+i)=item
+
+		include inc/footer.pug 
+		include inc/scripts.pug 
