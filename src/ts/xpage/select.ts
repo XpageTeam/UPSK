@@ -1,4 +1,4 @@
-import {EventListener, App} from "./index"
+import {EventListener, App, Element} from "./index"
 
 interface selectElement {
 	render(template?: string): string
@@ -15,11 +15,11 @@ class select{
 	private _customOptions: selectOptions
 
 
-	public value: string
-
-
 	set el (el: HTMLSelectElement){
 		this._el = el
+	}
+	get el (){
+		return this._el
 	}
 	set options (options: HTMLOptionsCollection){
 		this._options = options
@@ -27,6 +27,14 @@ class select{
 		this._customOptions = new selectOptions(options)
 	}
 
+	set value(newVal: string){
+		if (newVal == this.el.value)
+			return
+
+		this.el.value = newVal;
+
+		new EventListener(this.el).trigger("change")
+	}
 
 
 	constructor(select: string)
@@ -61,7 +69,7 @@ class select{
 	}
 
 	private bindEvents(){
-		new EventListener(this._el).add("mousedown", (el: HTMLSelectElement, e: Event) => {
+		new EventListener(this.el).add("mousedown", (el: HTMLSelectElement, e: Event) => {
 			e.preventDefault()
 			if (el.classList.contains("js__opened"))
 				el.classList.remove("js__opened")
@@ -69,12 +77,38 @@ class select{
 				el.classList.add("js__opened")
 		})
 
-		new EventListener(this._el).add("focus", (el: HTMLSelectElement, e: Event) => {
+		new EventListener("body").add("click", (el: HTMLBodyElement, event: Event) => {
+			const target = new Element(event.target),
+				parent = this.el.closest("div").querySelector(".my-select__list") as HTMLElement;
+
+			if(!target.is(this.el)
+				&& !new Element(this.el).has(target)
+				&& !target.is(parent)
+				&& !new Element(parent).has(target))
+				this.el.classList.remove("js__opened")
+		})
+
+		new EventListener(this.el).add("change", () => {
+			console.log("asdf")
+		})
+
+		new EventListener(this.el).add("focus", (el: HTMLSelectElement, e: Event) => {
 			el.classList.add("js__opened")
 		})
 
-		new EventListener(this._el).add("blur", (el: HTMLSelectElement, e: Event) => {
+		new EventListener(this.el).add("blur", (el: HTMLSelectElement, e: Event) => {
 			el.classList.remove("js__opened")
+		})
+
+		const $options = new Element(this.el.closest("div").querySelectorAll(".my-select__list-option"));
+
+		new EventListener($options).add("click", (el: HTMLElement) => {
+			$options.removeClass("selected")
+			el.classList.add("selected")
+
+			this.value = el.getAttribute("value") || "0"
+
+			this.el.classList.remove("js__opened")
 		})
 	}
 }

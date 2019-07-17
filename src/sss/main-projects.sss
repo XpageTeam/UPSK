@@ -102,11 +102,19 @@
 		padding-left: 31px
 		font-size: em(14)
 
-		&:before
+		&:before, &:after
 			content: ""
 			size: 14px 19px
 			position: absolute  0 * * 0
+			transition: opacity .3s ease
+
+		&:before
 			background: url("../img/ico-loc.svg") no-repeat
+
+		&:after
+			opacity: 0
+			background: url("../img/ico-loc-white.svg") no-repeat
+
 
 	&__text
 		margin: 36px 0 0
@@ -136,8 +144,35 @@
 		flex-direction: column
 		justify-content: flex-end
 
+		&-text
+			overflow: hidden
+			max-height: 0
+			transition: max-height .3s ease
+			padding: 42px 0 0
+			margin: -42px 0 0
+			font-size: 1em
+			line-height: calc(28 / 15)
+
 	&__img
+		background: #000
 
 		img
 			display: block
 			width: 100%
+
+	&__decor
+		position: absolute -14px -14px
+		border: 14px solid var(--main-color-darken)
+		opacity: 0
+		transition: opacity .3s ease
+
+	&:hover &__decor, &:focus &__decor
+		opacity: 1
+
+	&:hover, &:focus
+
+		.mp-item
+
+			&__text-text
+				max-height: 400px
+				margin: 0

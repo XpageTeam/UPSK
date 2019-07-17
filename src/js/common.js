@@ -7,9 +7,10 @@ window.get$ = (element) => {
 	return $(element)
 }
 
+require("./jquery.fancybox.js")
+require("../css/jquery.fancybox.css")
+
 document.addEventListener("DOMContentLoaded", function(){
-	require("./jquery.fancybox.js")
-	require("../css/jquery.fancybox.css")
 
 	$(".fancybox").fancybox({
 		trapFocus: false,

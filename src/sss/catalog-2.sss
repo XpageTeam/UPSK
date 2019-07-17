@@ -14,3 +14,39 @@
 		&__arrow
 			size: 20px 17px
 			background: url("../img/ico-arrow-right--small.svg") center no-repeat
+
+
+.prev-catalog
+	display: flex
+	flex-wrap: wrap
+
+	&__item
+		width: 20%
+		display: flex
+		flex-direction: column
+
+		&:not(:last-child)
+			border-right: 1px solid var(--border-color)
+
+.prev-item
+	text-align: center
+	padding: 20px 30px
+	display: block
+	flex: 1 0 auto
+	transition: box-shadow .3s ease
+
+	&:hover, &:focus
+		box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15)
+
+	&__img
+		height: 110px
+		display: flex
+		justify-content: center
+		align-items: center
+
+		img
+			max-height: 100%
+
+	&__title
+		margin: 20px 0 0
+		font-size: em(16)

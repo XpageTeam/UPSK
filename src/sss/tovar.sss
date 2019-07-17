@@ -3,6 +3,14 @@
 	&__list
 		margin: 97px 0 0
 
+	&__form
+		margin: 30px 0 85px
+
+	&__slider
+
+		&-title
+			margin: 0 0 40px
+
 .tovar-main
 	display: flex
 	align-items: flex-start
@@ -204,3 +212,123 @@
 		transition: background .3s ease
 		border: 1px solid var(--border-color)
 		cursor: pointer
+
+.ts-title
+	display: flex
+	justify-content: space-between
+
+	&:after
+		content: ""
+		display: inline-block
+
+	&__title
+		max-width: 300px
+		font-size: em(24)
+		line-height: calc(29 / 24)
+
+	&__subtitle
+		max-width: 435px
+		font-size: em(14)
+		line-height: calc(26 / 14)
+
+.tovar-slider
+	overflow: hidden
+	margin: 0 0 -14px
+
+	&:not(.swiper-container-initialized)
+
+		.swiper-slide
+
+			&:not(:first-child)
+				display: none
+
+			&:first-child
+				width: 33.33%
+
+	.mp-item
+		flex: 1 0 auto
+
+		&:before
+			content: ""
+			position: absolute 0
+			background: url("../img/mp-decor-shadow.png") center bottom no-repeat
+			background-size: cover
+			transform: translate3d(0, 100%, 0)
+			transition: transform .2s ease
+
+
+	&__arrows
+		display: flex
+		margin: 0 0 60px
+
+		.swiper-button
+
+			&-prev, &-next
+				position: relative auto
+				margin: 0
+				transition: background-color .3s ease, color .3s ease, border-color .3s ease
+				border-radius: 5px
+				size: 38px
+				border: 1px solid var(--border-color)
+				background-image: none
+				color: #000 #fff
+
+				&:hover
+					color: #fff var(--main-color-darken)
+					border-color: rgba(233, 233, 233, 0.2)
+
+				&:after
+					content: ''
+					position: absolute calc(50% - 5px) calc(50% - 2px) * *
+					size: 9px
+					border-right: 1px solid currentColor
+					border-bottom: 1px solid currentColor
+					transform: rotateZ(-45deg)					
+
+			&-prev
+				margin-right: 18px
+				transform: rotateZ(180deg)
+
+	.swiper
+
+		&-slide
+			position: relative
+			padding: 14px 0
+			display: flex
+			flex-direction: column
+			height: auto
+
+			&:hover
+				z-index: 1
+
+				.mp-item
+
+					&:before
+						transform: translate3d(0,0,0)
+
+					&__img
+
+						img
+							opacity: .2
+
+				.mp-text__address
+
+					&:before
+						opacity: 0
+
+					&:after
+						opacity: 1
+
+			&-active
+
+				.mp-item
+
+					&__decor
+						left: 0
+
+			&-next + .swiper-slide
+
+				.mp-item
+
+					&__decor
+						right: 0

@@ -214,14 +214,13 @@ html(lang="ru")
 												figcaption.log-item__text=text
 						.catalog__prev
 							.wrapper
-								.catalog-list
+								.prev-catalog
 									each title, i in ["Трубы стальные", "Детали трубопроводов", "Металлопрокат", "Изоляция труб\трубы в изоляции ", "Запорная арматура", ]
-										.catalog-list__item
-											a.cat-item(href="#")
-												figure.cat-item__img
+										.prev-catalog__item
+											a.prev-item(href="#")
+												figure.prev-item__img
 													img(src="img/photos/cat-item-"+i+".jpg", alt=title)
-												figcaption.cat-item__title=title
-												.cat-item__arrow
+												figcaption.prev-item__title=title
 								.seo-text
 									.seo-text__text
 										p Трубы стальные могут быть различных сечений:

@@ -1,5 +1,6 @@
 const path = require("path"),
-	BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+	BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin,
+	TerserPlugin = require('terser-webpack-plugin');
 
 const ignoredGSAPFiles = ['BezierPlugin', 'DirectionalRotationPlugin', 'RoundPropsPlugin'];
 
@@ -8,6 +9,7 @@ module.exports = (env, argv) => {
 		entry: {
 			base: "./src/js/common.js",
 			common: "./src/ts/common.ts",
+			"main-page": "./src/ts/main-page.ts"
 		},
 		output: {
 			path: path.resolve(__dirname, "./docs/"),
@@ -69,11 +71,26 @@ module.exports = (env, argv) => {
 			]
 		},
 		optimization: {
-			// runtimeChunk: 'single',
+			minimizer: [
+				new TerserPlugin({
+					cache: true,
+					parallel: true,
+					terserOptions: {
+						output: {
+							comments: false,
+						},
+						compress: {
+							drop_console: true,
+							ecma: 6,
+							passes: 2
+						}
+					},
+				}),
+			],
 	    	splitChunks: {
 		        cacheGroups: {
 		            vendors: {
-		                test: /node_modules/,
+		                test: /^.*node_modules((?!gsap).)*$/,
 		                name: 'js/vendors',
 		                enforce: true,
 		                chunks: 'all',

@@ -37,7 +37,7 @@
 					background: var(--main-color-darken)
 
 				&-bullet
-					size: 23px
+					size: 24px
 					transition: background-color .3s ease
 					background-color: transparent
 					position: relative
@@ -58,8 +58,8 @@
 
 					&:after
 						content: ""
-						position: absolute calc(50% - 3px) calc(50% - 3px) * *
-						size: 7px
+						position: absolute calc(50% - 4px) calc(50% - 4px) * *
+						size: 8px
 						transition: background-color .3s ease
 						border-radius: 50%
 						background: var(--main-color)
@@ -186,6 +186,11 @@
 			font-weight: 600
 			font-size: 36px
 			color: var(--main-color-darken)
+			display: inline-block
+			opacity: 0
+			margin: 0 8px
+			text-align: center
+			white-space: nowrap
 
 .big-counter
 	position: relative
@@ -203,6 +208,8 @@
 			font-size: 50px
 			line-height: 1.1
 			letter-spacing: .014em
+			white-space: nowrap
+			opacity: 0
 
 		&-subtitle
 			font-size: 16px
