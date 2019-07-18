@@ -67,7 +67,6 @@ export default class MobileMenu{
 	constructor(settings: mobileMenuSettings){
 		this._settings = settings
 		this.ignoreWarnings = settings.ignoreWarnings
-		console.log("this.ignoreWarnings", this.ignoreWarnings);
 
 
 		this.burger = App.getElement(settings.burger)

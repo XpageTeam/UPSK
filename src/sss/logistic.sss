@@ -1,0 +1,105 @@
+.logistic
+
+	&__text
+		margin: 0 0 65px
+
+	&__content
+		margin: 0 0 110px
+
+.log-text
+
+	&__title
+		font-size: em(24)
+		line-height: calc(29 / 24)
+		margin: 0 0 14px
+
+	&__text
+		font-size: em(14)
+		line-height: calc(26 / 14)
+
+.log-content
+	display: flex
+
+	&__side
+		width: 441px
+		flex: none
+
+	&__list
+		flex: 1 1 auto
+		margin-right: 58px
+
+.log-side
+	position: sticky
+	top: 20px
+	background: var(--second-color)
+	padding: 52px 65px 70px
+
+	&__title
+		font-size: em(24)
+		line-height: calc(29 / 24)
+
+	&__links
+
+		&:not(:first-child)
+			margin: 50px 0 0
+
+		&-title
+			text-transform: uppercase
+			font-size: em(11)
+			color: rgba(46, 56, 68, 0.6)
+			margin: 0 0 11px
+
+		&-content
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			line-height: calc(24 / 32)
+			font-weight: 300
+
+			a
+				font-size: em(24)
+				color: inherit
+				border: none
+
+				&:hover
+					color: var(--main-color)
+
+				&:not(:first-child)
+					margin: 12px 0 0
+
+				&[href*="tel"]
+					padding-left: 28px
+					background: url("../img/ico-phone-darken.svg") left center no-repeat
+
+.log-list
+
+	&__item
+
+		&:not(:first-child)
+			margin: 95px 0 0
+
+.logistic-item
+
+	&__img
+
+		img
+			display: block
+			border-radius: 5px
+
+	&__desc
+		display: flex
+		align-items: center
+		margin: 100px 0 0
+
+		&-img
+			flex: none
+			width: 270px
+			padding: 0 30px
+			display: flex
+			justify-content: center
+			align-items: center
+
+		&-text
+			max-width: 525px
+			font-size: 1em
+			line-height: calc(28 / 15)
