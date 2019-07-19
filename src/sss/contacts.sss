@@ -5,8 +5,46 @@
 	&__form
 		--input-vert-spacing: 27px
 		--input-hor-spacing: 26px
+		flex: 1 1 auto
+		margin-right: 87px
+
+	&__side
+		width: 495px
+		flex: none
 
 	.default-input
 
 		&__input
 			background-color: transparent
+
+
+.contacts-list
+	max-width: 360px
+
+	&__title
+		font-size: em(24)
+		margin: 0 0 15px
+
+	&__address
+		font-size: em(14)
+		line-height: calc(20 / 14)
+		margin: 0 0 49px
+
+	&__item
+		padding: 32px 0 30px
+
+		&:not(:first-child)
+			border-top: 1px solid var(--border-color)
+
+		&-title
+			text-transform: uppercase
+			color: gba(46, 56, 68, 0.6)
+			font-size: em(11)
+			margin: 0 0 7px
+
+		&-text
+			font-weight: 300
+
+			a
+				font-size: em(24)
+				color: inherit
