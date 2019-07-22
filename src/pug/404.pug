@@ -13,14 +13,13 @@ html(lang="ru")
 				.inner-content
 					.inner-content__content
 						.wrapper
-							.error-404
-								.error-404__number 404
-								.error-404__title К сожалению, запрашиваемая страница не найдена
-								.error-404__text 
-									p Что-то пошло не так, страница больше не существует. 
-									p Пожалуйста, перейдите на 
-										a(href="#") главную страницу 
-										| сайта.
-
+							.p-404
+								.p-404__number 404
+								.p-404__text
+									.p-404__text-title Что-то пошло не так, страница больше не существует
+									a.p-404__text-link(href="#")
+										span.p-404-links
+											span.p-404-links__home.home-btn
+											span.p-404-links__text Пожалуйста, перейдите на главную страницу сайта
 		include inc/footer.pug
 		include inc/scripts.pug

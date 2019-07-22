@@ -1,6 +1,7 @@
 import "./forms"
 import "./textPage/text-page"
 import "./xpage/select"
+import "./top-search"
 
 import "./price-form"
 

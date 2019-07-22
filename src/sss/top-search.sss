@@ -1,0 +1,93 @@
+body
+	transition: margin .3s ease
+
+	&.js__search-opened
+		margin: 147px 0 0
+
+.top-search
+
+	&__cont
+		padding: 40px 0
+		display: none
+		background: #F4F4F4
+		position: fixed 0 * * 0
+		width: 100%
+		z-index: 4
+
+	.default-input
+
+
+		&__input
+			padding: var(--input-focus-padding)
+			height: 67px
+			max-height: 67px
+			position: relative
+			z-index: 3
+			background-color: #F4F4F4
+
+	&__results
+		position: absolute calc(100% - 11px) 0 *
+		background: #F4F4F4
+		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15)
+		padding: 30px 10px 15px
+
+	&__form
+		display: flex
+
+	&__close
+		flex: none
+		background: url("../img/ico-close.svg") center no-repeat
+		border-radius: 5px
+		border: 1px solid var(--border-color)
+		margin-left: 22px
+		width: 67px
+		cursor: pointer
+
+	&__inputs
+		position: relative
+		flex: 1 1 auto
+
+		&-submit
+			position: absolute 0 0 0 *
+			background: url("../img/ico-arrow-white.svg") center no-repeat
+			background-color: var(--main-color)
+			width: 67px
+			border: none
+			border-radius: 0 5px 5px 0
+			z-index: 3
+			transition: background-color .3s ease
+
+			&:hover, &:focus
+				background-color: var(--main-color-darken)
+
+.search-results
+	max-height: 40vh
+	overflow-y: auto
+	-webkit-overflow-scrolling: touch
+	overflow-scrolling: touch
+	overscroll-behavior: none
+	font-size: em(14)
+
+	&::-webkit-scrollbar
+		width: 30px
+
+		&-track, &-thumb
+			width: 30px
+			border-left: 27px solid #F4F4F4
+
+		&-track
+			background: #dbdbdb
+
+		&-thumb
+			background: var(--main-color)
+
+	li
+
+		&:not(:first-child)
+			margin: 9px 0 0
+	
+	&__link
+		transition: color .3s ease
+
+		&:hover, &:focus
+			color: var(--main-color)

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title О компании
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/top-serach.pug 
+		header.head(style="background-image: url(img/photos/about-head-bg.jpg)")
+			.head__wrap
+				.head__logo
+					a.logo(href="#")
+						img(src="img/logo.svg")
+				nav.head__menu
+					ul.h-menu
+						each link, i in ["Продукция", "Логистика", "О компании", "Полезное", "Контакты", ]
+							li
+								if (i == 2)
+									a.h-menu__link.active(href="#")=link
+								else
+									a.h-menu__link(href="#")=link
+				.head__search
+					a.search-link(href="#")
+				.head__contacts
+					.h-contacts
+						address.h-contacts__phone
+							a(href="tel: 8 351 211 00 70") 8 351 211 00 70
+						.h-contacts__btn
+							a.default-btn.fancybox(href="#") Заказать звонок
+			.head__title
+				.wrapper
+					.title-block
+						.title-block__text
+							.title-block__title
+								h1 О компании
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная страница
+									span.bread-crumbs__this О компании
+						.title-block__btn
+							a.write-btn.fancybox(href="#") Оставить заявку
+		main#content
+			.inner-content
+				.inner-content__content
+					section
+		include inc/footer.pug 
+		include inc/scripts.pug 

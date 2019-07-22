@@ -6,7 +6,11 @@
 @import "_title-block.sss"
 @import "_text-styles.sss"
 @import "_form-elements.sss"
+@import "_404.sss"
+@import "top-search.sss"
 @import "my-select.sss"
+
+@import "_standart-page.sss"
 
 @import "_header.sss"
 
@@ -30,6 +34,18 @@
 @import "seo-text.sss"
 
 @import "_footer.sss"
+
+.write-link
+	position: fixed calc(50% - 30px) 0 * *
+	size: 60px
+	background: url("../img/ico-side-write.svg") center no-repeat
+	background-color: var(--main-color)
+	border-radius: 50% 0 0 50%
+	z-index: 2
+	transition: background-color .3s ease
+
+	&:hover, &:focus
+		background-color: var(--main-color-darken)
 
 .main-left-decor
 	position: absolute 0 * 0 0

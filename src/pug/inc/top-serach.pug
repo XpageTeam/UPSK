@@ -1,0 +1,15 @@
+.top-search__cont
+	.wrapper
+		.top-search
+			form(action="#")
+				.top-search__form
+					.top-search__inputs
+						input.default-input__input(type="search" placeholder="Поиск...")
+						input.top-search__inputs-submit(type="submit" value="")
+						.top-search__results
+							ul.search-results
+								- for (let i = 0; i < 4; i++)
+									each res in ["Трубы электросварные ", "Трубы стальные", "Труба обсадная", "Трубы бурильные (сбт)", "Трубы водогазопроводные стальные", "Трубы электросварные", "Профильные трубы", "Трубы бесшовные", ]
+										li
+											a.search-results__link(href="#")=res
+					.top-search__close

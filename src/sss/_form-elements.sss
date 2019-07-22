@@ -4,9 +4,18 @@
 		display: flex
 		align-items: center
 
+		&--reverse
+			flex-direction: row-reverse
+			justify-content: space-between
+
+		&:not(&--reverse) &-btn
+			margin-right: 30px
+
+		&--reverse &-btn
+			margin-left: 30px
+
 		&-btn
 			flex: none
-			margin-right: 30px
 
 		&-text
 			font-size: em(14)
@@ -62,6 +71,15 @@
 .form__inputs-input
 	display: flex
 	flex-direction: column
+
+	&--2
+
+		&:first-child
+
+			.default-input__input
+				background-image: url("../img/ico-perse.svg")
+				background-position: right 27px center
+				background-repeat: no-repeat
 
 textarea.default-input__input
 
@@ -209,6 +227,34 @@ textarea.default-input__input
 
 			&--4
 				grid-column: span 4
+
+.popup
+	display: none
+	width: 821px
+	max-width: 100%
+	padding: 0 !important
+
+	--input-hor-spacing: 26px
+	--input-vert-spacing: 26px
+
+	.mc-form
+
+		&__title
+			font-size: em(24)
+			font-weight: 300
+
+	.mc-form__title
+		top: 30px
+		right: 35px
+
+	.default-btn, .default-input__label-file
+		background-color: var(--main-color-darken)
+
+		&:hover, &:focus
+			background-color: var(--main-color)
+
+	.default-input__input-filetext .default-input__input
+		border-color: var(--main-color-darken)
 
 //.popup-form
 //	display: none

@@ -1,78 +1,78 @@
 .page-404
-	padding: 0
+	background: url("../img/404-bg.jpg") center no-repeat
+	background-size: cover !important
 
-	.head
-		position: static !important
-
-	.inner-content
-		margin: 0
-		display: flex
-		flex-direction: column
-		flex: 1 1 auto
-
-		&__cont
-			display: flex
-			flex-direction: column
-			flex: 1 1 auto
-
-			> .wrapper
-				width: 100%
-				box-sizing: border-box
-				flex: 1 1 auto
-				display: flex
-				flex-direction: column
-
-.error-404
+.p-404
 	flex: 1 1 auto
 	display: flex
-	flex-direction: column
-	justify-content: center
 	align-items: center
-	margin: 150px 0 0
-	text-align: center
+	padding: 0 0 100px
 
 	&__number
-		color: var(--mainColor)
-		font-size: rem(230)
-		line-height: 1
-		margin-bottom: rem(40)
-
-	&__title
-		font-size: 18px
-		margin-bottom: 20px
-		text-transform: uppercase
-		color: var(--mainColor)
+		font-weight: bold
+		font-size: em(250)
+		font-weight: 300
+		letter-spacing: .1em
+		color: var(--main-color-darken)
+		margin-right: 80px
 
 	&__text
-		color: #adb4c6
-		line-height: calc(24 / 16)
-		margin-bottom: 40px
 
+		&-title
+			font-size: em(24)
+			font-weight: 500
+			line-height: calc(29 / 24)
+			margin: 0 0 40px
+			max-width: 430px
 
+		&-link
+			display: inline-block
 
-@media screen and (max-width: 1200px) and (min-width: 660px)
-	.error-404
-		margin: 30px 0 0
+.home-btn
+	background: url("../img/ico-home.svg") center no-repeat
+	background-color: var(--main-color-darken)
+	border-radius: 5px
+	display: inline-block
+	size: 49px
 
-	.page-404
+.p-404-links
+	display: flex
+	align-items: center
 
-		.footer
-			margin: 40px 0 0 
+	&__home
+		flex: none
 
-@media screen and (max-width: 660px)
-	.error-404
-		margin: 30px 0 0
+		&:not(:last-child)
+			margin-right: 25px
+
+	&__text
+		font-size: 14px
+		max-width: 225px
+
+@media (max-width: 1300px)
+	.p-404
 
 		&__number
-			font-size: 60px
-			margin-bottom: 20px
+			font-size: 200px
 
-		&__title
-			font-size: 16px
+@media (max-width: 1000px)
+	.p-404
+		flex-direction: column
+		// align-items: flex-start
+		justify-content: center
+
+		&__number
+			margin: 0
 
 		&__text
-			margin-bottom: 20px
-			font-size: 14px
+			display: flex
+			align-items: center
+			flex-direction: column
+			max-width: 450px
 
-			p
-				display: inline
+			&-title
+				text-align: center
+
+@media (max-width: 660px)
+	.p-404__number
+		font-size: 140px

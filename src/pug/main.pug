@@ -6,7 +6,9 @@ html(lang="ru")
 		include inc/head.pug
 		include inc/css.pug
 	body.main.loading
-		include inc/header.pug 
+		include inc/top-serach.pug 
+		include inc/header.pug
+		a.write-link.fancybox(href="#request")
 		main#content
 			section.main-slider
 				.swiper-wrapper
@@ -453,4 +455,5 @@ html(lang="ru")
 											span=(i+1)+" этап"
 									.works-item__text=item
 		include inc/footer.pug
+		script(src="js/main-page.js")
 		include inc/scripts.pug
