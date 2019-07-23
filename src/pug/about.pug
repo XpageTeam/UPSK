@@ -5,7 +5,7 @@ html(lang="ru")
 		title О компании
 		include inc/head.pug
 		include inc/css.pug
-	body.inner.loading
+	body.inner.loading.page-about
 		include inc/top-serach.pug 
 		header.head(style="background-image: url(img/photos/about-head-bg.jpg)")
 			.head__wrap
@@ -32,7 +32,7 @@ html(lang="ru")
 				.wrapper
 					.title-block
 						.title-block__text
-							.title-block__title
+							//- .title-block__title
 								h1 О компании
 							.title-block__crumbs
 								.bread-crumbs
@@ -43,6 +43,185 @@ html(lang="ru")
 		main#content
 			.inner-content
 				.inner-content__content
-					section
+					section.about
+						.wrapper
+							.about__block
+								.about__block-left
+									.about__block-left-content
+										.ts-title__title Трубная компания «УПСК» более 12 лет успешно работает на российском и зарубежном рынках
+								.about__block-right
+									.about-text
+										.about-text__text Основными направлениями деятельности компании являются поставки трубной продукции для всех отраслей промышленности, а также:
+										.about-text__list
+											ul
+												li строительного металлопроката
+												li соединительных деталей трубопроводов
+												li опор трубопроводов
+							.about__block
+								.about__block-left
+									.about__block-left-content
+										.ts-title__title Мы - команда профессиональных специалистов
+										.ts-title__arrows
+											.swiper-button-prev
+											.swiper-button-next
+								.about__block-right
+									.personal-slider
+										.swiper-wrapper
+											- for (let i = 0; i < 4; i++)
+												each pers, j in ["Иванов Иван", "Елена Агафонова", "Сергей Степанов", ]
+													.swiper-slide
+														.personal-slide
+															figure.personal-slide__img
+																if (i == 0 && j == 0)
+																	img(src="img/photos/pers-img-"+j+".jpg", alt=pers)
+																else
+																	img.swiper-lazy(data-src="img/photos/pers-img-"+j+".jpg", alt=pers)
+																	.swiper-lazy-preloader
+															figcaption.personal-slide__desc
+																.personal-slide__desc-name=pers
+																.personal-slide__desc-pos Генеральный директор
+						.about__award
+							.wrapper
+								.cat-award
+									.cat-award__icon
+										figure.cat-award__icon-img
+											img(src="img/photos/catalog-award.svg")
+									.cat-award__text
+										.cat-award__text-title Вся наша продукция сертифицирована и соответствует ГОСТ и ТУ, что гарантируется системой контроля качества работы компании на всех этапах приема и исполнения заказа
+										.cat-award__text-text
+											p Мы поставляем трубную продукцию в Челябинске, во всех регионах России, в странах СНГ и Ближнего Востока на максимально удобных условиях. Наша компания берет на себя решение всех организационных вопросов, связанных с поставкой, погрузкой и транспортировкой продукции, а также таможенных вопросов и финансовых вопросов, связанных с выбором удобных для вас форм расчета.
+											p Высокий профессионализм сотрудников и финансовая надежность позволили приобрести надежную репутацию и партнерские отношения на территории России и стран СНГ
+						.about__partners
+							.wrapper
+								.about__block
+									.about__block-left
+										.about__block-left-content
+											.ts-title__title В числе наших клиентов – ведущие заводы трубной промышленности: 
+											.ts-title__arrows
+												.swiper-button-prev
+												.swiper-button-next
+									.about__block-right
+										.about-partners-slider
+											.swiper-wrapper
+												- for (let i = 0; i < 4; i++)
+													each pers, j in ["ОАО «Челябинский трубопрокатный завод» (ОАО «ЧТПЗ»)", "ОАО «Первоуральский новотрубный завод» (ОАО «ПНТЗ»)", "ОАО «Синарский трубный завод» (ОАО «СинТЗ»)", ]
+														.swiper-slide
+															.about-partner
+																figure.about-partner__img
+																	if (i == 0 && j == 0)
+																		img(src="img/photos/about-partner-img-"+j+".svg", alt=pers)
+																	else
+																		img.swiper-lazy(data-src="img/photos/about-partner-img-"+j+".svg", alt=pers)
+																		.swiper-lazy-preloader
+																figcaption.about-partner__title=pers
+						.about__projects
+							.tovar__slider-title
+								.wrapper
+									.ts-title
+										.ts-title__title Мы принимаем участие в крупнейших проектах
+										.ts-title__subtitle Продукция трубной компании «УПСК» активно используется для строительства действующих трубопроводов в России и странах СНГ
+							.tovar__slider-slider
+								.tovar-slider
+									.wrapper
+										.tovar-slider__arrows
+											.swiper-button-prev
+											.swiper-button-next
+									.swiper-wrapper
+										.swiper-slide
+											a.mp-item(href="#")
+												.mp-item__decor
+												figure.mp-item__img
+													img(src="img/photos/mp-img-0.jpg")
+												figcaptin.mp-item__text
+													.mp-text__title Нефтегазовое
+														br
+														| месторождение Тенгиз
+													address.mp-text__address Атырауской область, Казахстан
+													.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+										.swiper-slide
+											a.mp-item(href="#")
+												.mp-item__decor
+												figure.mp-item__img
+													img.swiper-lazy(data-src="img/photos/mp-img-1.jpg")
+													.swiper-lazy-preloader
+												figcaptin.mp-item__text
+													.mp-text__title Шинный центр
+														br
+														| Continental
+													address.mp-text__address г. Калуга
+													.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+										.swiper-slide
+											a.mp-item(href="#")
+												.mp-item__decor
+												figure.mp-item__img
+													img.swiper-lazy(data-src="img/photos/mp-img-2.jpg")
+													.swiper-lazy-preloader
+												figcaptin.mp-item__text
+													.mp-text__title Нефтегазовое
+														br
+														| месторождение Тенгиз
+													address.mp-text__address Атырауской область, Казахстан
+													.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции
+										.swiper-slide
+											a.mp-item(href="#")
+												.mp-item__decor
+												figure.mp-item__img
+													img.swiper-lazy(data-src="img/photos/mp-img-0.jpg")
+													.swiper-lazy-preloader
+												figcaptin.mp-item__text
+													.mp-text__title Нефтегазовое
+														br
+														| месторождение Тенгиз
+													address.mp-text__address Атырауской область, Казахстан
+													.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+										.swiper-slide
+											a.mp-item(href="#")
+												.mp-item__decor
+												figure.mp-item__img
+													img.swiper-lazy(data-src="img/photos/mp-img-1.jpg")
+													.swiper-lazy-preloader
+												figcaptin.mp-item__text
+													.mp-text__title Шинный центр
+														br
+														| Continental
+													address.mp-text__address г. Калуга
+													.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+										.swiper-slide
+											a.mp-item(href="#")
+												.mp-item__decor
+												figure.mp-item__img
+													img.swiper-lazy(data-src="img/photos/mp-img-2.jpg")
+													.swiper-lazy-preloader
+												figcaptin.mp-item__text
+													.mp-text__title Нефтегазовое
+														br
+														| месторождение Тенгиз
+													address.mp-text__address Атырауской область, Казахстан
+													.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции
+						.about__advantages
+							.wrapper
+								.about__block
+									.about__block-left
+										.about__block-left-content
+											.ts-title__title Качество
+											.ts-title__subtitle Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки
+											.ts-title__arrows
+												.swiper-button-prev
+												.swiper-button-next
+									.about__block-right
+										.about-advantages-slider
+											.swiper-wrapper
+												- for (let i = 0; i < 4; i++)
+													each item, j  in [{title: "Качество", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Ассортимент", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Оперативность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Стоимость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Гибкость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Компетентность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Надежность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Удобство", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставк"}, ]
+														.swiper-slide
+															.m-advantage
+																figure.m-advantage__img
+																	if (i == 0 && j == 0)
+																		img(src="img/photos/advantage-"+j+".svg", alt=pers)
+																	else
+																		img.swiper-lazy(data-src="img/photos/advantage-"+j+".svg", alt=pers)
+																		.swiper-lazy-preloader
+																figcaption.m-advantage__title=item.title
+																span.m-advantage__text=item.text
 		include inc/footer.pug 
 		include inc/scripts.pug 

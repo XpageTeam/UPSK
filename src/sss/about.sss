@@ -1,0 +1,146 @@
+.page-about
+
+	.head__title
+		padding: 94px 0
+
+.about
+
+	&__block
+		display: flex
+
+		&:not(:first-child)
+			margin: 120px 0 0
+
+			.about__block-left-content
+				position: sticky
+				top: 30px
+
+		&-left
+			flex: none
+			width: 478px
+			padding-right: 40px
+
+		&-right
+			flex: 1 1 auto
+			overflow: hidden
+
+	&__partners
+		margin: 115px 0 0
+
+		.about__block
+			padding: 0 0 115px
+			border-bottom: 1px solid var(--border-color)
+
+			&-right
+				padding-left: 100px
+
+	&__projects
+		margin: 90px 0 0
+
+		.ts-title
+
+			&:after
+				width: 110px
+
+	&__award
+		color: #fff var(--thrid-color)
+		margin: 125px 0 0
+		padding: 102px 0 95px
+
+		.cat-award
+
+			&__text
+				padding-left: 100px
+
+				&-title
+					color: inherit
+
+			&__icon
+				width: 478px
+
+				&-img
+
+					&:before
+						border-color: #374250
+
+.about-text
+	padding-left: 95px
+	border-left: 1px solid var(--main-color-darken)
+
+	&__text
+		font-size: em(14)
+		font-weight: 400
+		line-height: calc(26 / 14)
+		max-width: 420px
+
+	&__list
+		font-size: em(24)
+		margin: 70px 0 0
+
+		li
+
+			&:not(:first-child)
+				margin: 20px 0 0 !important
+
+			&:before
+				color: var(--main-color-darken)
+
+		ul
+
+			> li
+
+				&:before
+					content: '-'
+
+.personal-slider
+
+	.swiper-slide
+
+		&:nth-child(even)
+			
+			.personal-slide
+				margin: 42px 0 0
+
+
+.personal-slide
+
+	&__img
+		margin: 0 0 32px
+
+		img
+			display: block
+			width: 100%
+
+			&.swiper-lazy
+				transition: opacity .3s ease
+
+				&:not(.swiper-lazy-loaded)
+					opacity: 0
+
+	&__desc
+
+		&-name
+			font-weight: 400
+			font-size: em(18)
+
+		&-pos
+			margin: 8px 0 0
+			color: rgba(32,39,48, .4)
+
+.about-partner
+	padding-right: 50px
+
+	&__img
+		height: 60px
+		display: flex
+		align-items: center
+
+		img
+			max-height: 100%
+			display: block
+
+	&__title
+		margin: 38px 0 0
+		font-size: em(14)
+		font-weight: 400
+		line-height: calc(26 / 14)

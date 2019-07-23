@@ -4,6 +4,7 @@ import "./xpage/select"
 import "./top-search"
 
 import "./price-form"
+import "./about"
 
 
 import "./cat3-scroll"
