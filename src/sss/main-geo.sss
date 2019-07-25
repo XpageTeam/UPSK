@@ -34,9 +34,9 @@
 
 .region
 
-	&__map
-		opacity: 0
-		transition: opacity .3s ease
+	&:not(.js__initiallized)
 
-	&:hover &__map
-		opacity: 1
+		.region
+
+			&__map, &__center, &__line
+				opacity: 0
