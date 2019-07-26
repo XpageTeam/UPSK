@@ -103,7 +103,7 @@ class regionHover {
 	constructor(private map: SVGGElement){
 		this.mapCenter = this.map.querySelector(".region__center")
 
-		this.mapGroup = this.map.querySelector(".region__map > g")
+		this.mapGroup = this.map.querySelector(".region__map")
 
 		this.mapPoints = App.transformNodeListToArray(this.map.querySelectorAll(".region__map-point")) as any;
 	
@@ -303,8 +303,8 @@ class regionHover {
 	}
 
 	private showCenter(callback: Function = () => {}): regionHover{
-		const bigCircle = this.mapCenter.querySelector("path:first-child"),
-			smallCircle = this.mapCenter.querySelector("path:nth-child(2)");
+		const bigCircle = this.mapCenter.querySelector("path:first-child") || this.mapCenter.querySelector("circle:first-child") ,
+			smallCircle = this.mapCenter.querySelector("path:nth-child(2)") || this.mapCenter.querySelector("circle:nth-child(2)");
 
 		TweenLite.to(bigCircle, this.animationTime, {
 			scale: 1,
@@ -321,8 +321,8 @@ class regionHover {
 	}
 
 	private hideCenter(callback: Function = () => {}): regionHover{
-		const bigCircle = this.mapCenter.querySelector("path:first-child"),
-			smallCircle = this.mapCenter.querySelector("path:nth-child(2)");
+		const bigCircle = this.mapCenter.querySelector("path:first-child") || this.mapCenter.querySelector("circle:first-child") ,
+			smallCircle = this.mapCenter.querySelector("path:nth-child(2)") || this.mapCenter.querySelector("circle:nth-child(2)");
 
 		TweenLite.to(smallCircle, this.animationTime, {
 			scale: 0,
