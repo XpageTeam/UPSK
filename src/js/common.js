@@ -1,4 +1,5 @@
 import $ from "jquery"
+import stringEffect from "./stringAnimate.js"
 
 window.$ = $;
 window.jQuery = $;
@@ -11,7 +12,6 @@ require("./jquery.fancybox.js")
 require("../css/jquery.fancybox.css")
 
 document.addEventListener("DOMContentLoaded", function(){
-
 	$(".fancybox").fancybox({
 		trapFocus: false,
 		touch: false,
@@ -22,4 +22,13 @@ document.addEventListener("DOMContentLoaded", function(){
 		},
 		transitionEffect: "slide",
 	})
+
+	$(".ms-text__text").each((i, el) => {
+		new stringEffect({
+			selector: el,
+		});
+
+		el.classList.add("js__ready")
+	});
+
 })

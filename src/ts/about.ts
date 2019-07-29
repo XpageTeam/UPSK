@@ -1,4 +1,4 @@
-import {domReady, App} from "./xpage/index";
+import {domReady, App, EventListener, Element} from "./xpage/index";
 import {Swiper, Lazy, Navigation, Keyboard} from 'swiper/dist/js/swiper.esm.js'
 
 Swiper.use([Lazy, Navigation, Keyboard])
@@ -64,5 +64,28 @@ domReady(() => {
 				nextEl: el.querySelector(".swiper-button-next") as HTMLElement
 			}
 		})
+	})
+})
+
+domReady(() => {
+	const $advantages = new Element(".about__advantages .m-advantage"), 
+		targetBlock = {
+			title: new Element(".about__advantages .ts-title__title"),
+			subtitle: new Element(".about__advantages .ts-title__subtitle")
+		};
+
+	new EventListener($advantages).add("click", (el: HTMLElement) => {
+		const $this = new Element(el);
+
+		if ($this.hasClass("active"))
+			return
+
+		$advantages.removeClass("active")
+
+		$this.addClass("active")
+
+		targetBlock.title.text($this.find(".m-advantage__title").text())
+
+		targetBlock.subtitle.text($this.find(".m-advantage__subtitle").text())
 	})
 })

@@ -104,6 +104,7 @@
 			display: flex
 			flex-direction: column
 			justify-content: center
+			z-index: 2
 
 			.wrapper
 				width: 100%
@@ -113,14 +114,29 @@
 			position: absolute 0
 			background: #040B1D
 			opacity: .8
+			z-index: 1
 
 		&-img
 			display: block
 			width: 100%
+			overflow: hidden
 
 			img
 				display: block
 				width: 100%
+				opacity: 0
+				transform: scale(1.1)
+				transition: opacity .4s ease, transform .7s ease
+
+	.swiper-slide-active
+
+		img
+			opacity: 1
+			transform: scale(1)
+
+		.string
+			opacity: 1
+			transform: translate3d(0,0,0) !important
 
 .ms-text
 	max-width: 820px
@@ -129,7 +145,7 @@
 		margin: 0 0 70px
 
 	&__text
-		font-size: 42px
+		font-size: em(42)
 		font-weight: bold
 
 .play-link
@@ -156,7 +172,7 @@
 			pointer-events: none
 
 	&__text
-		font-size: 16px
+		font-size: em(16)
 		line-height: 1
 
 .ms-counters
@@ -179,12 +195,12 @@
 		background: var(--main-color-darken)
 
 	&__text
-		font-size: 16px
+		font-size: em(16)
 		max-width: 280px
 
 		b
 			font-weight: 600
-			font-size: 36px
+			font-size: em(36, 16)
 			color: var(--main-color-darken)
 			display: inline-block
 			opacity: 0
@@ -205,23 +221,78 @@
 
 		&-number
 			font-weight: bold
-			font-size: 50px
+			font-size: em(50)
 			line-height: 1.1
 			letter-spacing: .014em
 			white-space: nowrap
 			opacity: 0
 
 		&-subtitle
-			font-size: 16px
+			font-size: em(16)
 			line-height: calc(22 / 16)
 			display: inline-block
 			max-width: 140px
 
-	&__svg
+	&.js__animate &__svg
 		animation: circlesRotate 10s linear infinite
+
+.ms-text__text
+	line-height: 1.38
+
+	&:not(.js__ready)
+		opacity: 0
+
+.string
+	white-space: nowrap
+	display: inline-block
+	width: 100%
+	transition: transform 1s ease, opacity .7s ease
+	opacity: 0
+
+	br
+		display: none
 
 @keyframes circlesRotate
 	0%
 		transform: rotateZ(0)
 	100%
 		transform: rotateZ(-360deg)
+
+
+
+@media (max-width: 1700px)
+	.main-slider
+
+		&__counters
+			padding-left: 60px
+
+
+@media (max-width: 1500px)
+	.main-slider
+
+		&__counters
+			padding-bottom: 80px
+
+		&__dots
+			right: 20px
+
+	.ms-text
+		font-size: 13px
+
+	.ms-counter
+		font-size: 14px
+
+@media (max-width: 1400px)
+	.main-slider
+
+		&__counters
+			padding-bottom: 0
+
+		&__slide-text, &__dots
+			padding: 120px 0 162px
+
+		&__big-counter
+			padding: 120px 90px 162px 0
+
+	.ms-counter
+		padding: 35px 0 40px

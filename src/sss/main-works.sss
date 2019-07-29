@@ -80,3 +80,37 @@
 		font-size: 1em
 		line-height: calc(22 / 14)
 		max-width: 205px
+
+@media (max-width: 1700px)
+	.main-works
+
+		&__cont
+			padding-left: 60px
+			padding-right: 60px
+
+@media (max-width: 1400px)
+	.main-works
+		margin-bottom: -50px
+
+		&__cont
+			padding-top: 50px
+			padding-bottom: 50px
+
+	.main-works
+
+		&__item
+			margin: 0 0 30px
+
+	.main-works__item
+
+		&:not(:nth-child(5n))
+
+			.works-item__number
+
+				&:after
+					right: 50px
+
+				&-text
+
+					&:before
+						right: 58px
