@@ -126,7 +126,7 @@
 				width: 100%
 				opacity: 0
 				transform: scale(1.1)
-				transition: opacity .4s ease, transform .7s ease
+				transition: opacity .7s ease, transform .7s ease
 
 	.swiper-slide-active
 
@@ -296,3 +296,46 @@
 
 	.ms-counter
 		padding: 35px 0 40px
+
+	.ms-text
+
+		&__link
+			margin: 0 0 40px
+
+	.big-counter
+
+		&__svg
+			transform: scale(.8)
+
+@media (max-width: 1300px)
+	.ms-counter
+		padding: 25px 0 30px
+
+	.ms-text
+		font-size: 11px
+
+	.main-slider__counters
+		padding-left: 35px
+
+@media (max-width: 1200px)
+	.big-counter
+
+		&__svg
+			opacity: 0
+	
+	.ms-counters
+		justify-content: space-between
+
+		&__item
+
+			&:not(:last-child)
+				margin-right: 20px
+
+@media (max-width: 1100px)
+	.main-slider
+
+		&__dots, &__slide-text
+			padding: 90px 0 120px
+
+	.ms-text
+		font-size: 10px

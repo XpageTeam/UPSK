@@ -70,11 +70,12 @@ class select{
 
 	private bindEvents(){
 		new EventListener(this.el).add("mousedown", (el: HTMLSelectElement, e: Event) => {
-			e.preventDefault()
 			if (el.classList.contains("js__opened"))
 				el.classList.remove("js__opened")
 			else
 				el.classList.add("js__opened")
+
+			e.preventDefault()
 		})
 
 		new EventListener("body").add("click", (el: HTMLBodyElement, event: Event) => {

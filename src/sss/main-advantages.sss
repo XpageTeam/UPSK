@@ -95,3 +95,23 @@
 
 	.m-advantage-text
 		padding: 25px 30px
+
+@media (max-width: 1300px)
+	.main-advantages__cont
+		padding-left: 35px
+
+
+@media (max-width: 1200px)
+	.main-advantages
+		font-size: 13px
+
+@media (max-width: 1100px)
+	.main-advantages__list
+
+		&-item
+
+			&:not(&--text)
+				width: calc((100% - var(--adv-margin)*4)/4)
+
+			&--text
+				width: calc(100% - var(--adv-margin))

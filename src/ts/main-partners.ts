@@ -15,6 +15,20 @@ domReady(() => {
 			},
 			lazy: {
 				loadPrevNext: true
+			},
+			breakpoints: {
+				1400: {
+					slidesPerView: 5
+				},
+				1200: {
+					slidesPerView: 4
+				},
+				1000: {
+					slidesPerView: 3
+				},
+				800: {
+					slidesPerView: 2
+				}
 			}
 		})
 	})

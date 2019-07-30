@@ -19,8 +19,12 @@ export default class EventListener extends Element{
 	public add(event: string, callback: any, options?: EventOtions): EventListener{
 
 		App.each(this.els, function(el:HTMLElement, i: number){
-			el.addEventListener(event, function(event){
-				callback(this, event, i)
+			document.body.addEventListener(event, function(e){
+				const target = e.target as HTMLElement;
+
+				if (new Element(el).is(target)
+					|| new Element(el).has(target))
+					callback(target, e, i)
 			}, options)
 		})
 

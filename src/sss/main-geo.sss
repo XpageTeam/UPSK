@@ -33,6 +33,10 @@
 			font-size: em(24)
 
 .region
+	pointer-events: none
+
+	&__map, &__label rect
+		pointer-events: auto
 
 	&:not(.js__initiallized)
 

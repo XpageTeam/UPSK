@@ -11,8 +11,7 @@ import "./cat3-scroll"
 import "./tovar"
 
 import {domReady, App} from "./xpage/index"
-import Counter from "./counter"
-import {TweenLite, TimelineMax} from "gsap"
+
 
 
 
@@ -24,15 +23,7 @@ declare global {
     }
 }
 
-domReady(() => {
-	Counter(App.getElement(".big-counter__text-number"), 10, function(){
-		document.querySelector(".big-counter").classList.add("js__animate")
-	})
 
-	App.each(".ms-counter__text b", (el: HTMLElement) => {
-		Counter(el, 5)
-	})
-})
 
 // domReady(() => {
 // 	function splitText(phrase) {

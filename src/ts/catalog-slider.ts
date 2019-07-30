@@ -56,6 +56,12 @@ const sliderInit = (sliderEl: HTMLElement, sliderIndex: number = 0): Swiper => {
 					.addElement(links.find(".slider-links__item.active"))
 					.toggleClass("active")
 			}
+		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 2,
+				centeredSlides: false,
+			}
 		}
 	})
 

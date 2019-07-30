@@ -14,43 +14,10 @@
 .main-works
 	display: flex
 	flex-wrap: wrap
-	margin: 0 0 -70px
 
 	&__item
-		width: 20% 
-		margin: 0 0 70px
 		display: flex
 		flex-direction: column
-
-		&:not(:nth-child(5n))
-
-			.works-item
-
-				&__number
-					
-					&:after
-						content: ""
-						position: absolute calc(50% - 12px) 105px * *
-						border-radius: 50%
-						size: 23px
-						background: rgba(42, 110, 219, 0.3)
-
-					&:before
-						content: ""
-						position: absolute calc(50% - 1px) -3px 0 100px
-						height: 1px	
-						background: linear-gradient(to right, #40516A, #2E3844)			
-					
-					&-text
-
-						&:before
-							content: ""
-							border-radius: 50%
-							position: absolute
-							size: 7px
-							background: var(--main-color)
-							top: calc(50% - 4px)
-							right: 113px
 
 .works-item
 	flex: 1 1 auto
@@ -80,6 +47,44 @@
 		font-size: 1em
 		line-height: calc(22 / 14)
 		max-width: 205px
+
+@media (min-width: 1300px)
+	.main-works
+		margin: 0 0 -70px
+
+		&__item
+			width: 20% 
+			margin: 0 0 70px
+
+			&:not(:nth-child(5n))
+
+				.works-item
+
+					&__number
+						
+						&:after
+							content: ""
+							position: absolute calc(50% - 12px) 105px * *
+							border-radius: 50%
+							size: 23px
+							background: rgba(42, 110, 219, 0.3)
+
+						&:before
+							content: ""
+							position: absolute calc(50% - 1px) -3px 0 100px
+							height: 1px	
+							background: linear-gradient(to right, #40516A, #2E3844)			
+						
+						&-text
+
+							&:before
+								content: ""
+								border-radius: 50%
+								position: absolute
+								size: 7px
+								background: var(--main-color)
+								top: calc(50% - 4px)
+								right: 113px
 
 @media (max-width: 1700px)
 	.main-works
@@ -114,3 +119,48 @@
 
 					&:before
 						right: 58px
+
+
+
+@media (max-width: 1300px)
+	.main-works__cont
+		padding-left: 35px
+
+	.main-works
+
+		&__item
+			width: 25%
+
+			&:not(:nth-child(4n)):not(:last-child)
+
+				.works-item
+
+					&__number
+						
+						&:after
+							content: ""
+							position: absolute calc(50% - 12px) 105px * *
+							border-radius: 50%
+							size: 23px
+							background: rgba(42, 110, 219, 0.3)
+
+						&:before
+							content: ""
+							position: absolute calc(50% - 1px) -3px 0 100px
+							height: 1px	
+							background: linear-gradient(to right, #40516A, #2E3844)			
+						
+						&-text
+
+							&:before
+								content: ""
+								border-radius: 50%
+								position: absolute
+								size: 7px
+								background: var(--main-color)
+								top: calc(50% - 4px)
+								right: 113px
+
+@media (max-width: 1200px)
+	.main-works__cont 
+		padding-right: 0
