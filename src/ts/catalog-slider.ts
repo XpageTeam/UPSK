@@ -61,6 +61,10 @@ const sliderInit = (sliderEl: HTMLElement, sliderIndex: number = 0): Swiper => {
 			1200: {
 				slidesPerView: 2,
 				centeredSlides: false,
+			},
+			1000: {
+				slidesPerView: 3,
+				// centeredSlides: true
 			}
 		}
 	})
