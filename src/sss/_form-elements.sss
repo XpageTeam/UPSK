@@ -256,6 +256,26 @@ textarea.default-input__input
 	.default-input__input-filetext .default-input__input
 		border-color: var(--main-color-darken)
 
+
+
+
+@media (max-width: 660px)
+	.form__submit
+
+		&-text
+
+			br
+				display: none
+
+	.form	
+
+		&__inputs
+			grid-template-columns: 1fr
+			--input-vert-spacing: 20px
+
+			&-input
+				grid-column: 1
+
 //.popup-form
 //	display: none
 //	margin: 0 !important

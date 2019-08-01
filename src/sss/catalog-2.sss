@@ -50,3 +50,35 @@
 	&__title
 		margin: 20px 0 0
 		font-size: em(16)
+
+
+
+@media (max-width: 1400px)
+	.prev-item
+		padding: 20px
+		font-size: 13px
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.prev-catalog
+
+		&__item
+			width: 33.33%
+
+			&:nth-child(3n)
+				border-right: none
+
+			&:last-child:not(:nth-child(3n))
+				border-right: 1px solid var(--border-color)
+
+@media (max-width: 660px)
+	.prev-catalog
+
+		&__item
+			width: 50%
+
+			&:nth-child(even)
+				border-right: 0
+
+			&:last-child:nth-child(odd)
+				border-right: 1px solid var(--border-color)

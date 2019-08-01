@@ -33,7 +33,6 @@
 		flex: none
 
 		.default-btn
-			padding: var(--input-focus-padding)
 			background-color: var(--main-color-darken)
 
 			&:hover, &:focus
@@ -260,6 +259,14 @@
 
 
 
+@media (min-width: 660px)
+	.mc-filter
+
+		&__btn
+
+			.default-btn
+				padding: var(--input-focus-padding)
+
 
 
 @media (max-width: 1700px)
@@ -369,3 +376,33 @@
 
 	.slider-links
 		display: none
+
+
+@media (max-width: 660px)
+	.mc-form
+		border-radius: 0
+		padding: 20px
+
+		&__title
+			font-size: 1.5em
+
+		.form
+
+			&__inputs
+				grid-template-columns: 1fr
+
+				&-input
+					grid-column: 1
+
+		&__submit
+			margin: 20px 0 0
+
+	.form__submit
+		flex-direction: column-reverse
+		align-items: stretch
+
+		&-btn
+			margin: 20px 0 0 !important
+
+			.default-btn
+				width: 100%

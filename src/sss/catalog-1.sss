@@ -128,3 +128,125 @@
 		&-text
 			margin: 45px 0 0
 			max-width: 690px
+
+@media (max-width: 1400px) and (min-width: 660px)
+	.catalog
+
+		&__filter
+			margin: 40px 0 0
+			padding: 40px 0 0
+
+		&__form, &__award, &__logistic, &__prev, &__imgs
+			margin: 40px 0 0
+
+	.cat-item
+		padding: 20px
+
+		&__title
+			font-size: 1.2em
+
+		&__img
+			width: 120px
+			margin-right: 25px !important
+
+	.cat-award
+
+		&__icon
+			width: 270px
+
+		&__text
+			font-size: 13px
+
+			&-text
+				margin: 25px 0 0
+
+@media (max-width: 1400px) and (min-width: 1100px)
+	.catalog-text
+
+		&:not(&--reverse) &__img
+			margin-left: 5%
+
+		&--reverse &__img, &__title
+			margin-right: 5%
+
+		&__text
+			font-size: 13px
+
+
+@media (max-width: 1100px) and (min-width: 660px)
+	.catalog-text
+
+		&:not(&--reverse) &__img
+			margin-left: 2%
+
+		&--reverse &__img, &__title
+			margin-right: 2%
+
+		&__text
+			font-size: 13px
+
+		&__img
+			max-width: 45%
+
+@media (max-width: 660px)
+	.catalog-text
+		display: block
+
+		&__title
+			margin: 0 0 20px
+			font-size: 1.2em
+
+			br
+				display: none
+
+		&__img
+			margin: 25px 0 0 !important
+			max-width: none !important
+			width: 100% !important
+		
+		&__text
+			font-size: 13px
+
+			&-title
+
+				br
+					display: none
+
+	.catalog
+
+		&__filter
+			margin: 20px 0 0
+			padding: 20px 0 0
+
+		&__form, &__prev
+			margin: 0 -20px
+
+		&__award, &__logistic
+			margin: 20px 0 0
+
+	.catalog-list
+		margin: 0 -20px
+
+	.cat-item
+		padding: 20px
+		box-shadow: none !important
+
+		&__img
+			width: 80px !important
+			flex: none
+			margin-right: 15px !important
+
+		&__title
+			font-size: 1em !important
+
+		&__arrow
+			background-size: contain
+			width: 25px
+
+	.cat-award
+
+		&__icon
+			display: none
+
+		&__text
+			font-size: 13px

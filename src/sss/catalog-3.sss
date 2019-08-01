@@ -23,6 +23,9 @@
 		border-bottom: 1px solid var(--border-color)
 		padding: 36px 35px 36px 0
 
+		&:last-child
+			white-space: nowrap
+
 	th
 		text-align: left
 		background: #F4F4F4
@@ -77,3 +80,34 @@
 
 		&__sort
 			display: none
+
+
+
+
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.cat3 
+
+		th
+			padding: 25px
+
+		td
+			padding: 25px 20px 25px 0
+
+			&:last-child
+				padding-right: 0
+
+
+@media (max-width: 1000px)
+	.catalog__imgs
+		display: none
+
+		.mp-list
+			
+			&__item
+
+				&:first-child
+					width: 100%
+
+				&:not(:first-child)
+					width: 50%
