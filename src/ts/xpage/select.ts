@@ -1,8 +1,14 @@
-import {EventListener, App, Element} from "./index"
+import {EventListener, App, Element, domReady} from "./index"
 
 interface selectElement {
 	render(template?: string): string
 	replaceTemplateMarks(template: string): string
+}
+
+declare global {
+	interface HTMLSelectElement{
+		seletized?: boolean
+	}
 }
 
 enum selectType {Single, Mutiple}
@@ -40,6 +46,9 @@ class select{
 	constructor(select: string)
 	constructor(select: HTMLSelectElement)
 	constructor(select: any){
+		if (window.is.touchDevice())
+			return
+
 		if (typeof select == "string")
 			this._el = App.elementsGetter(select) ? App.elementsGetter(select)[0] as HTMLSelectElement : document.createElement("select")
 		else if(select instanceof HTMLSelectElement)
@@ -49,21 +58,44 @@ class select{
 			return
 		}
 
-		if (!this._el.options.length)
+
+
+		if (!this._el.options.length || this._el.seletized)
 			return
 
 
 		this.options = this._el.options
 
 		this.createSelect()
+
+		this._el.seletized = true
 	}
 
-	private createSelect(){
+	public renderOptions(){
+		if (this.el.closest("div").querySelector(".my-select__list-cont"))
+			this.el.closest("div").querySelector(".my-select__list-cont").remove()
+
 		const fakeDiv = document.createElement("div");
 
 		fakeDiv.innerHTML = this._customOptions.render()
 
 		this._el.parentNode.insertBefore(fakeDiv.querySelector(".my-select__list-cont"), this._el.nextSibling)
+
+		const $options = new Element(this.el.closest("div").querySelectorAll(".my-select__list-option"));
+
+		new EventListener($options).add("click", (el: HTMLElement) => {
+			$options.removeClass("selected")
+			el.classList.add("selected")
+
+			this.value = el.getAttribute("value") || "0"
+
+			this.el.classList.remove("js__opened")
+		})
+	}
+
+	private createSelect(){
+
+		this.renderOptions()
 
 		this.bindEvents()
 	}
@@ -101,16 +133,22 @@ class select{
 			el.classList.remove("js__opened")
 		})
 
-		const $options = new Element(this.el.closest("div").querySelectorAll(".my-select__list-option"));
+		
 
-		new EventListener($options).add("click", (el: HTMLElement) => {
-			$options.removeClass("selected")
-			el.classList.add("selected")
-
-			this.value = el.getAttribute("value") || "0"
-
-			this.el.classList.remove("js__opened")
-		})
+		// создаём экземпляр MutationObserver
+		const observer = new MutationObserver((mutations) => {
+		  mutations.forEach((mutation) => {
+		    switch (mutation.type){
+		    	case "childList":
+		    		console.log(123)
+		    		this.options = this._el.options
+		    		this.renderOptions()
+		    }
+		  });    
+		});
+		 
+		// передаём в качестве аргументов целевой элемент и его конфигурацию
+		observer.observe(this.el, {childList: true});
 	}
 }
 
@@ -230,6 +268,16 @@ class selectOption implements selectElement{
 }
 
 
-App.each("select", (el: HTMLSelectElement) => {
-	new select(el)
-})
+;(function(){
+	document.addEventListener("VUELoaded", function(){
+		App.each("select", (el: HTMLSelectElement) => {
+			new select(el)
+		})
+	})
+
+	document.addEventListener("VUEUpdated", function(){
+		App.each(".default-input__input--select", (el: HTMLSelectElement) => {
+			new select(el)
+		})
+	})
+})()

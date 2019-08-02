@@ -48,6 +48,34 @@
 
 
 
-@media (max-width: 1400px)
+@media (max-width: 1400px) and (min-width: 1000px)
 	.footer
 		padding: 40px 0
+
+
+@media (max-width: 1000px)
+	.footer
+		padding: 20px 0
+
+		&__logo
+			display: none
+
+@media (max-width: 660px)
+	.footer
+
+		&__top
+			display: none
+
+		&__bot
+			margin: 0
+			flex-direction: column-reverse
+			align-items: center
+			text-align: center
+
+		&__soc
+			margin: 0 0 20px
+			padding: 0
+
+		&__copy
+			margin: 0
+			font-size: 12px

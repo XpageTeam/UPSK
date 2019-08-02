@@ -48,3 +48,53 @@
 			a
 				font-size: em(24)
 				color: inherit
+
+
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.contacts
+		margin: 0 0 50px
+
+		&__form
+			margin-right: 40px
+
+		&__side
+			width: 360px
+
+@media (max-width: 1400px)
+	.contacts-list
+		font-size: 13px
+
+		&__address
+			margin: 0 0 30px
+
+		&__item
+			padding: 22px 0 20px
+
+
+@media (max-width: 1000px)
+	.contacts
+		flex-direction: column-reverse
+		margin: 0 0 30px
+
+		&__form
+			margin-right: 0
+
+		&__side
+			margin: 0 0 25px
+			width: 100%
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.contacts-list
+		max-width: none
+		display: flex
+		flex-wrap: wrap
+
+		&__title, &__address
+			width: 100%
+
+		&__item
+			width: 50%
+
+			&:last-child:nth-child(odd)
+				width: 100%

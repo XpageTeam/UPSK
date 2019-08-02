@@ -120,8 +120,28 @@
 	.main-advantages
 
 		&__list
+			--adv-margin: 20px
 
 			&-item
+
+				&:not(&--text)
+					width: calc((100% - var(--adv-margin)*2)/2)
 				
 				&--text
 					display: none
+
+
+	.m-advantage
+		padding: 20px
+
+		&__text
+			display: block
+			line-height: 1.4
+			margin: 10px 0 0
+
+		&__title
+			font-size: 1.4em
+
+		&__img
+			height: 60px
+			margin: 0 0 15px

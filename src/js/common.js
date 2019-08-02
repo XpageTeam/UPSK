@@ -1,12 +1,15 @@
 import $ from "jquery"
+import is from "is_js"
 import stringEffect from "./stringAnimate.js"
 
 window.$ = $;
 window.jQuery = $;
+window.is = is
 
 window.get$ = (element) => {
 	return $(element)
 }
+
 
 require("./jquery.fancybox.js")
 require("../css/jquery.fancybox.css")

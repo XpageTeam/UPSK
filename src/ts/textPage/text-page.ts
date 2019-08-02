@@ -42,7 +42,9 @@ domReady(() => {
 		}
 
 		new EventListener(track).add("scroll", function(el: HTMLElement){
-			let wrap = el.closest(".table-wrap");
+			const wrap = el.closest(".table-wrap");
+
+			console.log(wrap)
 
 			let shadows: Shadows = {
 				left: wrap.querySelector(".table-wrap__shadow--left"),
@@ -57,5 +59,6 @@ domReady(() => {
 })
 
 const setShadowOpacity = (element:HTMLElement, scrollWidth: number, offsetWidth: number = 80) => {
+	console.log(123)
 	element.style.opacity = (scrollWidth / offsetWidth <= 1 ? scrollWidth / offsetWidth : 1).toString()
 }

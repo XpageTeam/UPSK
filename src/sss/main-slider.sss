@@ -339,3 +339,73 @@
 
 	.ms-text
 		font-size: 10px
+
+@media (max-width: 1000px)
+	.main-slider
+
+		&__big-counter
+			display: none
+
+		&__counters
+			position: static
+
+		&__slide
+
+			&-text
+				padding: 40px 0 0
+
+		&__dots
+			padding: 40px 0 230px
+
+	.ms-counters
+		color: #000
+		flex-wrap: wrap
+		margin: 0 0 -20px -20px
+
+		&__item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 20px 20px
+			margin-right: 0 !important
+
+			&:first-child, &:nth-child(2)
+
+				.ms-counter
+
+					&:before
+						display: none
+
+	.ms-counter
+		padding: 20px 0 0
+
+	.ms-text
+		font-size: 9px
+
+@media (max-width: 660px)
+	.main-slider
+
+		&__dots
+			display: none
+
+		&__counters
+			padding-left: 0
+
+		&__slide
+
+			&-text
+				padding: 0
+
+	.ms-text
+		padding: 20px 0
+
+		&__link
+			margin: 0 0 15px
+
+		&__text
+			font-size: 1.8em
+
+			br
+				display: none
+
+			.string
+				display: inline
+				white-space: normal

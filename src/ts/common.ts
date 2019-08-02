@@ -19,7 +19,8 @@ declare global {
     interface Window {
     	animateScroll: Function; 
     	isScrolledIntoView: Function;
-    	get$: Function
+    	get$: Function;
+    	is: any;
     }
 }
 
