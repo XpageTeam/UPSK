@@ -64,8 +64,10 @@
 		color: #2E3844
 		text-transform: uppercase
 
-.inner-content
-	margin: 95px 0 0
+
+@media (min-width: 1400px)
+	.inner-content
+		margin: 95px 0 0
 
 
 
@@ -83,7 +85,7 @@
 		width: 35px
 
 
-@media (max-width: 1400px)
+@media (max-width: 1400px) and (min-width: 660px)
 	.inner-content
 		margin: 40px 0 0
 
@@ -91,3 +93,14 @@
 @media (max-width: 660px)
 	.main-left-decor
 		display: none
+
+	.write-link
+		size: 40px
+		background-size: 40%
+		top: 80px
+		right: auto
+		left: 0
+		border-radius: 0 50% 50% 0
+
+	.inner-content
+		margin: 30px 0 0

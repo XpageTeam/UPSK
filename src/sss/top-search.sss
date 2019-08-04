@@ -92,8 +92,51 @@ body
 		&:hover, &:focus
 			color: var(--main-color)
 
-@media (max-width: 1400px)
+@media (max-width: 1400px) and (min-width: 660px)
 	.top-search
 
 		&__cont
 			padding: 20px 0
+
+	body
+
+		&.js__search-opened
+			margin: 107px 0 0
+
+@media (max-width: 660px)
+	.top-search
+
+		&__results
+			right: -45px
+
+		&__cont
+			z-index: 99
+			padding: 0
+
+			.wrapper
+				padding: 0
+
+		&__close
+			width: 45px
+			margin-left: 0
+			border-radius: 0
+			z-index: 5
+			background-color: #f4f4f4
+
+		.default-input
+
+			&__input
+				height: 40px
+				padding: 10px 20px
+				border-radius: 0
+
+		&__inputs
+
+			&-submit
+				width: 45px
+				border-radius: 0
+
+	body
+
+		&.js__search-opened
+			margin: 40px 0 0

@@ -166,7 +166,7 @@
 		&:after, &:before
 			content: ""
 			height: 2px
-			background: var(--main-color)
+			background: #fff
 			display: inline-block
 
 		&:after
@@ -186,7 +186,7 @@
 			&:before, &:after
 				content: ""
 				size: 100% 2px
-				background: var(--main-color)
+				background: #fff
 				transition: opacity .3s ease
 				opacity: 0
 
@@ -218,11 +218,14 @@
 		&__menu
 			display: none
 
+		&__title
+			padding: 30px 0 !important
+
 @media (max-width: 660px)
 	.head
 		position: sticky !important
 		top: 0
-		background: var(--thrid-color)
+		background: var(--thrid-color) !important
 		z-index: 10 !important
 
 		&__contacts
@@ -231,3 +234,6 @@
 		&__logo
 			max-width: 90px
 			margin-right: 10px
+
+		&__title
+			padding: 20px 0 !important

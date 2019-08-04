@@ -133,6 +133,8 @@
 
 	.m-advantage
 		padding: 20px
+		cursor: default
+		background: none !important
 
 		&__text
 			display: block
@@ -145,3 +147,44 @@
 		&__img
 			height: 60px
 			margin: 0 0 15px
+
+@media (max-width: 660px)
+	.main-advantages
+
+		&__cont
+			padding: 0
+
+			.wrapper
+				padding: 0
+
+		&__list
+			margin: 0
+			display: block
+
+			&-item
+				margin: 0
+				width: auto !important
+
+				&:not(:first-child)
+					border-top: 1px solid var(--border-color)
+
+	.m-advantage
+		border-radius: 0
+		border: none
+		display: grid
+		align-items: flex-start
+		grid-template-columns: 40px 1fr
+		grid-template-areas: "img title" "img text"
+		text-align: left
+		grid-gap: 10px 20px
+		font-size: 12px
+
+		&__img
+			grid-area: img
+
+		&__title
+			grid-area: title
+
+		&__text
+			margin: 0
+			grid-area: text

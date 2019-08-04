@@ -243,8 +243,36 @@
 		&__title
 			margin: 0 0 20px
 
-@media (max-width: 1300px)
+@media (max-width: 1300px) and (min-width: 660px)
 	.main-projects
 
 		&__cont
 			padding-left: 35px
+
+@media (max-width: 660px)
+	.main-projects
+
+		&__cont
+			padding-left: 0
+
+	.mp-slider
+
+		&__arrows
+			bottom: calc(50% + 11px)
+			padding: 0 10px
+			justify-content: space-between
+
+			.swiper-button
+
+				&-prev, &-next
+					transition: background-color .3s ease,color .3s ease,border-color .3s ease
+					border-radius: 5px
+					width: 28px
+					height: 28px
+					border: 1px solid var(--border-color)
+					background-image: none
+					color: #000
+					background-color: #fff
+
+	.mp-text
+		font-size: 12px

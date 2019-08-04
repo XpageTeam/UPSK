@@ -22,6 +22,19 @@ domReady(() => {
 			navigation: {
 				prevEl: el.querySelector(".swiper-button-prev") as HTMLElement,
 				nextEl: el.querySelector(".swiper-button-next") as HTMLElement
+			},
+			breakpoints: {
+				1400: {
+					slidesPerColumn: 1
+				},
+				1100: {
+					slidesPerColumn: 1,
+					slidesPerView: 2
+				},
+				1000: {
+					slidesPerColumn: 1,
+					slidesPerView: 3
+				}
 			}
 		})
 
@@ -42,6 +55,19 @@ domReady(() => {
 			navigation: {
 				prevEl: el.querySelector(".swiper-button-prev") as HTMLElement,
 				nextEl: el.querySelector(".swiper-button-next") as HTMLElement
+			},
+			breakpoints: {
+				1400: {
+					slidesPerColumn: 1
+				},
+				1100: {
+					slidesPerColumn: 1,
+					slidesPerView: 2
+				},
+				1000: {
+					slidesPerColumn: 1,
+					slidesPerView: 3
+				}
 			}
 		})
 		
@@ -62,6 +88,19 @@ domReady(() => {
 			navigation: {
 				prevEl: el.querySelector(".swiper-button-prev") as HTMLElement,
 				nextEl: el.querySelector(".swiper-button-next") as HTMLElement
+			},
+			breakpoints: {
+				1400: {
+					slidesPerColumn: 1
+				},
+				1100: {
+					slidesPerColumn: 1,
+					slidesPerView: 2
+				},
+				1000: {
+					slidesPerColumn: 1,
+					slidesPerView: 3
+				}
 			}
 		})
 	})

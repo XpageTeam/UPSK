@@ -115,16 +115,6 @@
 				&:before
 					content: '-'
 
-.personal-slider
-
-	.swiper-slide
-
-		&:nth-child(even)
-			
-			.personal-slide
-				margin: 42px 0 0
-
-
 .personal-slide
 
 	&__img
@@ -167,3 +157,96 @@
 		font-size: em(14)
 		font-weight: 400
 		line-height: calc(26 / 14)
+
+
+
+
+@media (min-width: 1400px)
+	.personal-slider
+
+		.swiper-slide
+
+			&:nth-child(even)
+				
+				.personal-slide
+					margin: 42px 0 0
+
+@media (max-width: 1400px)
+	.about
+
+		&__block
+
+			&:not(:first-child)
+				margin: 50px 0 0
+
+			&-left
+				width: 390px
+
+		&__award
+			margin: 50px 0 0
+			padding: 50px 0
+
+			.cat-award
+
+				&__text
+					padding-left: 60px
+
+				&__icon
+					width: 390px
+
+		&__partners
+			margin: 50px 0 0
+
+			.about__block
+				padding: 0 0 50px
+
+		&__projects
+			margin: 50px 0 0
+
+		&__advantages
+			padding: 50px 0 40px
+
+	.about-text
+		padding-left: 60px
+
+		&__list
+			margin: 50px 0 0
+
+@media (max-width: 1000px)
+	.about
+
+		&__block
+			display: block
+
+			&:not(:first-child)
+				margin: 40px 0 0
+
+			&-left
+				width: auto
+				padding-right: 0
+
+			&-right
+				margin: 25px 0 0
+				padding-left: 0 !important
+
+		&__advantages
+
+			.about__block
+
+				&-left
+					display: none
+
+				&-right
+					padding-right: 0 !important
+					margin: 0 !important
+
+	.about-partner
+		padding-right: 0
+
+	.about-text
+		border: none
+		padding: 0
+
+		&__list
+			margin: 10px 0 0
+			font-size: 1em
