@@ -10,7 +10,7 @@ import "./about"
 import "./cat3-scroll"
 import "./tovar"
 
-import {domReady, App} from "./xpage/index"
+import {domReady, App, MobileMenu, settings} from "./xpage/index"
 
 
 
@@ -24,6 +24,17 @@ declare global {
     }
 }
 
+domReady(() => {
+	new MobileMenu({
+		burger: ".head__burger",
+		menu: ".mobile-menu",
+		menuActiveClass: "js__opened",
+		bodyActiveClass: "js__menu-opened",
+		ignoreWarnings: false,
+		fixBody: true,
+		media: settings.adaptiveMedia
+	})
+})
 
 
 // domReady(() => {

@@ -22,3 +22,25 @@ header.head
 		.head__burger
 			.burger
 				span
+
+aside.mobile-menu
+	.mobile-menu__content
+		nav.mobile-menu__nav
+			ul.m-menu
+				li.m-menu__item
+					a.m-menu__link.active(href="#") Продукция
+				each link in ["Логистика", "О компании", "Полезное", "Контакты", ]
+					li.m-menu__item
+						a.m-menu__link(href="#")=link
+		.mobile-menu__phone
+			.f-soc__title Наш телефон
+			address.m-phone
+				a(href="tel: 8 351 211 00 70") 8 351 211 00 70
+		.mobile-menu__soc
+			.f-soc
+				a.f-soc__link(href="#")
+					include ../../img/ico-vk.svg
+				a.f-soc__link(href="#")
+					include ../../img/ico-fb.svg
+				a.f-soc__link(href="#")
+					include ../../img/ico-yt.svg

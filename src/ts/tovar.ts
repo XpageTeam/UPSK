@@ -19,6 +19,14 @@ domReady(() => {
 				enabled: true,
 				onlyInViewport: true,
 			},
+			breakpoints: {
+				1300: {
+					slidesPerView: 2
+				},
+				700: {
+					slidesPerView: 1
+				}
+			}
 		})
 	})
 })

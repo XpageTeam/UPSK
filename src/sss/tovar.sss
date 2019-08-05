@@ -111,6 +111,7 @@
 		&-text
 			font-size: em(18)
 			color: rgba(0,0,0, .6)
+			white-space: nowrap
 
 .tovar-list
 	width: 100%
@@ -367,6 +368,56 @@
 
 
 
+@media (max-width: 1400px)
+	.tovar
+
+		&__list
+			margin: 40px 0 0
+
+	.tovar-list
+
+		&__title
+
+			&-label
+				padding: 20px 20px 20px 0
+
+			td
+
+				&:first-child
+
+					.tovar-list
+
+						&__title
+
+							&-label
+								padding-left: 20px
+
+		tr
+
+			&:not([class]) 
+
+				td
+					padding: 20px 20px 20px 0
+
+	.tovar-list tr+.tovar-list__title td
+		padding: 10px 0 0
+
+@media (max-width: 1200px)
+	.tovar-main
+
+		&__img
+			width: 320px
+			min-height: 352px
+			margin-right: 20px
+
+	.feature
+		padding: 20px 0
+
+	.tovar-price__text
+
+		br
+			display: none
+
 @media (max-width: 1000px)
 	.ts-title
 
@@ -376,3 +427,77 @@
 
 		&__arrows
 			margin: 20px 0 0
+
+	.tovar
+
+		&__form
+			margin: 30px 0
+
+	.tovar-slider
+
+		&__arrows
+			margin: 0 0 20px
+
+	.tovar-main
+
+		&__img
+			width: 160px
+			min-height: 160px
+
+@media (max-width: 660px)
+	.tovar-main
+		display: block
+
+		&__img
+			width: auto
+			margin: 0 0 20px
+			min-height: 0
+
+	.features
+		flex-wrap: wrap
+
+		&__item
+
+			&:not(:last-child)
+				margin-right: 20px
+
+	.tovar__slider
+
+		&-title
+			margin: 0 0 20px
+
+	.tovar-list
+		display: block
+
+		&__title
+
+			td
+
+				&:not(:first-child)
+					display: none
+
+		tbody, tr, td
+			display: block
+
+		tr
+
+			&:not(:first-child)
+				border-top: 1px solid var(--border-color)
+
+			&:not([class])
+
+				td
+					padding-right: 0 !important
+					border: none !important
+					text-align: left !important
+
+					&:not(:first-child)
+						padding-top: 0 !important
+
+	.ts-title
+		display: block
+
+		&__subtitle
+
+			&:not(:first-child)
+				margin: 15px 0 0

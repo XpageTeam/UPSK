@@ -240,6 +240,11 @@
 					padding-right: 0 !important
 					margin: 0 !important
 
+		&__award
+
+			.cat-award__text
+				padding-left: 0
+
 	.about-partner
 		padding-right: 0
 
@@ -250,3 +255,32 @@
 		&__list
 			margin: 10px 0 0
 			font-size: 1em
+	
+	.about-advantages-slider
+
+		.swiper
+
+			&-wrapper
+				transform: none !important
+				flex-wrap: wrap
+				width: auto
+				--adv-margin: 20px
+				margin: 0 0 calc(-1*var(--adv-margin)) calc(-1*var(--adv-margin))
+
+			&-slide
+				width: calc((100% - var(--adv-margin)*2)/2) !important
+				margin: 0 0 var(--adv-margin) var(--adv-margin) !important
+
+				&-duplicate
+					display: none !important
+
+@media (max-width: 660px)
+	.about-advantages-slider
+
+		.swiper
+
+			&-slide
+				width: calc((100% - var(--adv-margin)*1)/1) !important
+
+				&:not(:first-child)
+					border-top: 1px solid var(--border-color)

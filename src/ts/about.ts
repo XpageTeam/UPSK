@@ -34,6 +34,14 @@ domReady(() => {
 				1000: {
 					slidesPerColumn: 1,
 					slidesPerView: 3
+				},
+				660: {
+					slidesPerColumn: 1,
+					slidesPerView: 2
+				},
+				360: {
+					slidesPerColumn: 1,
+					slidesPerView: 1
 				}
 			}
 		})
@@ -67,6 +75,14 @@ domReady(() => {
 				1000: {
 					slidesPerColumn: 1,
 					slidesPerView: 3
+				},
+				660: {
+					slidesPerColumn: 1,
+					slidesPerView: 2
+				},
+				360: {
+					slidesPerColumn: 1,
+					slidesPerView: 1
 				}
 			}
 		})
@@ -99,7 +115,18 @@ domReady(() => {
 				},
 				1000: {
 					slidesPerColumn: 1,
-					slidesPerView: 3
+					slidesPerView: 3,
+					lazy: {
+						loadPrevNextAmount: 999
+					}
+				},
+				660: {
+					slidesPerColumn: 1,
+					slidesPerView: 2
+				},
+				360: {
+					slidesPerColumn: 1,
+					slidesPerView: 1
 				}
 			}
 		})
