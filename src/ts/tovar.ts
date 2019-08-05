@@ -4,7 +4,7 @@ import {Swiper, Lazy, Navigation, Keyboard} from 'swiper/dist/js/swiper.esm.js'
 Swiper.use([Lazy, Navigation, Keyboard])
 
 domReady(() => {
-	App.each(".tovar-slider", (el: HTMLDivElement) => {
+	App.each(".tovar__slider-slider .tovar-slider", (el: HTMLDivElement) => {
 		new Swiper(el, {
 			slidesPerView: 3,
 			loop: true,

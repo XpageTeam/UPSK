@@ -1,6 +1,12 @@
 import {TweenLite} from "gsap"
 import {App} from "./xpage/index"
 
+declare global {
+	interface SVGGElement {
+    	regHover: regionHover
+    }
+}
+
 export default class regionHover {
 	private _mapGroup: SVGGElement
 	private _mapCenter: SVGGElement
@@ -50,10 +56,12 @@ export default class regionHover {
 	set horLine(line: SVGPathElement){
 		this._horLine = line
 
-		this.horLine.style.strokeDasharray = this.horLine.getTotalLength()+', '+ this.horLine.getTotalLength()
-		this.horLine.style.strokeDashoffset = this.horLine.getTotalLength().toString()
+		if (this.horLine.getTotalLength){
+			this.horLine.style.strokeDasharray = this.horLine.getTotalLength()+', '+ this.horLine.getTotalLength()
+			this.horLine.style.strokeDashoffset = this.horLine.getTotalLength().toString()
 
-		this._horLineWidth = this.horLine.getTotalLength()
+			this._horLineWidth = this.horLine.getTotalLength()
+		}
 	}
 	get horLine(){
 		return this._horLine	
@@ -62,10 +70,12 @@ export default class regionHover {
 	set vertLine(line: SVGPathElement){
 		this._vertLine = line
 
-		this.vertLine.style.strokeDasharray = this.vertLine.getTotalLength()+', '+ this.vertLine.getTotalLength()
-		this.vertLine.style.strokeDashoffset = this.vertLine.getTotalLength().toString()
+		if (this.vertLine.getTotalLength){
+			this.vertLine.style.strokeDasharray = this.vertLine.getTotalLength()+', '+ this.vertLine.getTotalLength()
+			this.vertLine.style.strokeDashoffset = this.vertLine.getTotalLength().toString()
 
-		this._vertLineWidth = this.vertLine.getTotalLength()
+			this._vertLineWidth = this.vertLine.getTotalLength()
+		}
 	}
 	get vertLine(){
 		return this._vertLine	
@@ -102,6 +112,8 @@ export default class regionHover {
 		setTimeout(() => {
 			this.map.classList.add("js__initiallized")
 		}, this.animationTime)
+
+		this.map.regHover = this
 	}
 
 	private setFirstStates(){
@@ -254,6 +266,9 @@ export default class regionHover {
 	}
 
 	private showRegion(callback: Function = () => {}): regionHover{
+		App.each(".region", (el: SVGGElement, i:number) => {
+			el.regHover.hideAll()
+		})
 		TweenLite.to(this.mapGroup, this.animationTime, {
 			opacity: 1,
 			onComplete: callback,

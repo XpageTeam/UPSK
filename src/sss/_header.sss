@@ -11,7 +11,6 @@
 
 		&__wrap
 			border-bottom: 1px solid rgba(231,231,231, .15)
-			overflow: hidden
 
 		&:after
 			content: ""
@@ -37,6 +36,7 @@
 		padding: 68px 71px
 		position: relative
 		z-index: 1
+		overflow: hidden
 
 	&__logo
 		margin-right: auto
@@ -65,6 +65,23 @@
 		color: inherit
 		text-transform: uppercase
 		font-size: em(14)
+		position: relative
+
+		&:before
+			content: ''
+			pointer-events: none
+			position: absolute calc(100% + 30px) * * 50%
+			transform: translateX(-50%)
+			size: 220px
+			border-radius: 50%
+			background: radial-gradient(ellipse at center,var(--main-color) -20%,rgba(0,0,0,.0001) 70%)
+			transition: opacity .3s ease
+			opacity: 0
+
+		&:hover, &:focus, &.active
+
+			&:before
+				opacity: 1
 
 .h-contacts
 	display: flex

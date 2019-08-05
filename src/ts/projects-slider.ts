@@ -26,6 +26,25 @@ domReady(() => {
 					slidesPerView: 3,
 					spaceBetween: 20
 				}
+			},
+			thumbs: {
+				swiper: {
+					el: document.querySelector(".tovar-slider") as HTMLElement,
+					slidesPerView: 3,
+					loop: true,
+					// lazy: {
+					// 	load(){},
+					// 	loadInSlide(slide: number){}
+					// },
+					breakpoints: {
+						1300: {
+							slidesPerView: 2
+						},
+						700: {
+							slidesPerView: 1
+						}
+					}
+				}
 			}
 		})
 	else
@@ -55,6 +74,25 @@ domReady(() => {
 				660: {
 					spaceBetween: 10,
 					slidesPerView: 1
+				}
+			},
+			thumbs: {
+				swiper: {
+					el: document.querySelector(".tovar-slider") as HTMLElement,
+					slidesPerView: 3,
+					loop: true,
+					// lazy: {
+					// 	loadPrevload(){},
+					// 	loadInSlide(slide: number){}
+					// },
+					breakpoints: {
+						1300: {
+							slidesPerView: 2
+						},
+						700: {
+							slidesPerView: 1
+						}
+					}
 				}
 			}
 		})

@@ -7,6 +7,10 @@
 		.main-left-decor
 			background: #fafafa
 
+	&__filter
+		z-index: 12
+		position: relative
+
 	&__slider
 		padding: 105px 0 125px
 
@@ -89,7 +93,7 @@
 			cursor: pointer
 			color: rgba(46, 56, 68, 0.6)
 
-		&.active
+		&.active, &:hover
 			color: var(--main-color)
 
 
@@ -114,6 +118,7 @@
 		display: block
 		transition: transform .6s ease
 		flex: 1 1 auto
+		font-size: 13px
 
 		&:hover &-img img
 			transform: scale3d(1.1,1.1,1.1)
@@ -124,6 +129,7 @@
 			img
 				display: block
 				transition: transform .8s ease
+				transform: scale3d(1.001,1.001,1.001)
 
 		&:before
 			content: ""

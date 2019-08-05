@@ -75,19 +75,25 @@ class select{
 		if (this.el.closest("div").querySelector(".my-select__list-cont"))
 			this.el.closest("div").querySelector(".my-select__list-cont").remove()
 
-		const fakeDiv = document.createElement("div");
+		const fakeDiv = document.createElement("div"),
+			options = this._customOptions.render();
+			console.log("options", options);
 
-		fakeDiv.innerHTML = this._customOptions.render()
+		fakeDiv.innerHTML = options
+		console.log("fakeDiv.innerHTML", fakeDiv.innerHTML);
+
 
 		this._el.parentNode.insertBefore(fakeDiv.querySelector(".my-select__list-cont"), this._el.nextSibling)
 
 		const $options = new Element(this.el.closest("div").querySelectorAll(".my-select__list-option"));
 
-		new EventListener($options).add("click", (el: HTMLElement) => {
+		new EventListener($options).add("click", (el: HTMLElement, event: Event, i: number) => {
 			$options.removeClass("selected")
 			el.classList.add("selected")
 
-			this.value = el.getAttribute("value") || "0"
+			// this.value = el.getAttribute("value") || "0"
+
+			this.value = this.el.querySelector(`option:nth-child(${i+1})`).getAttribute("value")
 
 			this.el.classList.remove("js__opened")
 		})
@@ -246,8 +252,9 @@ class selectOption implements selectElement{
 		for (let i = 0; i < this.attributes.length; i++){
 			attrsObject.push({
 				name: this.attributes[i].localName,
-				value: this.attributes[i].textContent
+				value: this.attributes[i].textContent || ""
 			})
+
 
 			attrsString += ` ${attrsObject[i].name}='${attrsObject[i].value}'`
 		}
