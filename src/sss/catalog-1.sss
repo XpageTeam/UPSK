@@ -254,3 +254,24 @@
 
 		&__text
 			font-size: 13px
+
+@media (max-width: 360px)
+	@supports (display: grid)
+		.cat-item
+			display: grid
+			grid-template-columns: 60px 1fr
+			grid-template-areas: "img title" "img arrow"
+			grid-gap: 5px 15px
+			align-items: flex-start
+
+			&__img
+				width: auto !important
+				margin: 0 !important
+				grid-area: img
+
+			&__title
+				grid-area: title
+
+			&__arrow
+				grid-area: arrow
+				margin-left: 0

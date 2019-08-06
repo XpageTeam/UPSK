@@ -167,6 +167,7 @@
 		img
 			display: block
 			width: 100%
+			transition: opacity .3s ease
 
 	&__decor
 		position: absolute -14px -14px
@@ -215,7 +216,7 @@
 
 		&__slide
 			position: relative
-			display: block
+			flex-direction: column
 
 			&-text
 				padding: 20px
@@ -277,6 +278,7 @@
 			padding-left: 0
 
 	.mp-slider
+		overflow: hidden
 
 		&__arrows
 			bottom: calc(50% + 11px)

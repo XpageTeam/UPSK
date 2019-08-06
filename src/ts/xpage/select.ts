@@ -77,10 +77,8 @@ class select{
 
 		const fakeDiv = document.createElement("div"),
 			options = this._customOptions.render();
-			console.log("options", options);
 
 		fakeDiv.innerHTML = options
-		console.log("fakeDiv.innerHTML", fakeDiv.innerHTML);
 
 
 		this._el.parentNode.insertBefore(fakeDiv.querySelector(".my-select__list-cont"), this._el.nextSibling)
