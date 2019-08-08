@@ -206,7 +206,7 @@
 			font-size: em(36, 16)
 			color: var(--main-color-darken)
 			display: inline-block
-			opacity: 0
+			// opacity: 0
 			margin: 0 8px
 			text-align: center
 			white-space: nowrap
@@ -229,6 +229,9 @@
 			letter-spacing: .014em
 			white-space: nowrap
 			opacity: 0
+			text-align: center
+			display: flex
+			justify-content: center
 
 		&-subtitle
 			font-size: em(16)
@@ -237,7 +240,7 @@
 			max-width: 140px
 
 	&.js__animate &__svg
-		animation: circlesRotate 10s linear infinite
+		// animation: circlesRotate 10s linear infinite
 
 .ms-text__text
 	line-height: 1.38
@@ -257,7 +260,7 @@
 
 @keyframes circlesRotate
 	0%
-		transform: rotateZ(0)
+		transform: rotateZ(1deg)
 	100%
 		transform: rotateZ(-360deg)
 

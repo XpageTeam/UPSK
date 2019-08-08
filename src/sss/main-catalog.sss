@@ -13,6 +13,9 @@
 
 		.catalog__filter
 			margin: 0
+			padding: 0
+			border-top: none
+			border-bottom: 1px solid var(--border-color)
 
 			.wrapper
 				padding: 0
@@ -53,10 +56,8 @@
 		margin-right: var(--input-hor-spacing)
 
 .slider-list
-	counter-reset: i
 
 	&__item
-		counter-increment: i
 
 		&:not(:first-child)
 			margin: 22px 0 0
@@ -64,19 +65,17 @@
 		&-title
 			cursor: pointer
 			position: relative
-			padding-left: 32px
+			padding-left: 20px
 			font-weight: bold
 			font-size: em(19)
 			color: #272C33
 			display: block
 
 			&:before
-				content: "0" counter(i)
-				color: rgba(0, 0, 0, 0.3)
-				font-size: em(14, 19)
-				line-height: 1
-				position: absolute * * calc(50% - 6px) 0
-				font-weight: normal
+				content: ""
+				size: 10px 1px
+				background: rgba(0, 0, 0, 0.3)
+				position: absolute * * calc(50% - 1px) 0
 
 		&:not(.active)
 
@@ -84,7 +83,7 @@
 				display: none
 
 .slider-links
-	padding-left: 32px
+	padding-left: 20px
 	margin: 20px 0 0
 	user-select: none
 

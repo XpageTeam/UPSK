@@ -15,16 +15,26 @@
 	display: flex
 	flex-wrap: wrap
 
+	&:hover 
+
+		.works-item__number-text span
+			color: #fff var(--main-color)
+			border-color: transparent
+
 	&__item
 		display: flex
 		flex-direction: column
 
+		&:hover
+
+			~ .main-works__item
+
+				.works-item__number-text span
+					color: #2A6EDB #2E3844
+					border-color: var(--main-color-darken)
+
 .works-item
 	flex: 1 1 auto
-
-	&:hover &__number-text span
-		color: #fff var(--main-color)
-		border-color: transparent
 
 	&__number
 		margin: 0 0 34px
@@ -54,7 +64,7 @@
 
 		&__item
 			width: 20% 
-			margin: 0 0 70px
+			padding: 0 0 70px
 
 			&:not(:nth-child(5n))
 

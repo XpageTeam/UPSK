@@ -25,10 +25,11 @@ function Counter(el: HTMLElement, time: number, onComplete?: Function): void {
 			onComplete(){
 				if (onComplete)
 					onComplete()
+				el.style.width = "auto"
 			}
 		})
 	}else
-		TweenLite.set(".big-counter__text-number, .ms-counter__text b", {
+		TweenLite.set(el, {
 			opacity: 1
 		})
 }

@@ -8,6 +8,7 @@ import "./counter"
 
 import {domReady, App} from "./xpage/index"
 import Counter from "./counter"
+import {TweenLite, Linear} from "gsap"
 import regionHover from "./regionHover"
 
 
@@ -29,10 +30,25 @@ window.addEventListener("load", () => {
 
 domReady(() => {
 	Counter(App.getElement(".big-counter__text-number"), 10, function(){
-		document.querySelector(".big-counter").classList.add("js__animate")
+		// document.querySelector(".big-counter").classList.add("js__animate")
+
+		const animate = () => {
+			TweenLite.to(".big-counter__svg", 10, {
+				rotation: -360,
+				ease: Linear.easeNone,
+				onComplete(){
+					TweenLite.set(".big-counter__svg", {
+						rotation: 0
+					})
+					animate()
+				}
+			})
+		}
+
+		animate()
 	})
 
-	App.each(".ms-counter__text b", (el: HTMLElement) => {
-		Counter(el, 5)
-	})
+	// App.each(".ms-counter__text b", (el: HTMLElement) => {
+	// 	Counter(el, 5)
+	// })
 })
