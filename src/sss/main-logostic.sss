@@ -53,11 +53,13 @@
 	&__img, &__text
 		position: relative
 		z-index: 1
+		opacity: 0
 
 	&__img
 		height: 134px
 		margin: 50px 0 0
 		padding: 0 50px
+		transition: opacity .3s ease
 
 		img
 			display: block
@@ -67,9 +69,15 @@
 		font-size: em(16)
 		line-height: calc(25 / 16)
 
+	&.js__animate &__text, &.js__animate &__img
+		opacity: 1
 
+	&.js__animate
 
-
+		.string
+			opacity: 1
+			transform: none !important
+			transition: transform .4s ease, opacity .4s ease
 
 
 @media (max-width: 1700px)

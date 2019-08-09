@@ -30,22 +30,22 @@ window.addEventListener("load", () => {
 
 domReady(() => {
 	Counter(App.getElement(".big-counter__text-number"), 10, function(){
-		// document.querySelector(".big-counter").classList.add("js__animate")
+		document.querySelector(".big-counter").classList.add("js__animate")
 
-		const animate = () => {
-			TweenLite.to(".big-counter__svg", 10, {
-				rotation: -360,
-				ease: Linear.easeNone,
-				onComplete(){
-					TweenLite.set(".big-counter__svg", {
-						rotation: 0
-					})
-					animate()
-				}
-			})
-		}
+		// const animate = () => {
+		// 	TweenLite.to(".big-counter__svg", 10, {
+		// 		rotation: -360,
+		// 		ease: Linear.easeNone,
+		// 		onComplete(){
+		// 			TweenLite.set(".big-counter__svg", {
+		// 				rotation: 0
+		// 			})
+		// 			animate()
+		// 		}
+		// 	})
+		// }
 
-		animate()
+		// animate()
 	})
 
 	// App.each(".ms-counter__text b", (el: HTMLElement) => {

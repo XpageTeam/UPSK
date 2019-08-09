@@ -203,6 +203,10 @@
 			+ label
 				background: #f4f4f4
 
+		&:not(:checked) + label:hover
+			color: #fff var(--main-color)
+			border-color: transparent
+
 	&__label
 		size: 50px 40px
 		display: flex
@@ -210,9 +214,11 @@
 		justify-content: center
 		align-items: center
 		border-radius: 5px
-		transition: background .3s ease
+		transition: background .3s ease, color .3s ease, border-color .3s ease
 		border: 1px solid var(--border-color)
 		cursor: pointer
+
+		
 
 .ts-title
 	display: flex
@@ -444,6 +450,14 @@
 			width: 160px
 			min-height: 160px
 
+	.ts-title
+		display: block
+
+		&__subtitle
+
+			&:not(:first-child)
+				margin: 15px 0 0
+
 @media (max-width: 660px)
 	.tovar-main
 		display: block
@@ -494,10 +508,10 @@
 					&:not(:first-child)
 						padding-top: 0 !important
 
-	.ts-title
-		display: block
+					&[data-title]:not(:first-child)
 
-		&__subtitle
-
-			&:not(:first-child)
-				margin: 15px 0 0
+						&:before
+							content: attr(data-title) ":"
+							font-weight: bold
+							font-size: 12px
+							display: block

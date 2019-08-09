@@ -5,9 +5,11 @@ Swiper.use([Lazy, Pagination, EffectFade, Autoplay])
 
 domReady(() => {
     new Swiper(".main-slider", {
-        speed: 300,
+        speed: 700,
         roundLengths: true,
-        autoplay: true,
+        autoplay: {
+            delay: 5000
+        },
         effect: "fade",
         pagination: {
             el: '.main-slider__dots .swiper-pagination',

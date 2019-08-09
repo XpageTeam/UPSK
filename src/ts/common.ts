@@ -9,6 +9,7 @@ import "./about"
 
 import "./cat3-scroll"
 import "./tovar"
+import "./main-logistic"
 
 import {domReady, App, MobileMenu, settings} from "./xpage/index"
 

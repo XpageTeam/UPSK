@@ -22,9 +22,10 @@ export default class EventListener extends Element{
 			document.body.addEventListener(event, function(e){
 				const target = e.target as HTMLElement;
 
-				if (new Element(el).is(target)
-					|| new Element(el).has(target))
-					callback(target, e, i)
+
+				if (el.contains(target)
+					|| el == target)
+					callback(el, e, i)
 			}, options)
 		})
 

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		transitionEffect: "slide",
 	})
 
-	$(".ms-text__text").each((i, el) => {
+	$(".ms-text__text, .log-item__text").each((i, el) => {
 		new stringEffect({
 			selector: el,
 		});

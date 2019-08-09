@@ -28,6 +28,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
 	-webkit-appearance: none
 	appearance: none
 	font-family: inherit
+	box-shadow: none
 
 	&:focus
 
@@ -79,6 +80,9 @@ body
 	min-height: 100vh
 	overflow-x: hidden
 
+.swiper-container-fade .swiper-slide
+	will-change: opacity
+
 
 select
 	-webkit-appearance: none
@@ -124,6 +128,9 @@ a
 	padding: 0 20px
 	margin: 0 auto
 	box-sizing: content-box
+
+	.wrapper
+		padding: 0
 
 input[type="submit"], button
 	cursor: pointer

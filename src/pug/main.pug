@@ -43,7 +43,8 @@ html(lang="ru")
 												| и всему евразийскому континенту
 				.main-slider__big-counter
 					.big-counter
-						include ../img/big-counter.svg
+						//- include ../img/big-counter.svg
+						img.big-counter__svg(src="/img/big-counter.svg")
 						.big-counter__text
 							.big-counter__text-number 1325
 							.big-counter__text-subtitle Реализованных проектов
@@ -340,21 +341,34 @@ html(lang="ru")
 						.main-advantages__list
 							.main-advantages__list-item.main-advantages__list-item--text
 								.m-advantage-text
-									.m-advantage-text__title Качество
-									.m-advantage-text__text Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки
+									.m-advantage-text__title.js__visible Качество
+									.m-advantage-text__text.js__visible Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки
 							each item,i in [{title: "Качество", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Ассортимент", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Оперативность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Стоимость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Гибкость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Компетентность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Надежность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Удобство", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставк"}, ]
 								if (i == 0)
 									.main-advantages__list-item
 										.m-advantage.active
 											figure.m-advantage__img
-												img(src="img/photos/advantage-"+i+".svg")
+												include ../img/photos/advantage-0.svg
 											figcaption.m-advantage__title=item.title
 											span.m-advantage__text=item.text
 								else
 									.main-advantages__list-item
 										.m-advantage
 											figure.m-advantage__img
-												img(src="img/photos/advantage-"+i+".svg")
+												if (i == 1)
+													include ../img/photos/advantage-1.svg
+												if (i == 2)
+													include ../img/photos/advantage-2.svg
+												if (i == 3)
+													include ../img/photos/advantage-3.svg
+												if (i == 4)
+													include ../img/photos/advantage-4.svg
+												if (i == 5)
+													include ../img/photos/advantage-5.svg
+												if (i == 6)
+													include ../img/photos/advantage-6.svg
+												if (i == 7)
+													include ../img/photos/advantage-7.svg
 											figcaption.m-advantage__title=item.title
 											span.m-advantage__text=item.text
 			section.main-call__cont
