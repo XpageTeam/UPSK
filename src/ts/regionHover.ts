@@ -7,6 +7,16 @@ declare global {
     }
 }
 
+interface curAnimation {
+	lineCircle?: TweenLite,
+	showHorLine?: TweenLite,
+	showVertLine?: TweenLite,
+	showRegion?: TweenLite,
+	showCenter?: TweenLite,
+}
+
+let currentAnimation: curAnimation = {};
+
 export default class regionHover {
 	private _mapGroup: SVGGElement
 	private _mapCenter: SVGGElement
@@ -92,7 +102,7 @@ export default class regionHover {
 	constructor(private map: SVGGElement, private id: number){
 		this.mapCenter = this.map.querySelector(".region__center")
 
-		this.mapGroup = this.map.querySelector(".region__map")
+		this.mapGroup = this.map
 
 		this.mapPoints = App.transformNodeListToArray(this.map.querySelectorAll(".region__map-point")) as any;
 	
@@ -122,9 +132,12 @@ export default class regionHover {
 
 	private bindEvents(){
 		this.mapGroup.addEventListener("mouseover", () => {
+			this.killAllTweens()
+
+	
 			this.showRegion(
 				() => {
-					this.showPoints()
+					// this.showPoints()
 					this.showCenter()
 					this.showHorLine()
 					this.showVertLine(
@@ -137,29 +150,50 @@ export default class regionHover {
 			this.hideAll()
 		})
 
-		this.mapLabel.addEventListener("mouseover", () => {
-			this.showLineCircle(
-				() => {
-					this.showHorLine()
-					this.showVertLine(
-						() => {this.showRegion(
-							() => {
-								this.showPoints()
-								this.showCenter()
-							})
-					})
-				})
-		})
+		// this.mapLabel.addEventListener("mouseover", () => {
+		// 	// this.killAllTweens()
 
-		this.mapLabel.addEventListener("mouseleave", () => {
-			this.hideAll()
-		})
+	
+		// 	this.showLineCircle(
+		// 		() => {
+		// 			this.showHorLine()
+		// 			this.showVertLine(
+		// 				() => {this.showRegion(
+		// 					() => {
+		// 						// this.showPoints()
+		// 						this.showCenter()
+		// 					})
+		// 			})
+		// 		})
+		// })
+
+		// this.mapLabel.addEventListener("mouseleave", () => {
+		// 	this.hideAll()
+		// })
+	}
+
+	private killAllTweens(){
+		if (currentAnimation.lineCircle)
+			currentAnimation.lineCircle.kill()
+
+		if (currentAnimation.showHorLine)
+			currentAnimation.showHorLine.kill()
+
+		if (currentAnimation.showVertLine)
+			currentAnimation.showVertLine.kill()
+
+		if (currentAnimation.showRegion)
+			currentAnimation.showRegion.kill()
+
+		if (currentAnimation.showCenter)
+			currentAnimation.showCenter.kill()
 	}
 
 	public hideAll(){
+		this.killAllTweens()
 		this.hideRegion(
 			() => {
-				this.hidePoints()
+				// this.hidePoints()
 				this.hideCenter()
 				this.hideHorLine()
 				this.hideVertLine(
@@ -169,7 +203,7 @@ export default class regionHover {
 	}
 
 	private showLineCircle(callback: Function = () => {}): regionHover{
-		TweenLite.to(this.lineCircle, this.animationTime, {
+		currentAnimation.lineCircle = TweenLite.to(this.lineCircle, this.animationTime, {
 			opacity: 1,
 			onComplete: callback,
 			scale: 1,
@@ -190,7 +224,7 @@ export default class regionHover {
 	}
 
 	private showHorLine(callback: Function = () => {}): regionHover{
-		TweenLite.to(this.horLine, this.animationTime, {
+		currentAnimation.showHorLine = TweenLite.to(this.horLine, this.animationTime, {
 			opacity: 1,
 			strokeDashoffset: 0,
 			onComplete: callback,
@@ -211,7 +245,7 @@ export default class regionHover {
 	}
 
 	private showVertLine(callback: Function = () => {}): regionHover{
-		TweenLite.to(this.vertLine, this.animationTime, {
+		currentAnimation.showVertLine = TweenLite.to(this.vertLine, this.animationTime, {
 			opacity: 1,
 			strokeDashoffset: 0,
 			onComplete: callback,
@@ -269,7 +303,7 @@ export default class regionHover {
 		App.each(".region", (el: SVGGElement, i:number) => {
 			el.regHover.hideAll()
 		})
-		TweenLite.to(this.mapGroup, this.animationTime, {
+		currentAnimation.showRegion = TweenLite.to(this.mapGroup, this.animationTime, {
 			opacity: 1,
 			onComplete: callback,
 			transformOrigin: "center"
@@ -280,7 +314,7 @@ export default class regionHover {
 
 	private hideRegion(callback: Function = () => {}): regionHover{
 		TweenLite.set(this.mapGroup, {
-			opacity: 0,
+			// opacity: 0,
 			onComplete: callback,
 			transformOrigin: "center"
 		})
@@ -292,7 +326,7 @@ export default class regionHover {
 		const bigCircle = this.mapCenter.querySelector("path:first-child") || this.mapCenter.querySelector("circle:first-child") ,
 			smallCircle = this.mapCenter.querySelector("path:nth-child(2)") || this.mapCenter.querySelector("circle:nth-child(2)");
 
-		TweenLite.to(bigCircle, this.animationTime, {
+		currentAnimation.showCenter = TweenLite.to(bigCircle, this.animationTime, {
 			scale: 1,
 			onComplete(){
 				TweenLite.to(smallCircle, this.animationTime, {

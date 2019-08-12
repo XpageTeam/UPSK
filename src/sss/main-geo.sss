@@ -11,6 +11,11 @@
 	&__call
 		margin: 85px 0 0
 
+	&__map
+		
+		svg
+			overflow: visible
+
 .call
 	display: flex
 	align-items: center
@@ -32,8 +37,31 @@
 			color: #000
 			font-size: em(24)
 
+.region-list
+
+	&:hover
+
+		.region
+			opacity: .4
+
 .region
 	pointer-events: none
+	transition: opacity .3s ease
+
+	&__map
+		transition: filter .3s ease
+
+		path
+			transition: fill .3s ease
+	
+	&:hover &__map
+		filter: url(#dropshadow)
+
+		path
+			fill: var(--main-color)
+
+	&:hover
+		opacity: 1 !important
 
 	&__map, &__label rect
 		pointer-events: auto
@@ -42,10 +70,8 @@
 
 		.region
 
-			&__map, &__center, &__line
+			&__center, &__line
 				opacity: 0
-
-
 
 
 @media (max-width: 1700px)
