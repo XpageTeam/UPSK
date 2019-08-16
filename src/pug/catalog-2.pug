@@ -232,5 +232,151 @@ html(lang="ru")
 										p Прямоугольных – используются, когда известно направление приложенного вектора максимальной нагрузки. Используются при возведении колонн, вышек, опор, каркасов;
 											br
 											| Квадратных –  конструктивная прочность и жесткость, упрощенный монтаж,  низкая металлоемкость при изготовлении, логистическое преимущество. Используются при возведении колонн, вышек, опор, каркасов;
+						.catalog__advantages
+							.wrapper
+								.main-advantages
+									.main-advantages__list
+										.main-advantages__list-item.main-advantages__list-item--text
+											.m-advantage-text
+												.m-advantage-text__title.js__visible Качество
+												.m-advantage-text__text.js__visible Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки
+										each item,i in [{title: "Качество", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Ассортимент", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Оперативность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Стоимость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Гибкость", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Компетентность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Надежность", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставки"}, {title: "Удобство", text: "Вся наша продукция сертифицирована и соответствует официальным стандартам ГОСТ и ТУ. А собственный отдел контроля тщательно проверяет ее качество на всех этапах поставк"}, ]
+											if (i == 0)
+												.main-advantages__list-item
+													.m-advantage.active
+														figure.m-advantage__img
+															include ../img/photos/advantage-0.svg
+														figcaption.m-advantage__title=item.title
+														span.m-advantage__text=item.text
+											else
+												.main-advantages__list-item
+													.m-advantage
+														figure.m-advantage__img
+															if (i == 1)
+																include ../img/photos/advantage-1.svg
+															if (i == 2)
+																include ../img/photos/advantage-2.svg
+															if (i == 3)
+																include ../img/photos/advantage-3.svg
+															if (i == 4)
+																include ../img/photos/advantage-4.svg
+															if (i == 5)
+																include ../img/photos/advantage-5.svg
+															if (i == 6)
+																include ../img/photos/advantage-6.svg
+															if (i == 7)
+																include ../img/photos/advantage-7.svg
+														figcaption.m-advantage__title=item.title
+														span.m-advantage__text=item.text
+						.catalog__projects
+							.main-projects
+								.main-projects__top
+									.mp-slider
+										.mp-slider__arrows
+											.mp-slider__arrows-left
+												.swiper-button-prev
+											.mp-slider__arrows-right
+												.swiper-button-next
+										.swiper-wrapper
+											- for (let i = 0; i <= 5; i++)
+												.swiper-slide
+													.mp-slider__slide
+														picture.mp-slider__slide-img
+															if (i == 0)
+																<!-- Большая картинка -->
+																source(media="(min-width: 660px)" srcset="img/photos/project-slide-img-0.jpg")
+																<!-- Маленькая картинка -->
+																source(media="(max-width: 660px)" srcset="img/photos/project-slide-img-0.jpg")
+																img
+															else
+																<!-- Большая картинка -->
+																source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/project-slide-img-0.jpg")
+																<!-- Маленькая картинка -->
+																source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/project-slide-img-0.jpg")
+																img
+																.swiper-lazy-preloader
+														.mp-slider__slide-text
+															.mp-text
+																a.mp-text__title(href="#") Нефтегазовое
+																	br
+																	| месторождение Тенгиз
+																address.mp-text__address Атырауской область, Казахстан
+																.mp-text__text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции. 
+																	br
+																	| Открыто в 1979 году
+								.main-projects__bot
+									.tovar-slider
+										.swiper-wrapper
+											.swiper-slide
+												a.mp-item(href="#")
+													.mp-item__decor
+													figure.mp-item__img
+														img(src="img/photos/mp-img-0.jpg")
+													figcaptin.mp-item__text
+														.mp-text__title Нефтегазовое
+															br
+															| месторождение Тенгиз
+														address.mp-text__address Атырауской область, Казахстан
+														.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+											.swiper-slide
+												a.mp-item(href="#")
+													.mp-item__decor
+													figure.mp-item__img
+														img.swiper-lazy(data-src="img/photos/mp-img-1.jpg")
+														.swiper-lazy-preloader
+													figcaptin.mp-item__text
+														.mp-text__title Шинный центр
+															br
+															| Continental
+														address.mp-text__address г. Калуга
+														.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+											.swiper-slide
+												a.mp-item(href="#")
+													.mp-item__decor
+													figure.mp-item__img
+														img.swiper-lazy(data-src="img/photos/mp-img-2.jpg")
+														.swiper-lazy-preloader
+													figcaptin.mp-item__text
+														.mp-text__title Нефтегазовое
+															br
+															| месторождение Тенгиз
+														address.mp-text__address Атырауской область, Казахстан
+														.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции
+											.swiper-slide
+												a.mp-item(href="#")
+													.mp-item__decor
+													figure.mp-item__img
+														img.swiper-lazy(data-src="img/photos/mp-img-0.jpg")
+														.swiper-lazy-preloader
+													figcaptin.mp-item__text
+														.mp-text__title Нефтегазовое
+															br
+															| месторождение Тенгиз
+														address.mp-text__address Атырауской область, Казахстан
+														.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+											.swiper-slide
+												a.mp-item(href="#")
+													.mp-item__decor
+													figure.mp-item__img
+														img.swiper-lazy(data-src="img/photos/mp-img-1.jpg")
+														.swiper-lazy-preloader
+													figcaptin.mp-item__text
+														.mp-text__title Шинный центр
+															br
+															| Continental
+														address.mp-text__address г. Калуга
+														.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
+											.swiper-slide
+												a.mp-item(href="#")
+													.mp-item__decor
+													figure.mp-item__img
+														img.swiper-lazy(data-src="img/photos/mp-img-2.jpg")
+														.swiper-lazy-preloader
+													figcaptin.mp-item__text
+														.mp-text__title Нефтегазовое
+															br
+															| месторождение Тенгиз
+														address.mp-text__address Атырауской область, Казахстан
+														.mp-item__text-text Тенгиз - нефтегазовое месторождение в Атырауской области Казахстана, в 350 км к юго-востоку от г. Атырау. Относится к Прикаспийской нефтегазоносной провинции 
 		include inc/footer.pug
 		include inc/scripts.pug 

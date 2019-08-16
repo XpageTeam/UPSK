@@ -90,7 +90,8 @@ module.exports = (env, argv) => {
 	    	splitChunks: {
 		        cacheGroups: {
 		            vendors: {
-		                test: /^.*node_modules((?!gsap).)*$/,
+		                // test: /^.*node_modules((?!gsap).)*$/,
+		                test: /node_modules/,
 		                name: 'js/vendors',
 		                enforce: true,
 		                chunks: 'all',

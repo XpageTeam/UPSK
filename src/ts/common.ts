@@ -6,6 +6,9 @@ import "./top-search"
 import "./price-form"
 import "./about"
 
+import "./main-advantages"
+import "./projects-slider"
+
 
 import "./cat3-scroll"
 import "./tovar"

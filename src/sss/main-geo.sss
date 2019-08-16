@@ -1,5 +1,9 @@
 .main-geo
 
+	&__title
+		font-size: em(24)
+		margin: 0 0 40px
+
 	&__cont
 		position: relative
 		background: #f4f4f4
@@ -54,8 +58,10 @@
 		path
 			transition: fill .3s ease
 	
+	&:not(:hover) &__map
+		filter: none
+
 	&:hover &__map
-		filter: url(#dropshadow)
 
 		path
 			fill: var(--main-color)
