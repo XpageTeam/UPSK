@@ -84,6 +84,25 @@ html(lang="ru")
 														.tovar-price__text Осуществляется отгрузка по РФ,
 															br
 															| отсрочка оплаты
+								.tovar__calc
+									.tm-calc
+										.tm-calc__title Расчет расстояния между городами
+										form(name="frmTraceDetect" action="https://ati.su/trace/search" method="post" accept-charset="windows-1251" target="_blank")
+											.form__inputs.form__inputs--4
+												.form__inputs-input
+													.default-input
+														input.default-input__input(type="text" placeholder="Некий плейсхолдер" name="City1")
+														label.default-input__label От
+												.form__inputs-input
+													.default-input
+														input.default-input__input(type="text" placeholder="Некий плейсхолдер" name="City5")
+														label.default-input__label До
+												.form__inputs-input
+													.default-input
+														input.default-input__input(type="text" placeholder="Некий плейсхолдер" name="City2")
+														label.default-input__label Через
+												.form__inputs-input
+													input.default-btn(type="submit" name="ati-su-trace-submit-button" value="Определить")
 								.tovar__list
 									table.tovar-list
 										tr.tovar-list__title
