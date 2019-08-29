@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80ef138e-4cc9-4986-ae73-06c817a7061a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pug/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/pug/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sss/tovar.sss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sss/tovar.sss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +78,8 @@
       <workItem from="1562566067677" duration="10978000" />
       <workItem from="1562583174421" duration="335000" />
       <workItem from="1562638515827" duration="12799000" />
-      <workItem from="1567054893372" duration="3641000" />
+      <workItem from="1567054893372" duration="4351000" />
+      <workItem from="1567076378412" duration="306000" />
     </task>
     <servers />
   </component>
@@ -92,7 +91,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

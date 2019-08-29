@@ -396,10 +396,19 @@
 		min-height: 408px
 
 @media (min-width: 1000px)
-	.js__calc-loaded
+	.js__calc-loaded:not(.page-catalog-trubi-truby25619-)
 
 		#wr-calc
 			width: 767px
+
+			iframe
+				min-height: 600px
+				max-height: 100vh
+
+	.js__calc-loaded.page-catalog-trubi-truby25619-
+
+		#wr-calc
+			width: 1200px
 
 			iframe
 				min-height: 600px
