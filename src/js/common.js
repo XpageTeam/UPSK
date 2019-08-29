@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
 			preload: true,
 		},
 		transitionEffect: "slide",
+		afterClose(){
+			document.body.classList.remove("js__calc-loaded")
+		}
 	})
 
 	$(".ms-text__text, .log-item__text").each((i, el) => {

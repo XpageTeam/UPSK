@@ -11,9 +11,6 @@
 		&-title
 			margin: 0 0 40px
 
-	&__calc
-		margin: 60px 0 0
-
 .tovar-main
 	display: flex
 	align-items: flex-start
@@ -100,6 +97,11 @@
 	padding: 18px 17px
 	border: 1px solid var(--border-color)
 	border-radius: 5px
+
+	&__btn
+
+		&:not(:last-child)
+			margin-right: 20px
 
 	&__price
 		margin-right: 30px
@@ -376,14 +378,57 @@
 						right: 0
 
 .tm-calc
+	padding: 20px
 
 	&__title
 		font-size: em(20)
 		margin: 0 0 25px
+		max-width: 350px
 
 	.default-btn
 		height: 57px
 
+#wr-calc
+	padding: 0 !important
+	width: 430px
+
+	iframe
+		min-height: 408px
+
+@media (min-width: 1000px)
+	.js__calc-loaded
+
+		#wr-calc
+			width: 767px
+
+			iframe
+				min-height: 600px
+				max-height: 100vh
+
+@media (max-width: 1000px)
+	#wr-calc
+
+		iframe
+			min-height: calc(100vh - 90px)
+
+	.tp
+		display: block
+
+		&__btn
+
+			&:not(:last-child)
+				margin-right: 0
+				margin-bottom: 20px
+
+			.default-btn
+				width: 100%
+				text-align: center
+
+	.tovar-price
+		display: block
+
+		&__main
+			margin: 0 0 20px
 
 @media (max-width: 1400px)
 	.tovar
