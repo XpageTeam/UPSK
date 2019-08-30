@@ -31,6 +31,8 @@
 		flex: 1 1 auto
 
 .tm-desc
+	display: flex
+	flex-direction: column
 
 	&__category
 		text-transform: uppercase
@@ -39,12 +41,14 @@
 		margin: 0 0 16px
 		font-weight: bold
 		font-size: em(10)
+		order: -3
 
 	&__title, &__subtitle
 		max-width: 720px
 
 	&__title
 		margin: 0 0 15px
+		order: -2
 
 		h1
 			font-size: rem(24)
@@ -52,8 +56,12 @@
 	&__subtitle
 		margin: 0 0 33px
 
+		&:empty
+			display: none
+
 	&__price
-		margin: 35px 0 0
+		margin: 0 0 25px
+		order: -1
 
 .features
 	border-top: 1px solid var(--border-color)
