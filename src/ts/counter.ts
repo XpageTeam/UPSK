@@ -1,6 +1,5 @@
 import {settings} from "./xpage/index"
 import partitionNumber from "./functions/partNumber"
-import {TweenLite} from "gsap"
 
 /** Функция запустит счётчик на выбранном элементе
  * @param el: HTMLElement - на в нём будет счётчик
@@ -13,11 +12,11 @@ function Counter(el: HTMLElement, time: number, onComplete?: Function): void {
 
 		el.style.width = getComputedStyle(el).width
 
-		TweenLite.to(el, 2, {
+		window.TweenLite.to(el, 2, {
 			opacity: 1
 		})		
 
-		TweenLite.to(counter, time, {
+		window.TweenLite.to(counter, time, {
 			count: `+=${parseInt(el.innerText.replace(" ", ""))}`,
 			onUpdate(){
 				el.innerText = partitionNumber(Math.ceil(counter.count))
@@ -29,7 +28,7 @@ function Counter(el: HTMLElement, time: number, onComplete?: Function): void {
 			}
 		})
 	}else
-		TweenLite.set(el, {
+		window.TweenLite.set(el, {
 			opacity: 1
 		})
 }

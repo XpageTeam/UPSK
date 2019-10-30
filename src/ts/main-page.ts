@@ -6,7 +6,7 @@ import "./counter"
 
 import {domReady, App} from "./xpage/index"
 import Counter from "./counter"
-import {TweenLite, Linear} from "gsap"
+// import {TweenLite, Linear} from "gsap"
 import regionHover from "./regionHover"
 
 

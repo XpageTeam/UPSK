@@ -1,4 +1,4 @@
-import {TweenLite} from "gsap"
+// import {TweenLite} from "gsap"
 import {App} from "./xpage/index"
 
 declare global {
@@ -8,11 +8,11 @@ declare global {
 }
 
 interface curAnimation {
-	lineCircle?: TweenLite,
-	showHorLine?: TweenLite,
-	showVertLine?: TweenLite,
-	showRegion?: TweenLite,
-	showCenter?: TweenLite,
+	lineCircle?: any,
+	showHorLine?: any,
+	showVertLine?: any,
+	showRegion?: any,
+	showCenter?: any,
 }
 
 let currentAnimation: curAnimation = {};
@@ -203,7 +203,7 @@ export default class regionHover {
 	}
 
 	private showLineCircle(callback: Function = () => {}): regionHover{
-		currentAnimation.lineCircle = TweenLite.to(this.lineCircle, this.animationTime, {
+		currentAnimation.lineCircle = window.TweenLite.to(this.lineCircle, this.animationTime, {
 			opacity: 1,
 			onComplete: callback,
 			scale: 1,
@@ -213,7 +213,7 @@ export default class regionHover {
 		return this
 	}
 	private hideLineCircle(callback: Function = () => {}): regionHover{
-		TweenLite.set(this.lineCircle, {
+		window.TweenLite.set(this.lineCircle, {
 			opacity: 0,
 			onComplete: callback,
 			scale: 0,
@@ -224,7 +224,7 @@ export default class regionHover {
 	}
 
 	private showHorLine(callback: Function = () => {}): regionHover{
-		currentAnimation.showHorLine = TweenLite.to(this.horLine, this.animationTime, {
+		currentAnimation.showHorLine = window.TweenLite.to(this.horLine, this.animationTime, {
 			opacity: 1,
 			strokeDashoffset: 0,
 			onComplete: callback,
@@ -234,7 +234,7 @@ export default class regionHover {
 		return this
 	}
 	private hideHorLine(callback: Function = () => {}): regionHover{
-		TweenLite.set(this.horLine, {
+		window.TweenLite.set(this.horLine, {
 			opacity: 0,
 			strokeDashoffset: 0,
 			onComplete: callback,
@@ -245,7 +245,7 @@ export default class regionHover {
 	}
 
 	private showVertLine(callback: Function = () => {}): regionHover{
-		currentAnimation.showVertLine = TweenLite.to(this.vertLine, this.animationTime, {
+		currentAnimation.showVertLine = window.TweenLite.to(this.vertLine, this.animationTime, {
 			opacity: 1,
 			strokeDashoffset: 0,
 			onComplete: callback,
@@ -255,7 +255,7 @@ export default class regionHover {
 		return this
 	}
 	private hideVertLine(callback: Function = () => {}): regionHover{
-		TweenLite.set(this.vertLine, {
+		window.TweenLite.set(this.vertLine, {
 			opacity: 0,
 			strokeDashoffset: 0,
 			onComplete: callback,
@@ -269,7 +269,7 @@ export default class regionHover {
 		let counter = 0;
 
 		for (let point of this.mapPoints){
-			TweenLite.to(point, this.animationTime, {
+			window.TweenLite.to(point, this.animationTime, {
 				scale: 1,
 				delay: `.${counter}`,
 				transformOrigin: "center"
@@ -286,7 +286,7 @@ export default class regionHover {
 		let counter = 0;
 
 		for (let point of this.mapPoints){
-			TweenLite.set(point, {
+			window.TweenLite.set(point, {
 				scale: 0,
 				delay: `.${counter}`,
 				transformOrigin: "center"
@@ -303,7 +303,7 @@ export default class regionHover {
 		App.each(".region", (el: SVGGElement, i:number) => {
 			el.regHover.hideAll()
 		})
-		currentAnimation.showRegion = TweenLite.to(this.mapGroup, this.animationTime, {
+		currentAnimation.showRegion = window.TweenLite.to(this.mapGroup, this.animationTime, {
 			opacity: 1,
 			onComplete: callback,
 			transformOrigin: "center"
@@ -313,7 +313,7 @@ export default class regionHover {
 	}
 
 	private hideRegion(callback: Function = () => {}): regionHover{
-		TweenLite.set(this.mapGroup, {
+		window.TweenLite.set(this.mapGroup, {
 			// opacity: 0,
 			onComplete: callback,
 			transformOrigin: "center"
@@ -326,10 +326,10 @@ export default class regionHover {
 		const bigCircle = this.mapCenter.querySelector("path:first-child") || this.mapCenter.querySelector("circle:first-child") ,
 			smallCircle = this.mapCenter.querySelector("path:nth-child(2)") || this.mapCenter.querySelector("circle:nth-child(2)");
 
-		currentAnimation.showCenter = TweenLite.to(bigCircle, this.animationTime, {
+		currentAnimation.showCenter = window.TweenLite.to(bigCircle, this.animationTime, {
 			scale: 1,
 			onComplete(){
-				TweenLite.to(smallCircle, this.animationTime, {
+				window.TweenLite.to(smallCircle, this.animationTime, {
 					scale: 1,
 					transformOrigin: "center"
 				})
@@ -344,10 +344,10 @@ export default class regionHover {
 		const bigCircle = this.mapCenter.querySelector("path:first-child") || this.mapCenter.querySelector("circle:first-child") ,
 			smallCircle = this.mapCenter.querySelector("path:nth-child(2)") || this.mapCenter.querySelector("circle:nth-child(2)");
 
-		TweenLite.set(smallCircle, {
+		window.TweenLite.set(smallCircle, {
 			scale: 0,
 			onComplete(){
-				TweenLite.set(bigCircle, {
+				window.TweenLite.set(bigCircle, {
 					scale: 0,
 					onComplete: callback,
 					transformOrigin: "center"

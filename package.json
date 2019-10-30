@@ -1,14 +1,12 @@
 {
-  "name": "lorena",
+  "name": "upsk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "finish:him": "webpack --mode production --progress && gulp finish:him",
-    "deploy": "webpack --mode production --progress && gulp deploy",
     "watch": "webpack --mode development --watch"
   },
-  "author": "danil.khandys",
+  "author": "xpage",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -55,9 +53,7 @@
     "swiper": "^4.5.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.4.3",
-    "vinyl-ftp": "^0.6.1",
     "webpack": "^4.29.6",
-    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {

@@ -1,5 +1,4 @@
 import {domReady, EventListener, Element, App, viewWatcher} from "./xpage/index"
-import {TweenLite} from "gsap"
 
 domReady(() => {
 	const $adv = new Element(".m-advantage"),
@@ -39,7 +38,7 @@ domReady(() => {
 domReady(() => {
 	App.each(".m-advantage__img svg", (svg: SVGElement) => {
 		App.each(svg.querySelectorAll("path"), (path: SVGPathElement) => {
-			TweenLite.set(path, {
+			window.TweenLite.set(path, {
 				strokeDasharray: `${path.getTotalLength()}, ${path.getTotalLength()}`,
 				strokeDashoffset: path.getTotalLength().toString(),
 				stroke: path.getAttribute("fill")
@@ -51,10 +50,10 @@ domReady(() => {
 		viewWatcher(el, function(block: HTMLElement){
 
 			App.each(block.querySelectorAll("svg path"), (path: SVGPathElement) => {
-				TweenLite.to(path, 2, {
+				window.TweenLite.to(path, 2, {
 					strokeDashoffset: 0,
 					onComplete(){
-						TweenLite.to(path, .6, {
+						window.TweenLite.to(path, .6, {
 							fillOpacity: 1,
 							stroke: "transparent"
 						})

@@ -1,5 +1,4 @@
 const path = require("path"),
-	BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin,
 	TerserPlugin = require('terser-webpack-plugin');
 
 const ignoredGSAPFiles = ['BezierPlugin', 'DirectionalRotationPlugin', 'RoundPropsPlugin'];
@@ -14,13 +13,7 @@ module.exports = (env, argv) => {
 		output: {
 			path: path.resolve(__dirname, "./docs/"),
 			filename: "js/[name].js",
-			// publicPath: "/img/"
 			chunkFilename: '[name].js'
-		},
-		devServer: {
-			contentBase: "./docs",
-			overlay: true,
-		    // open: true,
 		},
 		devtool: 'source-map',
 		module: {
@@ -38,7 +31,6 @@ module.exports = (env, argv) => {
 					    "@babel/preset-env"
 					  ]
 					},
-					// exclude: /\/node_modules\/(?!dom7|ssr-window|swiper)\//,
 					exclude: /^.*node_modules((?!dom7|ssr-window|swiper).)*$/,
 				},
 				{
@@ -111,6 +103,5 @@ module.exports = (env, argv) => {
 		        }
 	    	}
 		},
-		plugins: [].concat(argv.mode == "development" ? new BundleAnalyzerPlugin() : [])
 	}
 }

@@ -1,6 +1,5 @@
 import {domReady, App} from "./xpage/index";
 import {Swiper, Lazy, Navigation} from 'swiper/dist/js/swiper.esm.js'
-import {TweenLite} from "gsap"
 
 Swiper.use([Lazy, Navigation])
 
@@ -69,7 +68,7 @@ setScaleByCursorPos = (targetSlides: any, e: MouseEvent): void => {
 	// 				: partOfElement / (targetSlides.current.clientWidth - e.offsetX))
 	// 				.toFixed(2)) / 4;
 
-	TweenLite.to(targetSlides.current.querySelector("img"), .1, {
+	window.TweenLite.to(targetSlides.current.querySelector("img"), .1, {
 		scale: 1 + Math.abs(scaleCurrent)
 	})
 

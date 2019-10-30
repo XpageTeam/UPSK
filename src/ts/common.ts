@@ -16,15 +16,13 @@ import "./main-logistic"
 
 import {domReady, App, MobileMenu, settings} from "./xpage/index"
 
-
-
-
 declare global {
     interface Window {
     	animateScroll: Function; 
     	isScrolledIntoView: Function;
     	get$: Function;
-    	is: any;
+		is: any;
+		TweenLite: any
     }
 }
 

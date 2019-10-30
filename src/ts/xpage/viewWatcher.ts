@@ -1,5 +1,4 @@
 import isScrolledIntoView from "./scrolledIntoView"
-import {App} from "index"
 
 function viewWatcher(el: Element, callback: Function){
 	let prevComparison = performance.now();

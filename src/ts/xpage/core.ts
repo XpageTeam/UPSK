@@ -1,3 +1,7 @@
+/**
+ * version 0.2
+ */
+
 export default class App {
 	public static getElements(selector: string): NodeList{
 		const elements: any = document.querySelectorAll(selector);

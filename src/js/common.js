@@ -2,6 +2,14 @@ import $ from "jquery"
 import is from "is_js"
 import stringEffect from "./stringAnimate.js"
 
+/** Подключение gsap реализовано здесь
+ * для нормально работы tree shaking
+ */
+import TweenLite from "gsap/TweenLite.js"
+import "gsap/CSSPlugin.js"
+
+
+window.TweenLite = TweenLite;
 window.$ = $;
 window.jQuery = $;
 window.is = is
